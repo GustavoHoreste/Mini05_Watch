@@ -1,0 +1,620 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D908CA972BFFD03700A088B3 /* Mini05_Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D908CA962BFFD03700A088B3 /* Mini05_Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D908CA9C2BFFD03700A088B3 /* Mini05_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CA9B2BFFD03700A088B3 /* Mini05_WatchApp.swift */; };
+		D908CA9E2BFFD03700A088B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CA9D2BFFD03700A088B3 /* ContentView.swift */; };
+		D908CAA02BFFD03800A088B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D908CA9F2BFFD03800A088B3 /* Assets.xcassets */; };
+		D908CAA32BFFD03800A088B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D908CAA22BFFD03800A088B3 /* Preview Assets.xcassets */; };
+		D908CAB02BFFD09A00A088B3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CAAF2BFFD09A00A088B3 /* UserModel.swift */; };
+		D908CAB22BFFD0A600A088B3 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CAB12BFFD0A600A088B3 /* Enum.swift */; };
+		D908CAB72BFFD14400A088B3 /* HomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CAB62BFFD14400A088B3 /* HomeButton.swift */; };
+		D91846062BFFD1990076F3A3 /* HomeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91846052BFFD1990076F3A3 /* HomeButtonView.swift */; };
+		D91846092BFFD1DF0076F3A3 /* SelectEvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91846082BFFD1DF0076F3A3 /* SelectEvaluationView.swift */; };
+		D918460B2BFFD2010076F3A3 /* SelectionBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918460A2BFFD2010076F3A3 /* SelectionBox.swift */; };
+		D91846102BFFD2CB0076F3A3 /* SummaryDataComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918460F2BFFD2CB0076F3A3 /* SummaryDataComponent.swift */; };
+		D91846122BFFD2E10076F3A3 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91846112BFFD2E10076F3A3 /* SummaryView.swift */; };
+		D91846152BFFD3110076F3A3 /* TabViewWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91846142BFFD3110076F3A3 /* TabViewWorkout.swift */; };
+		D91846182BFFD33A0076F3A3 /* ExerciseProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91846172BFFD33A0076F3A3 /* ExerciseProgressView.swift */; };
+		D918461B2BFFD3720076F3A3 /* ButtonStatusComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918461A2BFFD3720076F3A3 /* ButtonStatusComponent.swift */; };
+		D918461D2BFFD38F0076F3A3 /* StatusWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918461C2BFFD38F0076F3A3 /* StatusWorkoutView.swift */; };
+		D91846202BFFD3C20076F3A3 /* ButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918461F2BFFD3C20076F3A3 /* ButtonTest.swift */; };
+		D91846242BFFD5DC0076F3A3 /* PUViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91846232BFFD5DC0076F3A3 /* PUViewModel.swift */; };
+		D91846262BFFD6000076F3A3 /* PUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91846252BFFD6000076F3A3 /* PUView.swift */; };
+		D91846282BFFD65E0076F3A3 /* PUModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91846272BFFD65E0076F3A3 /* PUModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D908CA982BFFD03700A088B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D908CA8A2BFFD03700A088B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D908CA952BFFD03700A088B3;
+			remoteInfo = "Mini05_Watch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D908CAA92BFFD03800A088B3 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				D908CA972BFFD03700A088B3 /* Mini05_Watch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D908CA902BFFD03700A088B3 /* Mini05_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini05_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D908CA962BFFD03700A088B3 /* Mini05_Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini05_Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D908CA9B2BFFD03700A088B3 /* Mini05_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini05_WatchApp.swift; sourceTree = "<group>"; };
+		D908CA9D2BFFD03700A088B3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D908CA9F2BFFD03800A088B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D908CAA22BFFD03800A088B3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D908CAAF2BFFD09A00A088B3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		D908CAB12BFFD0A600A088B3 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		D908CAB62BFFD14400A088B3 /* HomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButton.swift; sourceTree = "<group>"; };
+		D91846052BFFD1990076F3A3 /* HomeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonView.swift; sourceTree = "<group>"; };
+		D91846082BFFD1DF0076F3A3 /* SelectEvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEvaluationView.swift; sourceTree = "<group>"; };
+		D918460A2BFFD2010076F3A3 /* SelectionBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionBox.swift; sourceTree = "<group>"; };
+		D918460F2BFFD2CB0076F3A3 /* SummaryDataComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryDataComponent.swift; sourceTree = "<group>"; };
+		D91846112BFFD2E10076F3A3 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		D91846142BFFD3110076F3A3 /* TabViewWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewWorkout.swift; sourceTree = "<group>"; };
+		D91846172BFFD33A0076F3A3 /* ExerciseProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseProgressView.swift; sourceTree = "<group>"; };
+		D918461A2BFFD3720076F3A3 /* ButtonStatusComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStatusComponent.swift; sourceTree = "<group>"; };
+		D918461C2BFFD38F0076F3A3 /* StatusWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusWorkoutView.swift; sourceTree = "<group>"; };
+		D918461F2BFFD3C20076F3A3 /* ButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTest.swift; sourceTree = "<group>"; };
+		D91846232BFFD5DC0076F3A3 /* PUViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PUViewModel.swift; sourceTree = "<group>"; };
+		D91846252BFFD6000076F3A3 /* PUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PUView.swift; sourceTree = "<group>"; };
+		D91846272BFFD65E0076F3A3 /* PUModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PUModel.swift; sourceTree = "<group>"; };
+		D91846292BFFD77C0076F3A3 /* Mini05_Watch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mini05_Watch Watch App.entitlements"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D908CA932BFFD03700A088B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D908CA892BFFD03700A088B3 = {
+			isa = PBXGroup;
+			children = (
+				D908CA9A2BFFD03700A088B3 /* Mini05_Watch Watch App */,
+				D908CA912BFFD03700A088B3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D908CA912BFFD03700A088B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D908CA902BFFD03700A088B3 /* Mini05_Watch.app */,
+				D908CA962BFFD03700A088B3 /* Mini05_Watch Watch App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D908CA9A2BFFD03700A088B3 /* Mini05_Watch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				D91846292BFFD77C0076F3A3 /* Mini05_Watch Watch App.entitlements */,
+				D908CAB32BFFD0EE00A088B3 /* View */,
+				D908CAAE2BFFD06F00A088B3 /* Model */,
+				D908CAAD2BFFD05100A088B3 /* Utilities */,
+				D908CAA12BFFD03800A088B3 /* Preview Content */,
+			);
+			path = "Mini05_Watch Watch App";
+			sourceTree = "<group>";
+		};
+		D908CAA12BFFD03800A088B3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D908CAA22BFFD03800A088B3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D908CAAD2BFFD05100A088B3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D908CA9B2BFFD03700A088B3 /* Mini05_WatchApp.swift */,
+				D908CA9F2BFFD03800A088B3 /* Assets.xcassets */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D908CAAE2BFFD06F00A088B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D908CAAF2BFFD09A00A088B3 /* UserModel.swift */,
+				D908CAB12BFFD0A600A088B3 /* Enum.swift */,
+				D91846272BFFD65E0076F3A3 /* PUModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D908CAB32BFFD0EE00A088B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D918461E2BFFD3AE0076F3A3 /* Shared */,
+				D908CAB42BFFD11400A088B3 /* Screens */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D908CAB42BFFD11400A088B3 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D908CA9D2BFFD03700A088B3 /* ContentView.swift */,
+				D91846212BFFD59D0076F3A3 /* PushUps */,
+				D91846132BFFD2EE0076F3A3 /* WorkoutInProgress */,
+				D918460E2BFFD2B40076F3A3 /* Summary */,
+				D91846072BFFD1C50076F3A3 /* SelectEvaluation */,
+				D908CAB52BFFD11F00A088B3 /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		D908CAB52BFFD11F00A088B3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D908CAB62BFFD14400A088B3 /* HomeButton.swift */,
+				D91846052BFFD1990076F3A3 /* HomeButtonView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D91846072BFFD1C50076F3A3 /* SelectEvaluation */ = {
+			isa = PBXGroup;
+			children = (
+				D91846082BFFD1DF0076F3A3 /* SelectEvaluationView.swift */,
+				D918460A2BFFD2010076F3A3 /* SelectionBox.swift */,
+			);
+			path = SelectEvaluation;
+			sourceTree = "<group>";
+		};
+		D918460E2BFFD2B40076F3A3 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				D918460F2BFFD2CB0076F3A3 /* SummaryDataComponent.swift */,
+				D91846112BFFD2E10076F3A3 /* SummaryView.swift */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		D91846132BFFD2EE0076F3A3 /* WorkoutInProgress */ = {
+			isa = PBXGroup;
+			children = (
+				D91846192BFFD3520076F3A3 /* StatusWorkout */,
+				D91846162BFFD3290076F3A3 /* ExerciseProgress */,
+				D91846142BFFD3110076F3A3 /* TabViewWorkout.swift */,
+			);
+			path = WorkoutInProgress;
+			sourceTree = "<group>";
+		};
+		D91846162BFFD3290076F3A3 /* ExerciseProgress */ = {
+			isa = PBXGroup;
+			children = (
+				D91846172BFFD33A0076F3A3 /* ExerciseProgressView.swift */,
+			);
+			path = ExerciseProgress;
+			sourceTree = "<group>";
+		};
+		D91846192BFFD3520076F3A3 /* StatusWorkout */ = {
+			isa = PBXGroup;
+			children = (
+				D918461A2BFFD3720076F3A3 /* ButtonStatusComponent.swift */,
+				D918461C2BFFD38F0076F3A3 /* StatusWorkoutView.swift */,
+			);
+			path = StatusWorkout;
+			sourceTree = "<group>";
+		};
+		D918461E2BFFD3AE0076F3A3 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D918461F2BFFD3C20076F3A3 /* ButtonTest.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		D91846212BFFD59D0076F3A3 /* PushUps */ = {
+			isa = PBXGroup;
+			children = (
+				D91846232BFFD5DC0076F3A3 /* PUViewModel.swift */,
+				D91846252BFFD6000076F3A3 /* PUView.swift */,
+			);
+			path = PushUps;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D908CA8F2BFFD03700A088B3 /* Mini05_Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D908CAAA2BFFD03800A088B3 /* Build configuration list for PBXNativeTarget "Mini05_Watch" */;
+			buildPhases = (
+				D908CA8E2BFFD03700A088B3 /* Resources */,
+				D908CAA92BFFD03800A088B3 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D908CA992BFFD03700A088B3 /* PBXTargetDependency */,
+			);
+			name = Mini05_Watch;
+			productName = Mini05_Watch;
+			productReference = D908CA902BFFD03700A088B3 /* Mini05_Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		D908CA952BFFD03700A088B3 /* Mini05_Watch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D908CAA62BFFD03800A088B3 /* Build configuration list for PBXNativeTarget "Mini05_Watch Watch App" */;
+			buildPhases = (
+				D908CA922BFFD03700A088B3 /* Sources */,
+				D908CA932BFFD03700A088B3 /* Frameworks */,
+				D908CA942BFFD03700A088B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mini05_Watch Watch App";
+			productName = "Mini05_Watch Watch App";
+			productReference = D908CA962BFFD03700A088B3 /* Mini05_Watch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D908CA8A2BFFD03700A088B3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					D908CA8F2BFFD03700A088B3 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					D908CA952BFFD03700A088B3 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = D908CA8D2BFFD03700A088B3 /* Build configuration list for PBXProject "Mini05_Watch" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D908CA892BFFD03700A088B3;
+			productRefGroup = D908CA912BFFD03700A088B3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D908CA8F2BFFD03700A088B3 /* Mini05_Watch */,
+				D908CA952BFFD03700A088B3 /* Mini05_Watch Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D908CA8E2BFFD03700A088B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D908CA942BFFD03700A088B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D908CAA32BFFD03800A088B3 /* Preview Assets.xcassets in Resources */,
+				D908CAA02BFFD03800A088B3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D908CA922BFFD03700A088B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D908CA9E2BFFD03700A088B3 /* ContentView.swift in Sources */,
+				D91846092BFFD1DF0076F3A3 /* SelectEvaluationView.swift in Sources */,
+				D91846282BFFD65E0076F3A3 /* PUModel.swift in Sources */,
+				D91846062BFFD1990076F3A3 /* HomeButtonView.swift in Sources */,
+				D908CAB02BFFD09A00A088B3 /* UserModel.swift in Sources */,
+				D918460B2BFFD2010076F3A3 /* SelectionBox.swift in Sources */,
+				D91846182BFFD33A0076F3A3 /* ExerciseProgressView.swift in Sources */,
+				D91846202BFFD3C20076F3A3 /* ButtonTest.swift in Sources */,
+				D91846152BFFD3110076F3A3 /* TabViewWorkout.swift in Sources */,
+				D91846102BFFD2CB0076F3A3 /* SummaryDataComponent.swift in Sources */,
+				D918461D2BFFD38F0076F3A3 /* StatusWorkoutView.swift in Sources */,
+				D91846262BFFD6000076F3A3 /* PUView.swift in Sources */,
+				D908CAB22BFFD0A600A088B3 /* Enum.swift in Sources */,
+				D91846122BFFD2E10076F3A3 /* SummaryView.swift in Sources */,
+				D908CAB72BFFD14400A088B3 /* HomeButton.swift in Sources */,
+				D91846242BFFD5DC0076F3A3 /* PUViewModel.swift in Sources */,
+				D908CA9C2BFFD03700A088B3 /* Mini05_WatchApp.swift in Sources */,
+				D918461B2BFFD3720076F3A3 /* ButtonStatusComponent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D908CA992BFFD03700A088B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D908CA952BFFD03700A088B3 /* Mini05_Watch Watch App */;
+			targetProxy = D908CA982BFFD03700A088B3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D908CAA42BFFD03800A088B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D908CAA52BFFD03800A088B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		D908CAA72BFFD03800A088B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Mini05_Watch Watch App/Mini05_Watch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Mini05_Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 335BRL9A43;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Para oferecer uma experiência completa e personalizada, nosso aplicativo precisa acessar seus dados de saúde. Isso nos permite rastrear suas atividades físicas, como exercícios e passos dados, para fornecer insights valiosos sobre sua saúde e bem-estar.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Nosso aplicativo necessita acessar e atualizar seus dados de saúde para fornecer um acompanhamento detalhado de suas atividades físicas e hábitos de vida. Isso inclui registrar informações sobre exercícios, monitorar métricas de saúde e oferecer recomendações personalizadas para melhorar seu condicionamento físico e bem-estar geral.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mini05.Mini05-Watch.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		D908CAA82BFFD03800A088B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Mini05_Watch Watch App/Mini05_Watch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Mini05_Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 335BRL9A43;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Para oferecer uma experiência completa e personalizada, nosso aplicativo precisa acessar seus dados de saúde. Isso nos permite rastrear suas atividades físicas, como exercícios e passos dados, para fornecer insights valiosos sobre sua saúde e bem-estar.";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Nosso aplicativo necessita acessar e atualizar seus dados de saúde para fornecer um acompanhamento detalhado de suas atividades físicas e hábitos de vida. Isso inclui registrar informações sobre exercícios, monitorar métricas de saúde e oferecer recomendações personalizadas para melhorar seu condicionamento físico e bem-estar geral.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mini05.Mini05-Watch.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Release;
+		};
+		D908CAAB2BFFD03800A088B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 335BRL9A43;
+				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mini05.Mini05-Watch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D908CAAC2BFFD03800A088B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 335BRL9A43;
+				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mini05.Mini05-Watch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D908CA8D2BFFD03700A088B3 /* Build configuration list for PBXProject "Mini05_Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D908CAA42BFFD03800A088B3 /* Debug */,
+				D908CAA52BFFD03800A088B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D908CAA62BFFD03800A088B3 /* Build configuration list for PBXNativeTarget "Mini05_Watch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D908CAA72BFFD03800A088B3 /* Debug */,
+				D908CAA82BFFD03800A088B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D908CAAA2BFFD03800A088B3 /* Build configuration list for PBXNativeTarget "Mini05_Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D908CAAB2BFFD03800A088B3 /* Debug */,
+				D908CAAC2BFFD03800A088B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D908CA8A2BFFD03700A088B3 /* Project object */;
+}
