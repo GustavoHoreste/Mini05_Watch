@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AchievementView: View {
-    let achievementList = ["correu bastante", "ta fortin", "fez varias flexoes"]
+    let achievementList = ["correu bastante", "ta fortin", "fez varias flexoes", ""]
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
