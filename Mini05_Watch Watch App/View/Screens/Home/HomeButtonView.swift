@@ -17,6 +17,8 @@ struct HomeView: View {
                     .padding(20)
                 HomeButton(name: "Gráficos", destination: EmptyView())
                     .padding(20)
+                HomeButton(name: "Conquistas", destination: AchievementView())
+                    .padding(20)
             }
             .listStyle(.carousel)
         }
