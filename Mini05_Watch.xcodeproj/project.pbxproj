@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5538C6CB2BFFE21F00971930 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CA2BFFE21F00971930 /* AchievementView.swift */; };
+		5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */; };
 		D908CA972BFFD03700A088B3 /* Mini05_Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D908CA962BFFD03700A088B3 /* Mini05_Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D908CA9C2BFFD03700A088B3 /* Mini05_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CA9B2BFFD03700A088B3 /* Mini05_WatchApp.swift */; };
 		D908CA9E2BFFD03700A088B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CA9D2BFFD03700A088B3 /* ContentView.swift */; };
@@ -55,6 +57,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5538C6CA2BFFE21F00971930 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
+		5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementIcon.swift; sourceTree = "<group>"; };
 		D908CA902BFFD03700A088B3 /* Mini05_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini05_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D908CA962BFFD03700A088B3 /* Mini05_Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini05_Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D908CA9B2BFFD03700A088B3 /* Mini05_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini05_WatchApp.swift; sourceTree = "<group>"; };
@@ -91,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5538C6C92BFFE1F100971930 /* Achievement */ = {
+			isa = PBXGroup;
+			children = (
+				5538C6CA2BFFE21F00971930 /* AchievementView.swift */,
+				5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */,
+			);
+			path = Achievement;
+			sourceTree = "<group>";
+		};
 		D908CA892BFFD03700A088B3 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				D908CA9D2BFFD03700A088B3 /* ContentView.swift */,
+				5538C6C92BFFE1F100971930 /* Achievement */,
 				D91846212BFFD59D0076F3A3 /* PushUps */,
 				D91846132BFFD2EE0076F3A3 /* WorkoutInProgress */,
 				D918460E2BFFD2B40076F3A3 /* Summary */,
@@ -339,10 +353,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D908CA9E2BFFD03700A088B3 /* ContentView.swift in Sources */,
+				5538C6CB2BFFE21F00971930 /* AchievementView.swift in Sources */,
 				D91846092BFFD1DF0076F3A3 /* SelectEvaluationView.swift in Sources */,
 				D91846282BFFD65E0076F3A3 /* PUModel.swift in Sources */,
 				D91846062BFFD1990076F3A3 /* HomeButtonView.swift in Sources */,
 				D908CAB02BFFD09A00A088B3 /* UserModel.swift in Sources */,
+				5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */,
 				D918460B2BFFD2010076F3A3 /* SelectionBox.swift in Sources */,
 				D91846182BFFD33A0076F3A3 /* ExerciseProgressView.swift in Sources */,
 				D91846202BFFD3C20076F3A3 /* ButtonTest.swift in Sources */,
