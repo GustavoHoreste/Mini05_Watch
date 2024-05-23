@@ -16,6 +16,8 @@ struct HomeButton<Destination: View>: View {
             HStack {
                 Spacer()
                 let _ = print("salve")
+                let _ = print("salve")
+                let _ = print("salve")
                 Text(name)
                     .padding(15)
                 Spacer()
