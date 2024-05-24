@@ -77,23 +77,23 @@ class HeathKitManager: ObservableObject{
         }
         
         
-        session?.delegate = self
-        builder?.delegate = self
+//        session?.delegate = self
+//        builder?.delegate = self
         builder?.dataSource = HKLiveWorkoutDataSource(healthStore: healthStore, workoutConfiguration: configuration)
     }
 }
 
-extension HeathKitManager: HKWorkoutSessionDelegate{
-    
-}
+//extension HeathKitManager: HKWorkoutSessionDelegate{
+//    
+//}
 
-extension HeathKitManager: HKLiveWorkoutBuilderDelegate{
-    func workoutBuilder(_ workoutBuilder: HKLiveWorkoutBuilder, didCollectDataOf collectedTypes: Set<HKSampleType>) {
-        
-    }
-    
-    func workoutBuilderDidCollectEvent(_ workoutBuilder: HKLiveWorkoutBuilder) {
-        
-    }
-
-}
+//extension HeathKitManager: HKLiveWorkoutBuilderDelegate{
+//    func workoutBuilder(_ workoutBuilder: HKLiveWorkoutBuilder, didCollectDataOf collectedTypes: Set<HKSampleType>) {
+//        
+//    }
+//    
+//    func workoutBuilderDidCollectEvent(_ workoutBuilder: HKLiveWorkoutBuilder) {
+//        
+//    }
+//
+//}
