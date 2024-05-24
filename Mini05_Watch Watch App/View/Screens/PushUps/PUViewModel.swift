@@ -29,22 +29,22 @@ class PUViewModel: ObservableObject {
         self.model = model
         self.pushUps = model.pushUps
         
-        requestHealthKitPermissions()
+//        requestHealthKitPermissions()
     }
     
-    private func requestHealthKitPermissions() {
-        let healthKitTypes: Set = [
-            HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
-            HKObjectType.quantityType(forIdentifier: .heartRate)!
-        ]
-        
-        healthStore.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { (success, error) in
-            if !success {
-                // Handle authorization failure
-                print("Authorization failed: \(String(describing: error))")
-            }
-        }
-    }
+//    private func requestHealthKitPermissions() {
+//        let healthKitTypes: Set = [
+//            HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
+//            HKObjectType.quantityType(forIdentifier: .heartRate)!
+//        ]
+//        
+//        healthStore.requestAuthorization(toShare: healthKitTypes, read: healthKitTypes) { (success, error) in
+//            if !success {
+//                // Handle authorization failure
+//                print("Authorization failed: \(String(describing: error))")
+//            }
+//        }
+//    }
     
     func startActivity() {
         if initialDate == nil {

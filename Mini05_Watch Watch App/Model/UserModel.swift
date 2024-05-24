@@ -14,3 +14,4 @@ struct SectionExerciseModel {
     let value: Double
     let withSimbol: Bool
 }
+
