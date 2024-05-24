@@ -7,8 +7,10 @@
 
 import Foundation
 
-
-enum Tabs {
-    case exercise, status
+struct SectionExerciseModel {
+    let exetensionSection: String
+    let systemImage: String
+    let nameSection: String
+    let value: Double
+    let withSimbol: Bool
 }
-

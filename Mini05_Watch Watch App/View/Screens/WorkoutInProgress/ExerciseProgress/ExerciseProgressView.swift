@@ -10,32 +10,73 @@ import SwiftUI
 struct ExerciseProgressView: View {
     var body: some View {
         MakeExerciseProgressView {
-            Text("Cronômetro")
-                .font(.callout)
             
-            Text("Tempo de exercicio")
-            Text("0:05:03")
-                .font(.system(size: 25))
-            
-            HStack{
-                Text("Tempo de avaliação")
-                    .font(.system(size: 10))
-
-                Text("0:05:03")
-            }
+            stopwatchElements()
+                .padding(.leading)
             
             Divider()
-            Label("Calorias", systemImage: "flame.fill")
-            
-            Text("130 kal")
-                .font(.system(size: 25))
+            SectionExercise(model: SectionExerciseModel(
+                                exetensionSection: "cal",
+                                systemImage: "flame.fill",
+                                nameSection: "Calorias",
+                                value: 130,
+                                withSimbol: true))
             
             Divider()
+            SectionExercise(model: SectionExerciseModel(
+                                exetensionSection: "m/s",
+                                systemImage: "bolt.fill",
+                                nameSection: "Velocidade",
+                                value: 23.5,
+                                withSimbol: true))
             
-            Text("Ferequência cadiaca")
-            Label("120 bpm", systemImage: "heart.fill")
-                .font(.system(size: 25))
+            Divider()
+            SectionExercise(model: SectionExerciseModel(
+                                exetensionSection: "km",
+                                systemImage: "map.fill",
+                                nameSection: "Distância",
+                                value: 0.5,
+                                withSimbol: false))
+            
+            Divider()
+            SectionExercise(model: SectionExerciseModel(
+                                exetensionSection: "bpm",
+                                systemImage: "heart.fill",
+                                nameSection: "Frequência Cardíaca",
+                                value: 120,
+                                withSimbol: true))
         }
+    }
+}
+
+extension ExerciseProgressView{
+    @ViewBuilder
+    private func stopwatchElements() -> some View{
+        Text("Cronômetro")
+            .font(.callout)
+        
+        VStack(alignment: .leading){
+//            Text("Tempo de exercicio")
+//                .font(.system(size: 13))
+            Text("0:00:00")
+                .font(.system(size: 30))
+        }
+//            .overlay {
+//                RoundedRectangle(cornerRadius: 10)
+//                    .stroke(Color.gray, lineWidth: 2)
+//                    
+//            }
+        
+        HStack{
+            Text("Tempo de avaliação")
+                .font(.system(size: 10))
+            
+            Text("0:05:03")
+        }.frame(width: 180, height: 30)
+            .overlay {
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(Color.gray, lineWidth: 2)
+            }
     }
 }
 
@@ -53,7 +94,6 @@ struct MakeExerciseProgressView<T: View>: View {
                 VStack(alignment: .leading){
                     content
                 }.navigationTitle("Defult")//mudar de acordo com o nome do exercicio
-                    .padding(.horizontal)
             }
         }
     }
