@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ExerciseProgressView: View {
+    @EnvironmentObject private var healthManager: HeathKitManager
+
     var body: some View {
         MakeExerciseProgressView {
             
             stopwatchElements()
                 .padding(.leading)
-            
+                
+//            Text("\(healthManager.nome)")
             Divider()
             SectionExercise(model: SectionExerciseModel(
                                 exetensionSection: "cal",
@@ -43,8 +46,12 @@ struct ExerciseProgressView: View {
                                 exetensionSection: "bpm",
                                 systemImage: "heart.fill",
                                 nameSection: "Frequência Cardíaca",
-                                value: 120,
+                                value: healthManager.heartRate,
                                 withSimbol: true))
+        }.task {
+//            healthManager.startWorkout(workoutType: .running )
+            await healthManager.startWorkout()
+//            print(await healthManager.queryData(.heartRate))
         }
     }
 }
@@ -101,5 +108,6 @@ struct MakeExerciseProgressView<T: View>: View {
 
 #Preview {
     ExerciseProgressView()
+        .environmentObject(HeathKitManager())
 }
 

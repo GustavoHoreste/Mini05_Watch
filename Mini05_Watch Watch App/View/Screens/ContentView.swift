@@ -9,28 +9,49 @@ import SwiftUI
 import HealthKit
 
 struct ContentView: View {
-    @StateObject private var healthManager: HeathKitManager = HeathKitManager()
-    @State private var isAuthorized: HKAuthorizationStatus = .notDetermined
+    @EnvironmentObject private var hkManager: HeathKitManager
+    @State private var authorizationStatuses: [HKObjectType: HKAuthorizationStatus] = [:]
     
     var body: some View {
-        verifyAutorization()
+        HomeView()
+            .onAppear{
+                print("Entes de permisao ")
+                Task{
+                    await hkManager.requestPermission()
+                }
+                print("depois  ")
+            }
+//        verifyAutorization()
+//
+//            .onAppear{
+//                authorizationStatuses = healthManager.verifyStatusPermission()
+//            }
     }
 }
 
 extension ContentView{
     @ViewBuilder
     private func verifyAutorization() -> some View{
-        if isAuthorized == .sharingAuthorized{
+        if allPermissionsAuthorized(){
             HomeView()
-        }else if isAuthorized == .sharingDenied{
+        }else if anyPermissionDenied(){
             VStack{
                Text("Permissao negada")
                 //colocar tutorial de  ir as configuraos aceitar a permisao
             }
         }else{
-            RequestPermissionView(healthKitManager: self.healthManager,
-                                        isAuthorized: self.$isAuthorized)
+            RequestPermissionView(healthKitManager: self.hkManager,
+                                        authorizationStatuses: self.$authorizationStatuses)
         }
+    }
+    
+    private func allPermissionsAuthorized() -> Bool{
+        return !authorizationStatuses.values.contains(.notDetermined) &&
+               !authorizationStatuses.values.contains(.sharingDenied)
+    }
+    
+    private func anyPermissionDenied() -> Bool {
+        return authorizationStatuses.values.contains(.sharingDenied)
     }
 }
 

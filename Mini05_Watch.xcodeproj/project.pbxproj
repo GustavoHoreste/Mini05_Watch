@@ -88,6 +88,7 @@
 		D918462A2C0003DE0076F3A3 /* SectionExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionExercise.swift; sourceTree = "<group>"; };
 		D918462C2C00C20A0076F3A3 /* HeathKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeathKitManager.swift; sourceTree = "<group>"; };
 		D918462E2C00C8670076F3A3 /* RequestPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPermissionView.swift; sourceTree = "<group>"; };
+		D91846302C011BB40076F3A3 /* Mini05-Watch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Mini05-Watch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +131,7 @@
 		D908CA9A2BFFD03700A088B3 /* Mini05_Watch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				D91846302C011BB40076F3A3 /* Mini05-Watch-Watch-App-Info.plist */,
 				D91846292BFFD77C0076F3A3 /* Mini05_Watch Watch App.entitlements */,
 				D908CAB32BFFD0EE00A088B3 /* View */,
 				D908CAAE2BFFD06F00A088B3 /* Model */,
@@ -524,6 +526,7 @@
 				DEVELOPMENT_TEAM = 335BRL9A43;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Mini05-Watch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Para oferecer uma experiência completa e personalizada, nosso aplicativo precisa acessar seus dados de saúde. Isso nos permite rastrear suas atividades físicas, como exercícios e passos dados, para fornecer insights valiosos sobre sua saúde e bem-estar.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Nosso aplicativo necessita acessar e atualizar seus dados de saúde para fornecer um acompanhamento detalhado de suas atividades físicas e hábitos de vida. Isso inclui registrar informações sobre exercícios, monitorar métricas de saúde e oferecer recomendações personalizadas para melhorar seu condicionamento físico e bem-estar geral.";
@@ -534,7 +537,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "mini05.Mini05-Watch.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = mini05.Tracker.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -557,6 +560,7 @@
 				DEVELOPMENT_TEAM = 335BRL9A43;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Mini05-Watch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Para oferecer uma experiência completa e personalizada, nosso aplicativo precisa acessar seus dados de saúde. Isso nos permite rastrear suas atividades físicas, como exercícios e passos dados, para fornecer insights valiosos sobre sua saúde e bem-estar.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Nosso aplicativo necessita acessar e atualizar seus dados de saúde para fornecer um acompanhamento detalhado de suas atividades físicas e hábitos de vida. Isso inclui registrar informações sobre exercícios, monitorar métricas de saúde e oferecer recomendações personalizadas para melhorar seu condicionamento físico e bem-estar geral.";
@@ -567,7 +571,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "mini05.Mini05-Watch.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = mini05.Tracker.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -588,7 +592,7 @@
 				DEVELOPMENT_TEAM = 335BRL9A43;
 				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "mini05.Mini05-Watch";
+				PRODUCT_BUNDLE_IDENTIFIER = mini05.Tracker.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -604,7 +608,7 @@
 				DEVELOPMENT_TEAM = 335BRL9A43;
 				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "mini05.Mini05-Watch";
+				PRODUCT_BUNDLE_IDENTIFIER = mini05.Tracker.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;

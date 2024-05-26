@@ -26,5 +26,6 @@ struct HomeButton<Destination: View>: View {
 
 #Preview {
     HomeButton(name: "Avaliação", destination: ContentView())
+        
 }
 

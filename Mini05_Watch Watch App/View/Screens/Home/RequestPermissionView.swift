@@ -10,7 +10,7 @@ import HealthKit
 
 struct RequestPermissionView: View {
     @ObservedObject var healthKitManager: HeathKitManager
-    @Binding var isAuthorized: HKAuthorizationStatus
+    @Binding var authorizationStatuses: [HKObjectType: HKAuthorizationStatus]
     
     var body: some View {
         VStack{
@@ -18,7 +18,7 @@ struct RequestPermissionView: View {
             
             Button{
                 Task{
-                    isAuthorized = await healthKitManager.requestPermission()
+//                    authorizationStatuses = await healthKitManager.requestPermission()
                 }
             }label: {
                 Text("Pedir")
@@ -28,7 +28,6 @@ struct RequestPermissionView: View {
 }
 
 #Preview {
-    RequestPermissionView(healthKitManager: HeathKitManager(),
-                                isAuthorized:.constant(HKAuthorizationStatus.notDetermined))
+    RequestPermissionView(healthKitManager: HeathKitManager(), authorizationStatuses: .constant([:]))
 }
 

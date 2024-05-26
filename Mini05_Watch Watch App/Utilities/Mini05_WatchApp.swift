@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct Mini05_Watch_Watch_AppApp: App {
+    @StateObject private var healthManager: HeathKitManager = HeathKitManager()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(healthManager)
+
         }
     }
 }
