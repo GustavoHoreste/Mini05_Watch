@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Mini05_Watch_Watch_AppApp: App {
@@ -17,5 +18,6 @@ struct Mini05_Watch_Watch_AppApp: App {
                 .environmentObject(healthManager)
 
         }
+        .modelContainer(for: [RunData.self])
     }
 }
