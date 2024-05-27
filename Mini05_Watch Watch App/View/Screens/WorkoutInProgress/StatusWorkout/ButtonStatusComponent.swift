@@ -22,10 +22,12 @@ struct ButtonStatusComponent: View {
             }label: {
                 Image(systemName: buttonChange ? symbol[1] : symbol[0])
                     
-            }.frame(width: 90, height: 50)
+            }.frame(maxWidth: DeviceScreen.getDimension(proportion: 0.4, forWidth: true),
+                    maxHeight: DeviceScreen.getDimension(proportion: 0.15, forWidth: false))
                 
             Text(buttonChange ? nameButton[1] : nameButton[0])
                 .font(.footnote)
+                .padding(.top)
         }
     }
 }

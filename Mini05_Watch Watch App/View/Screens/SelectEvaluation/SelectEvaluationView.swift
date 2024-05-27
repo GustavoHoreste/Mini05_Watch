@@ -41,5 +41,6 @@ struct SelectEvaluationView: View {
 
 #Preview {
     SelectEvaluationView()
+        .environmentObject(HealthKitManager())
 }
 

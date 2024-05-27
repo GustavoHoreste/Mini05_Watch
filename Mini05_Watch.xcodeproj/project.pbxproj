@@ -38,6 +38,10 @@
 		D918462F2C00C8670076F3A3 /* RequestPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918462E2C00C8670076F3A3 /* RequestPermissionView.swift */; };
 		D93311872C03B4160077D9BE /* PermissionDeniedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93311862C03B4160077D9BE /* PermissionDeniedView.swift */; };
 		D93311892C03B4700077D9BE /* HealthKitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93311882C03B4700077D9BE /* HealthKitModel.swift */; };
+		D9A072732C0509C5004BD3A0 /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A072722C0509C5004BD3A0 /* ElapsedTimeView.swift */; };
+		D9A072752C0509F7004BD3A0 /* ElapsedTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A072742C0509F7004BD3A0 /* ElapsedTimeFormatter.swift */; };
+		D9A072772C050A4A004BD3A0 /* MetricsTimelineSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A072762C050A4A004BD3A0 /* MetricsTimelineSchedule.swift */; };
+		D9A072792C050C62004BD3A0 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A072782C050C62004BD3A0 /* Device.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +103,10 @@
 		D91846302C011BB40076F3A3 /* Mini05-Watch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Mini05-Watch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D93311862C03B4160077D9BE /* PermissionDeniedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionDeniedView.swift; sourceTree = "<group>"; };
 		D93311882C03B4700077D9BE /* HealthKitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitModel.swift; sourceTree = "<group>"; };
+		D9A072722C0509C5004BD3A0 /* ElapsedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeView.swift; sourceTree = "<group>"; };
+		D9A072742C0509F7004BD3A0 /* ElapsedTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeFormatter.swift; sourceTree = "<group>"; };
+		D9A072762C050A4A004BD3A0 /* MetricsTimelineSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsTimelineSchedule.swift; sourceTree = "<group>"; };
+		D9A072782C050C62004BD3A0 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +194,9 @@
 				D91846272BFFD65E0076F3A3 /* PUModel.swift */,
 				D93311882C03B4700077D9BE /* HealthKitModel.swift */,
 				C0EA943D2C0125340057E48B /* RunData.swift */,
+				D9A072742C0509F7004BD3A0 /* ElapsedTimeFormatter.swift */,
+				D9A072762C050A4A004BD3A0 /* MetricsTimelineSchedule.swift */,
+				D9A072782C050C62004BD3A0 /* Device.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				D91846172BFFD33A0076F3A3 /* ExerciseProgressView.swift */,
+				D9A072722C0509C5004BD3A0 /* ElapsedTimeView.swift */,
 			);
 			path = ExerciseProgress;
 			sourceTree = "<group>";
@@ -416,9 +428,13 @@
 				D908CAB72BFFD14400A088B3 /* HomeButton.swift in Sources */,
 				D93311872C03B4160077D9BE /* PermissionDeniedView.swift in Sources */,
 				D91846242BFFD5DC0076F3A3 /* PUViewModel.swift in Sources */,
+				D9A072752C0509F7004BD3A0 /* ElapsedTimeFormatter.swift in Sources */,
+				D9A072792C050C62004BD3A0 /* Device.swift in Sources */,
 				C0EA943E2C0125340057E48B /* RunData.swift in Sources */,
 				D908CA9C2BFFD03700A088B3 /* Mini05_WatchApp.swift in Sources */,
 				D93311892C03B4700077D9BE /* HealthKitModel.swift in Sources */,
+				D9A072772C050A4A004BD3A0 /* MetricsTimelineSchedule.swift in Sources */,
+				D9A072732C0509C5004BD3A0 /* ElapsedTimeView.swift in Sources */,
 				D918462F2C00C8670076F3A3 /* RequestPermissionView.swift in Sources */,
 				D918461B2BFFD3720076F3A3 /* ButtonStatusComponent.swift in Sources */,
 				D918462D2C00C20A0076F3A3 /* HealthKitManager.swift in Sources */,

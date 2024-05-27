@@ -45,5 +45,6 @@ extension ContentView{
 
 #Preview {
     ContentView()
+        .environmentObject(HealthKitManager())
 }
 

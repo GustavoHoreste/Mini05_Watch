@@ -182,6 +182,16 @@ class HealthKitManager: NSObject, ObservableObject{
         
         print("Todos os dados do workout e do HealthKit foram resetados.")
     }
+    
+    @Published var totalDuration: TimeInterval = 720
+    
+    func remainingTime(at date: Date) -> TimeInterval {
+        guard let startDate = builder?.startDate else {
+            return totalDuration
+        }
+        let elapsedTime = date.timeIntervalSince(startDate)
+        return max(totalDuration - elapsedTime, 0)
+    }
 }
 
 

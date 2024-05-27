@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftData
 
 struct HomeView: View {
-    
     @Environment(\.modelContext) var context
     @Query(sort: \RunData.date) var runData: [RunData]
     
@@ -24,6 +23,7 @@ struct HomeView: View {
                     .padding(20)
                 HomeButton(name: "Conquistas", destination: AchievementView())
                     .padding(20)
+                
                 Button("Save data") {
                     let data1 = RunData(date: Date(), totalTime: 90, totalDistance: 10, totalEnergy: 100, avgHeartRate: 110, avgSpeed: 8)
                     let data2 = RunData(date: Date(timeIntervalSinceNow: -60*60*24), totalTime: 120, totalDistance: 12, totalEnergy: 120, avgHeartRate: 110, avgSpeed: 9)
@@ -47,7 +47,8 @@ struct HomeView: View {
     }
 }
 
-//#Preview {
-//    HomeView(runData: [])
-//}
+#Preview {
+    HomeView()
+        .environmentObject(HealthKitManager())
+}
 

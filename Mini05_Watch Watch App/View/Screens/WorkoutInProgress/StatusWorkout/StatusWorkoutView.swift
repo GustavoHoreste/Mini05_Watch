@@ -14,11 +14,13 @@ struct StatusWorkoutView: View {
     var body: some View {
         NavigationStack{
             VStack {
-                HStack(spacing: 10) {
+                HStack {
                     ButtonStatusComponent(symbol: ["pause.fill", "play.fill"],
                                           nameButton: ["Pause", "Play"],
                                           action:  {healthManager.togglePauseOrStart()},
                                           isPauseOrPlay: true)
+                    
+                    Spacer()
                     
                     ButtonStatusComponent(symbol: ["xmark"],
                                           nameButton: ["Sair"],
@@ -37,8 +39,9 @@ struct StatusWorkoutView: View {
                                           action:  {print("Próximo")},
                                           isPauseOrPlay: false)
                 }.padding(.top)
-            }.ignoresSafeArea()
-                .navigationTitle("Status")
+                
+            }.padding(.top)
+            .navigationTitle("Status")
                 .navigationDestination(isPresented: $nextView) {
                     SummaryView()
                 }
@@ -50,6 +53,7 @@ struct StatusWorkoutView: View {
 
 #Preview {
     StatusWorkoutView()
+        .environmentObject(HealthKitManager())
 }
 
 

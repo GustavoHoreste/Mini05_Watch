@@ -30,5 +30,6 @@ struct TabViewWorkout: View {
 
 #Preview {
     TabViewWorkout()
+        .environmentObject(HealthKitManager())
 }
 
