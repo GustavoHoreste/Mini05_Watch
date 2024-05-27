@@ -111,7 +111,6 @@ class HealthKitManager: NSObject, ObservableObject{
             print(result.quantity)
             return String("\(result.quantity)")
         }
-        
         return "nil"
     }
     
