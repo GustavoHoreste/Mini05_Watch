@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5538C6CB2BFFE21F00971930 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CA2BFFE21F00971930 /* AchievementView.swift */; };
 		5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */; };
+		C0EA943C2C0124F40057E48B /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943B2C0124F40057E48B /* GraphView.swift */; };
+		C0EA943E2C0125340057E48B /* RunData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943D2C0125340057E48B /* RunData.swift */; };
+		C0EA94402C012F520057E48B /* GraphExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943F2C012F520057E48B /* GraphExerciseView.swift */; };
 		D908CA972BFFD03700A088B3 /* Mini05_Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D908CA962BFFD03700A088B3 /* Mini05_Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D908CA9C2BFFD03700A088B3 /* Mini05_WatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CA9B2BFFD03700A088B3 /* Mini05_WatchApp.swift */; };
 		D908CA9E2BFFD03700A088B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CA9D2BFFD03700A088B3 /* ContentView.swift */; };
@@ -59,6 +62,9 @@
 /* Begin PBXFileReference section */
 		5538C6CA2BFFE21F00971930 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
 		5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementIcon.swift; sourceTree = "<group>"; };
+		C0EA943B2C0124F40057E48B /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		C0EA943D2C0125340057E48B /* RunData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunData.swift; sourceTree = "<group>"; };
+		C0EA943F2C012F520057E48B /* GraphExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphExerciseView.swift; sourceTree = "<group>"; };
 		D908CA902BFFD03700A088B3 /* Mini05_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini05_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D908CA962BFFD03700A088B3 /* Mini05_Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mini05_Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D908CA9B2BFFD03700A088B3 /* Mini05_WatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mini05_WatchApp.swift; sourceTree = "<group>"; };
@@ -102,6 +108,15 @@
 				5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */,
 			);
 			path = Achievement;
+			sourceTree = "<group>";
+		};
+		C0EA943A2C01245D0057E48B /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				C0EA943B2C0124F40057E48B /* GraphView.swift */,
+				C0EA943F2C012F520057E48B /* GraphExerciseView.swift */,
+			);
+			path = Graph;
 			sourceTree = "<group>";
 		};
 		D908CA892BFFD03700A088B3 = {
@@ -156,6 +171,7 @@
 				D908CAAF2BFFD09A00A088B3 /* UserModel.swift */,
 				D908CAB12BFFD0A600A088B3 /* Enum.swift */,
 				D91846272BFFD65E0076F3A3 /* PUModel.swift */,
+				C0EA943D2C0125340057E48B /* RunData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +192,7 @@
 				5538C6C92BFFE1F100971930 /* Achievement */,
 				D91846212BFFD59D0076F3A3 /* PushUps */,
 				D91846132BFFD2EE0076F3A3 /* WorkoutInProgress */,
+				C0EA943A2C01245D0057E48B /* Graph */,
 				D918460E2BFFD2B40076F3A3 /* Summary */,
 				D91846072BFFD1C50076F3A3 /* SelectEvaluation */,
 				D908CAB52BFFD11F00A088B3 /* Home */,
@@ -354,8 +371,10 @@
 			files = (
 				D908CA9E2BFFD03700A088B3 /* ContentView.swift in Sources */,
 				5538C6CB2BFFE21F00971930 /* AchievementView.swift in Sources */,
+				C0EA943C2C0124F40057E48B /* GraphView.swift in Sources */,
 				D91846092BFFD1DF0076F3A3 /* SelectEvaluationView.swift in Sources */,
 				D91846282BFFD65E0076F3A3 /* PUModel.swift in Sources */,
+				C0EA94402C012F520057E48B /* GraphExerciseView.swift in Sources */,
 				D91846062BFFD1990076F3A3 /* HomeButtonView.swift in Sources */,
 				D908CAB02BFFD09A00A088B3 /* UserModel.swift in Sources */,
 				5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */,
@@ -370,6 +389,7 @@
 				D91846122BFFD2E10076F3A3 /* SummaryView.swift in Sources */,
 				D908CAB72BFFD14400A088B3 /* HomeButton.swift in Sources */,
 				D91846242BFFD5DC0076F3A3 /* PUViewModel.swift in Sources */,
+				C0EA943E2C0125340057E48B /* RunData.swift in Sources */,
 				D908CA9C2BFFD03700A088B3 /* Mini05_WatchApp.swift in Sources */,
 				D918461B2BFFD3720076F3A3 /* ButtonStatusComponent.swift in Sources */,
 			);
