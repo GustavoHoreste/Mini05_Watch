@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WatchKit
 
 struct TabViewWorkout: View {
     @Environment(\.isLuminanceReduced) var isLuminanceReduced
@@ -18,6 +19,9 @@ struct TabViewWorkout: View {
             
             ExerciseProgressView()
                 .tag(Tabs.exercise)
+            
+            NowPlayingView()
+                .tag(Tabs.nowPlaying)
             
         }.tabViewStyle(PageTabViewStyle(indexDisplayMode: isLuminanceReduced ? .never : .automatic))
             .navigationBarBackButtonHidden()
