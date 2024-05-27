@@ -9,7 +9,7 @@ import SwiftUI
 import HealthKit
 
 struct RequestPermissionView: View {
-    @ObservedObject var healthKitManager: HeathKitManager
+    @ObservedObject var healthKitManager: HealthKitManager
     @Binding var authorizationStatuses: [HKObjectType: HKAuthorizationStatus]
     
     var body: some View {
@@ -18,7 +18,7 @@ struct RequestPermissionView: View {
             
             Button{
                 Task{
-//                    authorizationStatuses = await healthKitManager.requestPermission()
+                    authorizationStatuses = await healthKitManager.requestPermission()
                 }
             }label: {
                 Text("Pedir")
@@ -28,6 +28,6 @@ struct RequestPermissionView: View {
 }
 
 #Preview {
-    RequestPermissionView(healthKitManager: HeathKitManager(), authorizationStatuses: .constant([:]))
+    RequestPermissionView(healthKitManager: HealthKitManager(), authorizationStatuses: .constant([:]))
 }
 

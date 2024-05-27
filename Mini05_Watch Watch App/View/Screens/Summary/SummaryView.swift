@@ -8,32 +8,46 @@
 import SwiftUI
 
 struct SummaryView: View {
+    @EnvironmentObject private var healthManager: HealthKitManager
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
                 SummaryDataComponent(title: "Total Time",
-                                  value: "00:00:00")
+                                     extensionName: "",
+                                     value: 0)
                     .foregroundStyle(.yellow)
                 SummaryDataComponent(title: "Total Distance",
-                                  value: "21,41 m")
+                                     extensionName: "m",
+                                     value: healthManager.distanceWalkingRunning)
                     .foregroundStyle(.green)
                 SummaryDataComponent(title: "Total Energy",
-                                  value: "1 Cal")
-                    .foregroundStyle(.pink)
+                                     extensionName: "Cal",
+                                     value: healthManager.activeEnergyBurned)
+                        .foregroundStyle(.pink)
                 SummaryDataComponent(title: "Avg. Heart Rate",
-                                  value: "121 bpm")
+                                     extensionName: "bpm",
+                                     value: healthManager.heartRate)
                     .foregroundStyle(.red)
                 SummaryDataComponent(title: "Avg. Speed",
-                                  value: "4,1 M/s")
+                                     extensionName: "M/s",
+                                     value: healthManager.runningSpeed) //se pa nao ta pegando velocidade media
                     .foregroundStyle(.orange)
-                Button("Done") {
-                    
+                
+                NavigationLink {
+                    HomeView()
+                } label: {
+                    Text("Done")
+                }.onTapGesture{
+                    healthManager.resetWorkoutData()
                 }
+
             }
             .scenePadding()
         }
         .navigationTitle("Summary")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden()
     }
 }
 

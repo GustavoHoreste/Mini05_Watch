@@ -21,8 +21,8 @@ struct HomeView: View {
                     .padding(20)
             }
             .listStyle(.carousel)
+            .navigationBarBackButtonHidden()
         }
-        
     }
 }
 

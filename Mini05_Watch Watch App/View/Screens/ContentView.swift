@@ -9,23 +9,14 @@ import SwiftUI
 import HealthKit
 
 struct ContentView: View {
-    @EnvironmentObject private var hkManager: HeathKitManager
+    @EnvironmentObject private var healthManager: HealthKitManager
     @State private var authorizationStatuses: [HKObjectType: HKAuthorizationStatus] = [:]
     
     var body: some View {
-        HomeView()
+        verifyAutorization()
             .onAppear{
-                print("Entes de permisao ")
-                Task{
-                    await hkManager.requestPermission()
-                }
-                print("depois  ")
+                authorizationStatuses = healthManager.verifyStatusPermission()
             }
-//        verifyAutorization()
-//
-//            .onAppear{
-//                authorizationStatuses = healthManager.verifyStatusPermission()
-//            }
     }
 }
 
@@ -35,12 +26,9 @@ extension ContentView{
         if allPermissionsAuthorized(){
             HomeView()
         }else if anyPermissionDenied(){
-            VStack{
-               Text("Permissao negada")
-                //colocar tutorial de  ir as configuraos aceitar a permisao
-            }
+            PermissionDeniedView()
         }else{
-            RequestPermissionView(healthKitManager: self.hkManager,
+            RequestPermissionView(healthKitManager: self.healthManager,
                                         authorizationStatuses: self.$authorizationStatuses)
         }
     }

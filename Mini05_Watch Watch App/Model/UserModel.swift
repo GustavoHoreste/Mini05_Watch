@@ -7,11 +7,6 @@
 
 import Foundation
 
-struct SectionExerciseModel {
-    let exetensionSection: String
-    let systemImage: String
-    let nameSection: String
-    let value: Double
-    let withSimbol: Bool
-}
+
+
 

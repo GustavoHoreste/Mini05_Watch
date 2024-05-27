@@ -9,5 +9,5 @@ import Foundation
 
 
 enum Tabs {
-    case exercise, status
+    case exercise, status, nowPlaying
 }

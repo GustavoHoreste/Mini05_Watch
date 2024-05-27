@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct Mini05_Watch_Watch_AppApp: App {
-    @StateObject private var healthManager: HeathKitManager = HeathKitManager()
+    @StateObject private var healthManager: HealthKitManager = HealthKitManager()
 
     var body: some Scene {
         WindowGroup {

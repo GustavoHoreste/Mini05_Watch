@@ -8,18 +8,25 @@
 import SwiftUI
 
 struct StatusWorkoutView: View {
+    @EnvironmentObject private var healthManager: HealthKitManager
+    @State private var nextView: Bool = false
+    
     var body: some View {
         NavigationStack{
             VStack {
                 HStack(spacing: 10) {
                     ButtonStatusComponent(symbol: ["pause.fill", "play.fill"],
                                           nameButton: ["Pause", "Play"],
-                                          action:  {print("play")},
+                                          action:  {healthManager.togglePauseOrStart()},
                                           isPauseOrPlay: true)
                     
                     ButtonStatusComponent(symbol: ["xmark"],
                                           nameButton: ["Sair"],
-                                          action:  {print("Sair")},
+                                          action:  
+                                            {
+                                                healthManager.endSession()
+                                                nextView = true
+                                            },
                                           isPauseOrPlay: false)
                 }
                 
@@ -32,6 +39,9 @@ struct StatusWorkoutView: View {
                 }.padding(.top)
             }.ignoresSafeArea()
                 .navigationTitle("Status")
+                .navigationDestination(isPresented: $nextView) {
+                    SummaryView()
+                }
         }
     }
 }
