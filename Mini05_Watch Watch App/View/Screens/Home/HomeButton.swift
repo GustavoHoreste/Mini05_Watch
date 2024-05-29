@@ -13,11 +13,17 @@ struct HomeButton<Destination: View>: View {
     
     var body: some View {
         NavigationLink(destination: destination){
-            HStack {
-                Spacer()
-                Text(name)
-                    .padding(15)
-                Spacer()
+            ZStack{
+                RoundedRectangle(cornerSize: CGSize(width: 20, height: 20))
+                    .rotation(.degrees(45))
+                    .frame(width: 100,height: 100)
+                HStack {
+                    Spacer()
+                    Text(name)
+                        .foregroundStyle(.black)
+                        .padding(15)
+                    Spacer()
+                }
             }
         }
     }
