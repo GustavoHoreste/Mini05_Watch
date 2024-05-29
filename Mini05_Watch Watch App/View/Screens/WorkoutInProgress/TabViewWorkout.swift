@@ -9,6 +9,7 @@ import SwiftUI
 import WatchKit
 
 struct TabViewWorkout: View {
+    @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
     @Environment(\.isLuminanceReduced) var isLuminanceReduced
     @State private var selection: Tabs = .exercise
 
@@ -23,8 +24,19 @@ struct TabViewWorkout: View {
             NowPlayingView()
                 .tag(Tabs.nowPlaying)
             
-        }.tabViewStyle(PageTabViewStyle(indexDisplayMode: isLuminanceReduced ? .never : .automatic))
-            .navigationBarBackButtonHidden()
+        }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: isLuminanceReduced ? .never : .automatic))
+        .onChange(of: exerciseViewModel.isBackToView, { oldValue, newValue in
+            displayMetricsView()
+        })
+        .navigationBarBackButtonHidden()
+        
+    }
+    
+    private func displayMetricsView() {
+        withAnimation {
+            selection = .exercise
+        }
     }
 }
 

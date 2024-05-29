@@ -7,11 +7,97 @@
 
 import SwiftUI
 
+
+class ExerciseProgressViewModel: ObservableObject{
+    @Published public var endWorkout: Bool = false
+    @Published public var isBackToView: Bool = false
+    @Published public var selectExercise: [WorkoutViewsEnun] = []{
+        didSet{
+            print("Valor e: ", self)
+        }
+    }
+
+    
+    public func nextExercise(){
+        if !selectExercise.isEmpty{
+            self.selectExercise.removeFirst()
+        }
+    }
+    
+    public func toggleValueEnd(){
+        self.endWorkout.toggle()
+    }
+    
+    public func reseatAll(){
+        self.selectExercise = []
+        self.endWorkout = false
+        self.isBackToView = false
+    }
+    
+    public func backToView(){
+        self.isBackToView = true
+    }
+}
+
 struct ExerciseProgressView: View {
+    @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
+    @EnvironmentObject private var healthManager: HealthKitManager
+    @State private var callSummaryView: Bool = false
+
+    var body: some View {
+        NavigationStack{
+            ScrollView {
+                switch exerciseViewModel.selectExercise.first ?? .pushUps{
+                case .running12min:
+                    MakeExerciseProgressView{
+                        Divider()
+                        SectionExercise(model: SectionExerciseModel(
+                                            exetensionSection: "m/s",
+                                            systemImage: "bolt.fill",
+                                            nameSection: "Velocidade",
+                                            value: healthManager.runningSpeed,
+                                            withSimbol: true))
+                        
+                        Divider()
+                        SectionExercise(model: SectionExerciseModel(
+                                            exetensionSection: "km",
+                                            systemImage: "map.fill",
+                                            nameSection: "Distância",
+                                            value: healthManager.distanceWalkingRunning,
+                                            withSimbol: false))
+                    }
+                case .pushUps, .abdominal:
+                    MakeExerciseProgressView {
+                        Text("Count")
+                            .font(.title)
+                    }
+                default:
+                    EmptyView()
+                }
+            }
+            .navigationTitle(exerciseViewModel.selectExercise.first?.rawValue ?? "nil")
+            .onAppear{
+                if exerciseViewModel.selectExercise.first == .summary{
+                    self.callSummaryView = true
+                }
+                Task{
+                    await healthManager.startWorkout()
+                }
+            }
+            .navigationDestination(isPresented: $callSummaryView) {
+                withAnimation {
+                    SummaryView()
+                }
+            }
+        }
+    }
+}
+
+struct HeartAndCaloriesViewComponemt: View {
     @EnvironmentObject private var healthManager: HealthKitManager
 
     var body: some View {
-        MakeExerciseProgressView {
+        VStack{
             Divider()
             SectionExercise(model: SectionExerciseModel(
                                 exetensionSection: "cal",
@@ -19,23 +105,6 @@ struct ExerciseProgressView: View {
                                 nameSection: "Calorias",
                                 value: healthManager.activeEnergyBurned,
                                 withSimbol: true))
-            
-            Divider()
-            SectionExercise(model: SectionExerciseModel(
-                                exetensionSection: "m/s",
-                                systemImage: "bolt.fill",
-                                nameSection: "Velocidade",
-                                value: healthManager.runningSpeed,
-                                withSimbol: true))
-            
-            Divider()
-            SectionExercise(model: SectionExerciseModel(
-                                exetensionSection: "km",
-                                systemImage: "map.fill",
-                                nameSection: "Distância",
-                                value: healthManager.distanceWalkingRunning,
-                                withSimbol: false))
-            
             Divider()
             SectionExercise(model: SectionExerciseModel(
                                 exetensionSection: "bpm",
@@ -43,18 +112,11 @@ struct ExerciseProgressView: View {
                                 nameSection: "Frequência Cardíaca",
                                 value: healthManager.heartRate,
                                 withSimbol: true))
-        }.onAppear {
-            Task{
-                await healthManager.startWorkout()
-            }
         }
     }
 }
 
-//intencao e criar view diferentes de acordo com o exercicio
 struct MakeExerciseProgressView<T: View>: View {
-    @EnvironmentObject var healthManager: HealthKitManager
-    
     let content: T
     
     init(@ViewBuilder _ content: () -> T) {
@@ -63,39 +125,22 @@ struct MakeExerciseProgressView<T: View>: View {
     
     var body: some View {
         NavigationStack{
-            TimelineView(MetricsTimelineSchedule(from: healthManager.builder?.startDate ?? Date(), isPaused: healthManager.session?.state == .paused)) { value in
-                ScrollView{
-                    VStack(alignment: .leading){
-                        Text("Cronômetro")
-                            .font(.callout)
-                        
-                        ElapsedTimeView(elapsedTime: healthManager.remainingTime(at: value.date), showSubseconds: false)
-                            .font(.system(size: 30))
-                        
-                        HStack{
-                            Text("Tempo de avaliação")
-                                .font(.system(size: 10))
-                           
-                            ElapsedTimeView(elapsedTime: healthManager.builder?.elapsedTime(at: value.date) ?? 0, showSubseconds: value.cadence == .live)
-
-                            
-                        }.frame(width: 180, height: 30)
-                            .overlay {
-                                RoundedRectangle(cornerRadius: 5)
-                                    .stroke(Color.gray, lineWidth: 2)
-                        }
-                        
-                        content
-                        
-                    }.navigationTitle("Defult")//mudar de acordo com o nome do exercicio
+            ScrollView {
+                VStack{
+                    TimerWorkoutView()
+                    self.content
+                    HeartAndCaloriesViewComponemt()
                 }
             }
         }
     }
 }
 
+
+
 #Preview {
     ExerciseProgressView()
         .environmentObject(HealthKitManager())
+        .environmentObject(ExerciseProgressViewModel())
 }
 

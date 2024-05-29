@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct SelectEvaluationView: View {
-    @State private var selectedExercises: [String] = []
-    @State private var exercises: [String] = ["Flexão", "Abdominal", "Corrida"]
+    @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
+    @State private var exercises: [WorkoutViewsEnun] = [.pushUps, .abdominal, .running12min]
     
     var body: some View {
         
         NavigationStack {
                 ScrollView {
-                    SelectionBox(selectedExercises: $selectedExercises, exerciseName: "Completa", allExercises: exercises, isCompleteButton: true)
+                    SelectionBox(selectedExercises: $exerciseViewModel.selectExercise, exerciseName: .complete, allExercises: exercises, isCompleteButton: true)
                     
                     Divider()
                     
@@ -25,7 +25,7 @@ struct SelectEvaluationView: View {
                     }
                     
                     ForEach(exercises, id: \.self) { exercise in
-                        SelectionBox(selectedExercises: $selectedExercises, exerciseName: exercise, allExercises: exercises, isCompleteButton: false)
+                        SelectionBox(selectedExercises: $exerciseViewModel.selectExercise, exerciseName: exercise, allExercises: exercises, isCompleteButton: false)
                     }
                 
                     Divider()

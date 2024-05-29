@@ -42,6 +42,7 @@
 		D9A072752C0509F7004BD3A0 /* ElapsedTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A072742C0509F7004BD3A0 /* ElapsedTimeFormatter.swift */; };
 		D9A072772C050A4A004BD3A0 /* MetricsTimelineSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A072762C050A4A004BD3A0 /* MetricsTimelineSchedule.swift */; };
 		D9A072792C050C62004BD3A0 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A072782C050C62004BD3A0 /* Device.swift */; };
+		D9DDC0BB2C07AD260097B82C /* TimerWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DDC0BA2C07AD260097B82C /* TimerWorkoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		D9A072742C0509F7004BD3A0 /* ElapsedTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeFormatter.swift; sourceTree = "<group>"; };
 		D9A072762C050A4A004BD3A0 /* MetricsTimelineSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsTimelineSchedule.swift; sourceTree = "<group>"; };
 		D9A072782C050C62004BD3A0 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		D9DDC0BA2C07AD260097B82C /* TimerWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWorkoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +271,7 @@
 			children = (
 				D91846172BFFD33A0076F3A3 /* ExerciseProgressView.swift */,
 				D9A072722C0509C5004BD3A0 /* ElapsedTimeView.swift */,
+				D9DDC0BA2C07AD260097B82C /* TimerWorkoutView.swift */,
 			);
 			path = ExerciseProgress;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				D908CA9E2BFFD03700A088B3 /* ContentView.swift in Sources */,
 				5538C6CB2BFFE21F00971930 /* AchievementView.swift in Sources */,
 				C0EA943C2C0124F40057E48B /* GraphView.swift in Sources */,
+				D9DDC0BB2C07AD260097B82C /* TimerWorkoutView.swift in Sources */,
 				D91846092BFFD1DF0076F3A3 /* SelectEvaluationView.swift in Sources */,
 				D91846282BFFD65E0076F3A3 /* PUModel.swift in Sources */,
 				C0EA94402C012F520057E48B /* GraphExerciseView.swift in Sources */,

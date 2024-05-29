@@ -33,7 +33,7 @@ class HealthKitManager: NSObject, ObservableObject{
     
     
     ///timer descrecente
-    @Published private(set) var totalDuration: TimeInterval = 720
+    @Published private(set) var totalDuration: TimeInterval = 20
     
     override init() { }
     
@@ -226,7 +226,6 @@ extension HealthKitManager: HKLiveWorkoutBuilderDelegate{
                 print("Valor de workoutBuilder e nil ou invalido")
                 return
             }
-            print("Running: ", quantityType, "...")
             self.updateStatistics(statistics)
         }
     }

@@ -17,24 +17,6 @@ class ElapsedTimeFormatter: Formatter {
     }()
     var showSubseconds = true
 
-//    override func string(for value: Any?) -> String? {
-//        guard let time = value as? TimeInterval else {
-//            return nil
-//        }
-//
-//        guard let formattedString = componentsFormatter.string(from: time) else {
-//            return nil
-//        }
-//
-//        if showSubseconds {
-//            let hundredths = Int((time.truncatingRemainder(dividingBy: 1)) * 100)
-//            let decimalSeparator = Locale.current.decimalSeparator ?? "."
-//            return String(format: "%@%@%0.2d", formattedString, decimalSeparator, hundredths)
-//        }
-//
-//        return formattedString
-//    }
-    
     override func string(for value: Any?) -> String? {
         guard let time = value as? TimeInterval else {
             return nil
