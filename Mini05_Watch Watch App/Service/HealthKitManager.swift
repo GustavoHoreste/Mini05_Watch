@@ -32,8 +32,19 @@ class HealthKitManager: NSObject, ObservableObject{
     @Published private(set) var generalTimeWorkout: String = ""
     
     
+    ///timer descrecente
+    @Published private(set) var totalDuration: TimeInterval = 720
+    
     override init() { }
     
+    
+    public func remainingTime(at date: Date) -> TimeInterval {
+        guard let startDate = builder?.startDate else {
+            return totalDuration
+        }
+        let elapsedTime = date.timeIntervalSince(startDate)
+        return max(totalDuration - elapsedTime, 0)
+    }
     
     public func requestPermission() async -> [HKObjectType: HKAuthorizationStatus]{
         do {
@@ -181,16 +192,6 @@ class HealthKitManager: NSObject, ObservableObject{
         height = 0
         
         print("Todos os dados do workout e do HealthKit foram resetados.")
-    }
-    
-    @Published var totalDuration: TimeInterval = 720
-    
-    func remainingTime(at date: Date) -> TimeInterval {
-        guard let startDate = builder?.startDate else {
-            return totalDuration
-        }
-        let elapsedTime = date.timeIntervalSince(startDate)
-        return max(totalDuration - elapsedTime, 0)
     }
 }
 
