@@ -23,8 +23,8 @@ struct ExerciseProgressView: View {
                     }
                 case .pushUps, .abdominal:
                     MakeExerciseProgressView {
-                        Text("Count")
-                            .font(.title)
+                        InformationViewComponemt(nameExercise: "Abdominal",
+                                                 value: healthManager.runningSpeed)
                     }
                 default:
                     EmptyView()
