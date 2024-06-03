@@ -17,8 +17,6 @@ struct HomeView: View {
             List{
                 HomeButton(name: "Avaliação", destination: SelectEvaluationView())
                     .padding(20)
-                HomeButton(name: "Flexao", destination: PUView(viewModel: PUViewModel(model: PUModel())))
-                    .padding(20)
                 HomeButton(name: "Gráficos", destination: GraphView())
                     .padding(20)
                 HomeButton(name: "Conquistas", destination: AchievementView())

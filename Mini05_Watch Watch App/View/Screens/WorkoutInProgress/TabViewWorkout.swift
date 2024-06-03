@@ -26,9 +26,10 @@ struct TabViewWorkout: View {
             
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: isLuminanceReduced ? .never : .automatic))
-        .onChange(of: exerciseViewModel.isBackToView, { oldValue, newValue in
+        .tabViewStyle(.page)
+        .onChange(of: exerciseViewModel.isBackToView){ oldValue, newValue in
             displayMetricsView()
-        })
+        }
         .navigationBarBackButtonHidden()
         
     }

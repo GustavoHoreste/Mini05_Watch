@@ -31,10 +31,21 @@ struct SelectEvaluationView: View {
                     Divider()
                     
                     NavigationLink("NextView") {
-                        TabViewWorkout()
+                        self.configRinning()
                     }
                     
             }
+        }
+    }
+}
+
+extension SelectEvaluationView{
+    @ViewBuilder
+    private func configRinning() -> some View{ ///Verifica se corrida foi escolhida, se for chama a view de configura corrida. 
+        if exerciseViewModel.selectExercise.contains(.running12min){
+            ConfigureRunningView()
+        }else{
+            TabViewWorkout()
         }
     }
 }

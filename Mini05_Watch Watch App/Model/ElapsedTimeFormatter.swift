@@ -30,9 +30,8 @@ class ElapsedTimeFormatter: Formatter {
         }
 
         if showSubseconds {
-            let hundredths = Int((absTime.truncatingRemainder(dividingBy: 1)) * 100)
             let decimalSeparator = Locale.current.decimalSeparator ?? "."
-            return String(format: "%@%@%0.2d", formattedString, decimalSeparator, hundredths)
+            return String(format: "%@%@", formattedString, decimalSeparator)
         }
 
         return isNegative ? "-\(formattedString)" : formattedString

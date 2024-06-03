@@ -101,7 +101,6 @@ class HealthKitManager: NSObject, ObservableObject{
         let startDate = Date()
         self.session?.startActivity(with: startDate)
         try await builder?.beginCollection(at: startDate)
-
     }
     
     
@@ -221,6 +220,7 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
 
 extension HealthKitManager: HKLiveWorkoutBuilderDelegate{
     func workoutBuilder(_ workoutBuilder: HKLiveWorkoutBuilder, didCollectDataOf collectedTypes: Set<HKSampleType>) {
+        print("Rodando...")
         for type in collectedTypes{
             guard let quantityType = type as? HKQuantityType, let statistics = workoutBuilder.statistics(for: quantityType) else {
                 print("Valor de workoutBuilder e nil ou invalido")
