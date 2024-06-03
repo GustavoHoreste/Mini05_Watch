@@ -14,15 +14,15 @@ struct SelectBoxConponent: View {
     
     var body: some View {
         HStack{
-            Label(nameButtom, systemImage: isSelect ? "smallcircle.filled.circle" : "circle")
-                .font(.system(size: 20, weight: .regular))
-                .lineLimit(2)
-        
+            Image(systemName: isSelect ? "smallcircle.filled.circle" : "circle")
+            Text(nameButtom)
         }.onTapGesture {
             self.isSelect.toggle()
             self.action()
         }
     }
 }
+
+
 
 
