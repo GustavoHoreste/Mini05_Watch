@@ -16,6 +16,8 @@ struct SelectBoxConponent: View {
         HStack{
             Image(systemName: isSelect ? "smallcircle.filled.circle" : "circle")
             Text(nameButtom)
+                .lineLimit(2)
+                .font(.system(size: 12))
         }.onTapGesture {
             self.isSelect.toggle()
             self.action()
