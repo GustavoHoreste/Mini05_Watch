@@ -10,14 +10,15 @@ import SwiftUI
 struct PickerTimerView: View {
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
     
-    
     var body: some View {
         NavigationStack{
             VStack(alignment: .leading){
                 Text("Tempo\nEstabelecido")
+                    .lineLimit(2)
                 
                 DatePicker("Seleciona ai", selection: $exerciseViewModel.timerValue, displayedComponents: .hourMinuteAndSecond)
                     .datePickerStyle(.automatic)
+                    
                 
                 HStack{
                     Spacer()

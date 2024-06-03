@@ -46,12 +46,12 @@ struct TimerWorkoutView: View {
 
 extension TimerWorkoutView{
     private func upadateTimerValue(at value: Date) -> Double{
-        if self.reseatTime{
-            DispatchQueue.main.async {
-                self.reseatTime = false
-            }
-            return value.timeIntervalSince(Date())
-        }
+//        if self.reseatTime{
+//            DispatchQueue.main.async {
+//                self.reseatTime = false
+//            }
+//            return value.timeIntervalSince(Date())
+//        }
         
         if exerciseViewModel.isDecrementingTimer && exerciseViewModel.selectExercise.first == .running12min{
             return exerciseViewModel.remainingTime(at: value)

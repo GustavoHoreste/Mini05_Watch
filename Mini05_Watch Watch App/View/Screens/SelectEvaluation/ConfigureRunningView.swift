@@ -17,7 +17,7 @@ struct ConfigureRunningView: View {
                 Text("Corrida")
                     .font(.system(size: 21.5, weight: .medium))
                 
-                SelectBoxConponent(isSelect: $isSelectTime, nameButtom: "Tempo\n estabelecido"){
+                SelectBoxConponent(isSelect: $isSelectTime, nameButtom: "Tempo\nEstabelecido"){
                     self.isNotSelectTime = false
                 }
                 SelectBoxConponent(isSelect: $isNotSelectTime, nameButtom: "Tempo livre"){

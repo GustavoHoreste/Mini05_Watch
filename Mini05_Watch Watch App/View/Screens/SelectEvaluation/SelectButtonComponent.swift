@@ -13,7 +13,7 @@ struct SelectBoxConponent: View {
     let action: () -> Void
     
     var body: some View {
-        HStack {
+        HStack{
             Label(nameButtom, systemImage: isSelect ? "smallcircle.filled.circle" : "circle")
                 .font(.system(size: 20, weight: .regular))
                 .lineLimit(2)
