@@ -18,7 +18,6 @@ struct Mini05_Watch_Watch_AppApp: App {
             ContentView()
                 .environmentObject(healthManager)
                 .environmentObject(exerciseViewModel)
-
         }
         .modelContainer(for: [RunData.self])
     }

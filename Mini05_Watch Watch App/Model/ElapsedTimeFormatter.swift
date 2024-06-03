@@ -30,8 +30,7 @@ class ElapsedTimeFormatter: Formatter {
         }
 
         if showSubseconds {
-            let decimalSeparator = Locale.current.decimalSeparator ?? "."
-            return String(format: "%@%@", formattedString, decimalSeparator)
+            return String(format: "%@", formattedString)
         }
 
         return isNegative ? "-\(formattedString)" : formattedString

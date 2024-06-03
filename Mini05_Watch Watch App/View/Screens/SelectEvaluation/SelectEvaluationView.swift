@@ -33,7 +33,6 @@ struct SelectEvaluationView: View {
                     NavigationLink("NextView") {
                         self.configRinning()
                     }
-                    
             }
         }
     }

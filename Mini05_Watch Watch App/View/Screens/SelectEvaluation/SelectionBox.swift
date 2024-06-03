@@ -22,7 +22,9 @@ struct SelectionBox: View {
             if self.isCompleteButton {
                 if self.checkState {
                     self.selectedExercises = self.allExercises
-                    self.selectedExercises.append(.summary)
+//                    if !self.selectedExercises.contains(.summary){
+//                        self.selectedExercises.append(.summary)
+//                    }
                 } else {
                     self.selectedExercises.removeAll()
                 }
@@ -30,7 +32,6 @@ struct SelectionBox: View {
             } else {
                 if self.checkState {
                     self.selectedExercises.append(self.exerciseName)
-                    self.selectedExercises.append(.summary)
                 } else {
                     if let index = self.selectedExercises.firstIndex(of: self.exerciseName) {
                         self.selectedExercises.remove(at: index)

@@ -10,6 +10,7 @@ import WatchKit
 
 struct TabViewWorkout: View {
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
+    @EnvironmentObject private var healthManager: HealthKitManager
     @Environment(\.isLuminanceReduced) var isLuminanceReduced
     @State private var selection: Tabs = .exercise
 
@@ -27,6 +28,14 @@ struct TabViewWorkout: View {
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: isLuminanceReduced ? .never : .automatic))
         .tabViewStyle(.page)
+        .onAppear{
+            Task{
+                await healthManager.startWorkout()
+            }
+            
+            exerciseViewModel.selectExercise.append(.summary)
+            
+        }
         .onChange(of: exerciseViewModel.isBackToView){ oldValue, newValue in
             displayMetricsView()
         }
@@ -44,5 +53,6 @@ struct TabViewWorkout: View {
 #Preview {
     TabViewWorkout()
         .environmentObject(HealthKitManager())
+        .environmentObject(ExerciseProgressViewModel())
 }
 

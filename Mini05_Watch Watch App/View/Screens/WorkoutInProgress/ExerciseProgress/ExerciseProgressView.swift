@@ -7,69 +7,6 @@
 
 import SwiftUI
 
-
-class ExerciseProgressViewModel: ObservableObject{
-    @Published public var endWorkout: Bool = false
-    @Published public var isBackToView: Bool = false
-    @Published public var selectExercise: [WorkoutViewsEnun] = []
-    @Published public var isDecrementingTimer: Bool = false
-    @Published public var timerValue: Date = Date(){
-        didSet{
-            self.convertDateToDouble(timerValue)
-        }
-    }
-    @Published private(set) var totalDuration: TimeInterval = 0
-
-    public var startDate: Date?
-
-    public func nextExercise(){
-        if !selectExercise.isEmpty{
-            self.selectExercise.removeFirst()
-        }
-    }
-    
-    public func toggleValueEnd(){
-        self.endWorkout.toggle()
-    }
-    
-    public func reseatAll(){
-        self.selectExercise = []
-        self.endWorkout = false
-        self.isBackToView = false
-//        self.isDecrementingTimer = false
-    }
-    
-    public func backToView(){
-        self.isBackToView = true
-    }
-    
-    private func convertDateToDouble(_ date: Date){
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.hour, .minute, .second], from: date)
-        
-        guard let hour = components.hour, let minute = components.minute, let second = components.second else{
-            return
-        }
-        
-        let totalSeconds = Double(hour * 3600 + minute * 60 + second)
-        
-        self.totalDuration = totalSeconds
-    }
-    
-    public func injectionStartDate(_ date: Date?){
-        self.startDate = date
-    }
-    
-    
-    public func remainingTime(at date: Date) -> TimeInterval {
-        guard let startDate = startDate else {
-            return totalDuration
-        }
-        let elapsedTime = date.timeIntervalSince(startDate)
-        return max(totalDuration - elapsedTime, 0)
-    }
-}
-
 struct ExerciseProgressView: View {
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
     @EnvironmentObject private var healthManager: HealthKitManager
@@ -78,24 +15,11 @@ struct ExerciseProgressView: View {
     var body: some View {
         NavigationStack{
             Group{
-                switch exerciseViewModel.selectExercise.first ?? .pushUps{
+                switch exerciseViewModel.selectExercise.first ?? .running12min{
                 case .running12min:
                     MakeExerciseProgressView{
-                        Divider()
-                        SectionExercise(model: SectionExerciseModel(
-                                            exetensionSection: "m/s",
-                                            systemImage: "bolt.fill",
-                                            nameSection: "Velocidade",
-                                            value: healthManager.runningSpeed,
-                                            withSimbol: true))
-                        
-                        Divider()
-                        SectionExercise(model: SectionExerciseModel(
-                                            exetensionSection: "km",
-                                            systemImage: "map.fill",
-                                            nameSection: "Distância",
-                                            value: healthManager.distanceWalkingRunning,
-                                            withSimbol: false))
+                        InformationViewComponemt(nameExercise: "Corrida",
+                                                 value: healthManager.runningSpeed)
                     }
                 case .pushUps, .abdominal:
                     MakeExerciseProgressView {
@@ -108,15 +32,13 @@ struct ExerciseProgressView: View {
                 }
             }
             .onAppear{
-                Task{
-                    await healthManager.startWorkout()
-                }
                 if exerciseViewModel.selectExercise.first == .summary{
                     self.callSummaryView = true
                 }
                 exerciseViewModel.injectionStartDate(healthManager.builder?.startDate ?? Date())
             }
             .navigationDestination(isPresented: $callSummaryView) {
+//                self.healthManager.endSession()
                 withAnimation {
                     SummaryView()
                 }
@@ -125,28 +47,7 @@ struct ExerciseProgressView: View {
     }
 }
 
-struct HeartAndCaloriesViewComponemt: View {
-    @EnvironmentObject private var healthManager: HealthKitManager
 
-    var body: some View {
-        VStack{
-            Divider()
-            SectionExercise(model: SectionExerciseModel(
-                                exetensionSection: "cal",
-                                systemImage: "flame.fill",
-                                nameSection: "Calorias",
-                                value: healthManager.activeEnergyBurned,
-                                withSimbol: true))
-            Divider()
-            SectionExercise(model: SectionExerciseModel(
-                                exetensionSection: "bpm",
-                                systemImage: "heart.fill",
-                                nameSection: "Frequência Cardíaca",
-                                value: healthManager.heartRate,
-                                withSimbol: true))
-        }
-    }
-}
 
 
 struct MakeExerciseProgressView<T: View>: View {
@@ -158,9 +59,8 @@ struct MakeExerciseProgressView<T: View>: View {
     
     var body: some View {
         TabView {
-            TimerWorkoutView().tag(0)
-            self.content.tag(1)
-            HeartAndCaloriesViewComponemt().tag(1)
+            TimerWorkoutView()
+            self.content
         }.tabViewStyle(.carousel)
     }
 }

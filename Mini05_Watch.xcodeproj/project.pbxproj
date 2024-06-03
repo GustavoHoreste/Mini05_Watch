@@ -38,6 +38,7 @@
 		D918462F2C00C8670076F3A3 /* RequestPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918462E2C00C8670076F3A3 /* RequestPermissionView.swift */; };
 		D93311872C03B4160077D9BE /* PermissionDeniedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93311862C03B4160077D9BE /* PermissionDeniedView.swift */; };
 		D93311892C03B4700077D9BE /* HealthKitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93311882C03B4700077D9BE /* HealthKitModel.swift */; };
+		D94FBF912C0DF51000C852DE /* InformationViewComponemt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF902C0DF51000C852DE /* InformationViewComponemt.swift */; };
 		D981C9692C0BB02100003DCF /* ConfigureRunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981C9682C0BB02100003DCF /* ConfigureRunningView.swift */; };
 		D981C96B2C0BB66200003DCF /* SelectButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981C96A2C0BB66200003DCF /* SelectButtonComponent.swift */; };
 		D981C96D2C0BB76300003DCF /* ButtonNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981C96C2C0BB76300003DCF /* ButtonNext.swift */; };
@@ -48,6 +49,9 @@
 		D9CDC9E02C0D571E003C20F1 /* StatisticTimeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CDC9DF2C0D571E003C20F1 /* StatisticTimeComponent.swift */; };
 		D9DDC0BB2C07AD260097B82C /* TimerWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DDC0BA2C07AD260097B82C /* TimerWorkoutView.swift */; };
 		D9E99D982C0BE298003F2E36 /* PickerTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E99D972C0BE298003F2E36 /* PickerTimerView.swift */; };
+		D9ECC89A2C0DF5C500A31138 /* VelocityViewComponemt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC8992C0DF5C500A31138 /* VelocityViewComponemt.swift */; };
+		D9ECC89C2C0DF5FB00A31138 /* HeartAndCaloriesViewComponemt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC89B2C0DF5FB00A31138 /* HeartAndCaloriesViewComponemt.swift */; };
+		D9ECC89E2C0DF62E00A31138 /* ExerciseProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC89D2C0DF62E00A31138 /* ExerciseProgressViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +113,7 @@
 		D91846302C011BB40076F3A3 /* Mini05-Watch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Mini05-Watch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D93311862C03B4160077D9BE /* PermissionDeniedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionDeniedView.swift; sourceTree = "<group>"; };
 		D93311882C03B4700077D9BE /* HealthKitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitModel.swift; sourceTree = "<group>"; };
+		D94FBF902C0DF51000C852DE /* InformationViewComponemt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewComponemt.swift; sourceTree = "<group>"; };
 		D981C9682C0BB02100003DCF /* ConfigureRunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureRunningView.swift; sourceTree = "<group>"; };
 		D981C96A2C0BB66200003DCF /* SelectButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButtonComponent.swift; sourceTree = "<group>"; };
 		D981C96C2C0BB76300003DCF /* ButtonNext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNext.swift; sourceTree = "<group>"; };
@@ -119,6 +124,9 @@
 		D9CDC9DF2C0D571E003C20F1 /* StatisticTimeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTimeComponent.swift; sourceTree = "<group>"; };
 		D9DDC0BA2C07AD260097B82C /* TimerWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWorkoutView.swift; sourceTree = "<group>"; };
 		D9E99D972C0BE298003F2E36 /* PickerTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTimerView.swift; sourceTree = "<group>"; };
+		D9ECC8992C0DF5C500A31138 /* VelocityViewComponemt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelocityViewComponemt.swift; sourceTree = "<group>"; };
+		D9ECC89B2C0DF5FB00A31138 /* HeartAndCaloriesViewComponemt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartAndCaloriesViewComponemt.swift; sourceTree = "<group>"; };
+		D9ECC89D2C0DF62E00A31138 /* ExerciseProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseProgressViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +294,10 @@
 				D9A072722C0509C5004BD3A0 /* ElapsedTimeView.swift */,
 				D9DDC0BA2C07AD260097B82C /* TimerWorkoutView.swift */,
 				D9CDC9DF2C0D571E003C20F1 /* StatisticTimeComponent.swift */,
+				D94FBF902C0DF51000C852DE /* InformationViewComponemt.swift */,
+				D9ECC8992C0DF5C500A31138 /* VelocityViewComponemt.swift */,
+				D9ECC89B2C0DF5FB00A31138 /* HeartAndCaloriesViewComponemt.swift */,
+				D9ECC89D2C0DF62E00A31138 /* ExerciseProgressViewModel.swift */,
 			);
 			path = ExerciseProgress;
 			sourceTree = "<group>";
@@ -434,6 +446,7 @@
 				D91846282BFFD65E0076F3A3 /* PUModel.swift in Sources */,
 				C0EA94402C012F520057E48B /* GraphExerciseView.swift in Sources */,
 				D91846062BFFD1990076F3A3 /* HomeButtonView.swift in Sources */,
+				D94FBF912C0DF51000C852DE /* InformationViewComponemt.swift in Sources */,
 				D908CAB02BFFD09A00A088B3 /* UserModel.swift in Sources */,
 				D981C96B2C0BB66200003DCF /* SelectButtonComponent.swift in Sources */,
 				D981C96D2C0BB76300003DCF /* ButtonNext.swift in Sources */,
@@ -446,9 +459,12 @@
 				D91846102BFFD2CB0076F3A3 /* SummaryDataComponent.swift in Sources */,
 				D918461D2BFFD38F0076F3A3 /* StatusWorkoutView.swift in Sources */,
 				D918462B2C0003DE0076F3A3 /* SectionExercise.swift in Sources */,
+				D9ECC89E2C0DF62E00A31138 /* ExerciseProgressViewModel.swift in Sources */,
 				D91846262BFFD6000076F3A3 /* PUView.swift in Sources */,
 				D908CAB22BFFD0A600A088B3 /* Enum.swift in Sources */,
+				D9ECC89C2C0DF5FB00A31138 /* HeartAndCaloriesViewComponemt.swift in Sources */,
 				D91846122BFFD2E10076F3A3 /* SummaryView.swift in Sources */,
+				D9ECC89A2C0DF5C500A31138 /* VelocityViewComponemt.swift in Sources */,
 				D908CAB72BFFD14400A088B3 /* HomeButton.swift in Sources */,
 				D93311872C03B4160077D9BE /* PermissionDeniedView.swift in Sources */,
 				D91846242BFFD5DC0076F3A3 /* PUViewModel.swift in Sources */,

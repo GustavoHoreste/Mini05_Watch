@@ -69,7 +69,6 @@ class HealthKitManager: NSObject, ObservableObject{
     //TODO: Mudar de onde a funcao e chamada
     ///start workout
     public func startWorkout() async {
-        
         if session?.state.rawValue == 4 || session?.state.rawValue == 2{
             print("Pausado")
             return
@@ -90,7 +89,6 @@ class HealthKitManager: NSObject, ObservableObject{
         } catch {
             print("Error em comecar workout: ", error.localizedDescription)
         }
-        
     }
     
     private func executeExercise() async throws{
@@ -220,11 +218,13 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
 
 extension HealthKitManager: HKLiveWorkoutBuilderDelegate{
     func workoutBuilder(_ workoutBuilder: HKLiveWorkoutBuilder, didCollectDataOf collectedTypes: Set<HKSampleType>) {
-        print("Rodando...")
         for type in collectedTypes{
             guard let quantityType = type as? HKQuantityType, let statistics = workoutBuilder.statistics(for: quantityType) else {
                 print("Valor de workoutBuilder e nil ou invalido")
                 return
+            }
+            DispatchQueue.main.async {
+                print("Rodando...")
             }
             self.updateStatistics(statistics)
         }
