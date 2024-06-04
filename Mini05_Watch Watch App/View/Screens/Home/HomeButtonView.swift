@@ -17,6 +17,7 @@ struct HomeView: View {
             List{
                 
                 HomeButton(name: "Avaliação", destination: SelectEvaluationView())
+
                     .padding(20)
                 HomeButton(name: "Flexao", destination: PUView(viewModel: PUViewModel(model: PUModel())))
                     .padding(20)
@@ -24,6 +25,7 @@ struct HomeView: View {
                     .padding(20)
                 HomeButton(name: "Conquistas", destination: AchievementView())
                     .padding(20)
+
                 
                 Button("Save data") {
                     let data1 = RunData(date: Date(), totalTime: 90, totalDistance: 10, totalEnergy: 100, avgHeartRate: 110, avgSpeed: 8)
