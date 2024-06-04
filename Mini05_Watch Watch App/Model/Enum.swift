@@ -16,3 +16,11 @@ enum Tabs {
 enum WorkoutViewsEnun: String{
     case running12min = "Corrida", pushUps = "Flexão", abdominal = "Abdominal", complete = "Completa", summary = "Summary"
 }
+
+
+enum Fonts: String{
+    case sairaMedium = "Saira-Medium"
+    case sairaBlack = "Saira-Black"
+    case sairaBold = "Saira-Bold"
+    case sairaRegular = "Saira-Regular"
+}
