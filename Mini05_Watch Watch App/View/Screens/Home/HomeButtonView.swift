@@ -15,6 +15,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack{
             List{
+                
                 HomeButton(name: "Avaliação", destination: SelectEvaluationView())
                     .padding(20)
                 HomeButton(name: "Flexao", destination: PUView(viewModel: PUViewModel(model: PUModel())))
@@ -35,6 +36,7 @@ struct HomeView: View {
                     
                     print(runData.description)
                 }
+                
                 Button("Delete all data") {
                     context.container.deleteAllData()
                     
