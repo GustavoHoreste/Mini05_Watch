@@ -56,9 +56,6 @@ class ExerciseProgressViewModel: ObservableObject{
         self.totalDuration = totalSeconds
     }
     
-    public func injectionStartDate(_ date: Date?){
-        self.startDate = date
-    }
     
     
     public func remainingTime(at date: Date) -> TimeInterval {
@@ -67,5 +64,12 @@ class ExerciseProgressViewModel: ObservableObject{
         }
         let elapsedTime = date.timeIntervalSince(startDate)
         return max(totalDuration - elapsedTime, 0)
+    }
+    
+    public func returnNameExercise() -> String{
+        guard let name = selectExercise.first else {
+            return "nil"
+        }
+        return name.rawValue
     }
 }

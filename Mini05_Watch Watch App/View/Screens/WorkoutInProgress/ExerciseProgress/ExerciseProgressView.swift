@@ -35,7 +35,8 @@ struct ExerciseProgressView: View {
                 if exerciseViewModel.selectExercise.first == .summary{
                     self.callSummaryView = true
                 }
-                exerciseViewModel.injectionStartDate(healthManager.builder?.startDate ?? Date())
+//                exerciseViewModel.injectionStartDate(healthManager.builder?.startDate ?? Date())
+                exerciseViewModel.startDate = Date()
             }
             .navigationDestination(isPresented: $callSummaryView) {
 //                self.healthManager.endSession()
