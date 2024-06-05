@@ -11,13 +11,13 @@ import SwiftData
 @main
 struct Mini05_Watch_Watch_AppApp: App {
     @StateObject private var healthManager: HealthKitManager = HealthKitManager()
-
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(healthManager)
-
+            
         }
-        .modelContainer(for: [RunData.self])
+        .modelContainer(for: [RunData.self, PushUpData.self, AbdominalData.self])
     }
 }
