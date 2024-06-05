@@ -33,6 +33,8 @@ class HealthKitManager: NSObject, ObservableObject{
     
     ///timer descrecente
     @Published private(set) var totalDuration: TimeInterval = 20
+    @Published private(set) var forcePause:  Bool = false
+    
     
     override init() { }
     
@@ -66,7 +68,7 @@ class HealthKitManager: NSObject, ObservableObject{
     
 
     public func startWorkout() async {
-        if session?.state.rawValue == 4 || session?.state.rawValue == 2{
+        if session?.state == .running || session?.state == .paused{
             print("Pausado")
             return
         }
@@ -141,10 +143,10 @@ class HealthKitManager: NSObject, ObservableObject{
     }
     
     public func togglePauseOrStart(){
-        switch session?.state.rawValue{ ///E do tipo `HKWorkoutSessionState`
-        case 2: ///session em execucao
+        switch session?.state{ ///E do tipo `HKWorkoutSessionState`
+        case .running: ///session em execucao
             self.pauseSession()
-        case 4: ///session pausada
+        case .paused: ///session pausada
             self.resumeSession()
         default:
             print("Estado desconhecido da sessão.")
@@ -184,6 +186,14 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
                 }
             }
         }
+        
+        if toState == .paused{
+            self.forcePause = true
+        }
+        
+        if toState == .running {
+            self.forcePause = false
+        }
     }
     
     func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
@@ -193,6 +203,10 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
 
 extension HealthKitManager: HKLiveWorkoutBuilderDelegate{
     func workoutBuilder(_ workoutBuilder: HKLiveWorkoutBuilder, didCollectDataOf collectedTypes: Set<HKSampleType>) {
+        if self.forcePause{
+            print("Pausad0...")
+            return
+        }
         for type in collectedTypes{
             guard let quantityType = type as? HKQuantityType, let statistics = workoutBuilder.statistics(for: quantityType) else {
                 print("Valor de workoutBuilder e nil ou invalido")

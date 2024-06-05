@@ -26,15 +26,14 @@ struct TabViewWorkout: View {
                 .tag(Tabs.nowPlaying)
             
         }
+        .background(.bg)
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: isLuminanceReduced ? .never : .automatic))
         .tabViewStyle(.page)
         .onAppear{
             Task{
                 await healthManager.startWorkout()
             }
-            
             exerciseViewModel.selectExercise.append(.summary)
-            
         }
         .onChange(of: exerciseViewModel.isBackToView){ oldValue, newValue in
             displayMetricsView()

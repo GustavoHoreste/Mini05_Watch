@@ -19,12 +19,16 @@ struct ExerciseProgressView: View {
                 case .running12min:
                     MakeExerciseProgressView{
                         InformationViewComponemt(nameExercise: exerciseViewModel.returnNameExercise(),
-                                                 value: healthManager.runningSpeed)
+                                                 subTitle: "Velocidade atual",
+                                                 value: healthManager.runningSpeed,
+                                                 extensionName: "Km/h")
                     }
                 case .pushUps, .abdominal:
                     MakeExerciseProgressView {
-                        InformationViewComponemt(nameExercise: "Abdominal",
-                                                 value: healthManager.runningSpeed)
+                        InformationViewComponemt(nameExercise: exerciseViewModel.returnNameExercise(),
+                                                 subTitle: "Repetições",
+                                                 value: healthManager.runningSpeed,//passar parametro aqui de repeticoes
+                                                 extensionName: "")
                     }
                 default:
                     EmptyView()
@@ -60,7 +64,7 @@ struct MakeExerciseProgressView<T: View>: View {
             TimerWorkoutView()
             self.content
         }.tabViewStyle(.carousel)
-//            .background(.bg)
+            .background(.bg)
     }
 }
 

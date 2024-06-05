@@ -46,8 +46,9 @@ struct SummaryView: View {
                 healthManager.resetWorkoutData()
                 exerciseViewModel.reseatAll()
             }
-
-
+            .onAppear {
+                healthManager.togglePauseOrStart()
+            }
         }
         .navigationTitle("Summary")
         .navigationBarTitleDisplayMode(.inline)

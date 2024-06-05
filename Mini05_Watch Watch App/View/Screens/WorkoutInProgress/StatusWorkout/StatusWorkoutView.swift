@@ -31,7 +31,7 @@ struct StatusWorkoutView: View {
                                             {
                                                 healthManager.endSession()
                                                 exerciseViewModel.toggleValueEnd()
-                                                exerciseViewModel.backToView()
+//                                                exerciseViewModel.backToView()
                                             })
                 }
                 
@@ -47,13 +47,21 @@ struct StatusWorkoutView: View {
                                           action:  {
                                                 //healthManager.togglePauseOrStart()
                                                 exerciseViewModel.nextExercise()
-                                                exerciseViewModel.backToView()
+                                                exerciseViewModel.callSumaryView = true
+//                                                exerciseViewModel.backToView()
                                           })
                     
                 }
             }
             .navigationDestination(isPresented: $exerciseViewModel.endWorkout) {
-                SummaryView()
+                if exerciseViewModel.endWorkout{
+                    SummaryView()// Quando Termina chama a view final
+                }
+            }
+            .navigationDestination(isPresented: $exerciseViewModel.callSumaryView) {
+                if exerciseViewModel.callSumaryView{
+                    SummaryView()// Chama o sumario parcial
+                }
             }
             .onDisappear{
                 exerciseViewModel.isBackToView = false
