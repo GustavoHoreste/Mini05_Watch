@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		5538C6CB2BFFE21F00971930 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CA2BFFE21F00971930 /* AchievementView.swift */; };
 		5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */; };
+		C01C8C7D2C10D7AD001826D6 /* Saira-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C792C10D7AD001826D6 /* Saira-Regular.ttf */; };
+		C01C8C7E2C10D7AD001826D6 /* Saira-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7A2C10D7AD001826D6 /* Saira-Black.ttf */; };
+		C01C8C7F2C10D7AD001826D6 /* Saira-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */; };
+		C01C8C802C10D7AD001826D6 /* Saira-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7C2C10D7AD001826D6 /* Saira-Bold.ttf */; };
 		C0EA943C2C0124F40057E48B /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943B2C0124F40057E48B /* GraphView.swift */; };
 		C0EA943E2C0125340057E48B /* RunData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943D2C0125340057E48B /* RunData.swift */; };
 		C0EA94402C012F520057E48B /* GraphExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943F2C012F520057E48B /* GraphExerciseView.swift */; };
@@ -20,10 +24,6 @@
 		D908CAB02BFFD09A00A088B3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CAAF2BFFD09A00A088B3 /* UserModel.swift */; };
 		D908CAB22BFFD0A600A088B3 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CAB12BFFD0A600A088B3 /* Enum.swift */; };
 		D908CAB72BFFD14400A088B3 /* HomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CAB62BFFD14400A088B3 /* HomeButton.swift */; };
-		D91473602C0F8D90002A8380 /* Saira-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D914735C2C0F8D90002A8380 /* Saira-Regular.ttf */; };
-		D91473612C0F8D90002A8380 /* Saira-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D914735D2C0F8D90002A8380 /* Saira-Black.ttf */; };
-		D91473622C0F8D90002A8380 /* Saira-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D914735E2C0F8D90002A8380 /* Saira-Medium.ttf */; };
-		D91473632C0F8D90002A8380 /* Saira-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D914735F2C0F8D90002A8380 /* Saira-Bold.ttf */; };
 		D91846062BFFD1990076F3A3 /* HomeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91846052BFFD1990076F3A3 /* HomeButtonView.swift */; };
 		D91846092BFFD1DF0076F3A3 /* SelectEvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91846082BFFD1DF0076F3A3 /* SelectEvaluationView.swift */; };
 		D918460B2BFFD2010076F3A3 /* SelectionBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918460A2BFFD2010076F3A3 /* SelectionBox.swift */; };
@@ -87,6 +87,10 @@
 /* Begin PBXFileReference section */
 		5538C6CA2BFFE21F00971930 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
 		5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementIcon.swift; sourceTree = "<group>"; };
+		C01C8C792C10D7AD001826D6 /* Saira-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Regular.ttf"; sourceTree = "<group>"; };
+		C01C8C7A2C10D7AD001826D6 /* Saira-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Black.ttf"; sourceTree = "<group>"; };
+		C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Medium.ttf"; sourceTree = "<group>"; };
+		C01C8C7C2C10D7AD001826D6 /* Saira-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Bold.ttf"; sourceTree = "<group>"; };
 		C0EA943B2C0124F40057E48B /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		C0EA943D2C0125340057E48B /* RunData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunData.swift; sourceTree = "<group>"; };
 		C0EA943F2C012F520057E48B /* GraphExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphExerciseView.swift; sourceTree = "<group>"; };
@@ -99,10 +103,6 @@
 		D908CAAF2BFFD09A00A088B3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		D908CAB12BFFD0A600A088B3 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		D908CAB62BFFD14400A088B3 /* HomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButton.swift; sourceTree = "<group>"; };
-		D914735C2C0F8D90002A8380 /* Saira-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Saira-Regular.ttf"; path = "../../../../../Downloads/fontsAscender/Saira-Regular.ttf"; sourceTree = "<group>"; };
-		D914735D2C0F8D90002A8380 /* Saira-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Saira-Black.ttf"; path = "../../../../../Downloads/fontsAscender/Saira-Black.ttf"; sourceTree = "<group>"; };
-		D914735E2C0F8D90002A8380 /* Saira-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Saira-Medium.ttf"; path = "../../../../../Downloads/fontsAscender/Saira-Medium.ttf"; sourceTree = "<group>"; };
-		D914735F2C0F8D90002A8380 /* Saira-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Saira-Bold.ttf"; path = "../../../../../Downloads/fontsAscender/Saira-Bold.ttf"; sourceTree = "<group>"; };
 		D91846052BFFD1990076F3A3 /* HomeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonView.swift; sourceTree = "<group>"; };
 		D91846082BFFD1DF0076F3A3 /* SelectEvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEvaluationView.swift; sourceTree = "<group>"; };
 		D918460A2BFFD2010076F3A3 /* SelectionBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionBox.swift; sourceTree = "<group>"; };
@@ -212,10 +212,10 @@
 		D908CAAD2BFFD05100A088B3 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				D914735D2C0F8D90002A8380 /* Saira-Black.ttf */,
-				D914735F2C0F8D90002A8380 /* Saira-Bold.ttf */,
-				D914735E2C0F8D90002A8380 /* Saira-Medium.ttf */,
-				D914735C2C0F8D90002A8380 /* Saira-Regular.ttf */,
+				C01C8C7C2C10D7AD001826D6 /* Saira-Bold.ttf */,
+				C01C8C7A2C10D7AD001826D6 /* Saira-Black.ttf */,
+				C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */,
+				C01C8C792C10D7AD001826D6 /* Saira-Regular.ttf */,
 				D908CA9B2BFFD03700A088B3 /* Mini05_WatchApp.swift */,
 				D908CA9F2BFFD03800A088B3 /* Assets.xcassets */,
 			);
@@ -442,11 +442,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C01C8C7F2C10D7AD001826D6 /* Saira-Medium.ttf in Resources */,
 				D908CAA32BFFD03800A088B3 /* Preview Assets.xcassets in Resources */,
-				D91473612C0F8D90002A8380 /* Saira-Black.ttf in Resources */,
-				D91473632C0F8D90002A8380 /* Saira-Bold.ttf in Resources */,
-				D91473622C0F8D90002A8380 /* Saira-Medium.ttf in Resources */,
-				D91473602C0F8D90002A8380 /* Saira-Regular.ttf in Resources */,
+				C01C8C7D2C10D7AD001826D6 /* Saira-Regular.ttf in Resources */,
+				C01C8C802C10D7AD001826D6 /* Saira-Bold.ttf in Resources */,
+				C01C8C7E2C10D7AD001826D6 /* Saira-Black.ttf in Resources */,
 				D908CAA02BFFD03800A088B3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
