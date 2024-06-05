@@ -2,7 +2,7 @@
 //  RunData.swift
 //  Mini05_Watch Watch App
 //
-//  Created by André Felipe Chinen on 24/05/24.
+//  Created by AndrÃ© Felipe Chinen on 24/05/24.
 //
 
 import Foundation
