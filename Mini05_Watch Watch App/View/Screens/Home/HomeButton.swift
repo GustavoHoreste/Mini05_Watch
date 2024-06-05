@@ -17,10 +17,10 @@ struct HomeButton<Destination: View>: View {
                 RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
                     .rotation(.degrees(45))
                     .frame(width: 70,height: 70)
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(Color("myOrange"))
                 Text(name)
-                    .foregroundStyle(.black)
-                    .font(.system(size: 12))
+                    .foregroundStyle(.white)
+                    .myCustonFont(fontName: .sairaMedium, size: 14, valueScaleFactor: 0)
                 
                 
             }
