@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftData
 
 struct HomeView: View {
-    
     @Environment(\.modelContext) var context
     
     var body: some View {
@@ -17,6 +16,7 @@ struct HomeView: View {
             List{
                 HomeButton(name: "Avaliação", destination: SelectEvaluationView())
                     .padding(20)
+
                 HomeButton(name: "Flexao", destination: PUView(viewModel: PUViewModel(model: PUModel())))
                     .padding(20)
                 HomeButton(name: "Gráficos", destination: GraphChooseView())
@@ -51,7 +51,8 @@ struct HomeView: View {
     }
 }
 
-//#Preview {
-//    HomeView(runData: [])
-//}
+#Preview {
+    HomeView()
+        .environmentObject(HealthKitManager())
+}
 

@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Saira-Black.ttf</string>
+		<string>Saira-Bold.ttf</string>
+		<string>Saira-Medium.ttf</string>
+		<string>Saira-Regular.ttf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array/>
 	<key>WKBackgroundModes</key>

@@ -30,6 +30,10 @@
 		D908CAB02BFFD09A00A088B3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CAAF2BFFD09A00A088B3 /* UserModel.swift */; };
 		D908CAB22BFFD0A600A088B3 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CAB12BFFD0A600A088B3 /* Enum.swift */; };
 		D908CAB72BFFD14400A088B3 /* HomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CAB62BFFD14400A088B3 /* HomeButton.swift */; };
+		D91473602C0F8D90002A8380 /* Saira-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D914735C2C0F8D90002A8380 /* Saira-Regular.ttf */; };
+		D91473612C0F8D90002A8380 /* Saira-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D914735D2C0F8D90002A8380 /* Saira-Black.ttf */; };
+		D91473622C0F8D90002A8380 /* Saira-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D914735E2C0F8D90002A8380 /* Saira-Medium.ttf */; };
+		D91473632C0F8D90002A8380 /* Saira-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D914735F2C0F8D90002A8380 /* Saira-Bold.ttf */; };
 		D91846062BFFD1990076F3A3 /* HomeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91846052BFFD1990076F3A3 /* HomeButtonView.swift */; };
 		D91846092BFFD1DF0076F3A3 /* SelectEvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91846082BFFD1DF0076F3A3 /* SelectEvaluationView.swift */; };
 		D918460B2BFFD2010076F3A3 /* SelectionBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918460A2BFFD2010076F3A3 /* SelectionBox.swift */; };
@@ -48,6 +52,22 @@
 		D918462F2C00C8670076F3A3 /* RequestPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918462E2C00C8670076F3A3 /* RequestPermissionView.swift */; };
 		D93311872C03B4160077D9BE /* PermissionDeniedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93311862C03B4160077D9BE /* PermissionDeniedView.swift */; };
 		D93311892C03B4700077D9BE /* HealthKitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93311882C03B4700077D9BE /* HealthKitModel.swift */; };
+		D94FBF912C0DF51000C852DE /* InformationViewComponemt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94FBF902C0DF51000C852DE /* InformationViewComponemt.swift */; };
+		D981C9692C0BB02100003DCF /* ConfigureRunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981C9682C0BB02100003DCF /* ConfigureRunningView.swift */; };
+		D981C96B2C0BB66200003DCF /* SelectButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981C96A2C0BB66200003DCF /* SelectButtonComponent.swift */; };
+		D981C96D2C0BB76300003DCF /* ButtonNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981C96C2C0BB76300003DCF /* ButtonNext.swift */; };
+		D99FC9E22C0F91F200E7FC79 /* ModifierFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99FC9E12C0F91F200E7FC79 /* ModifierFonts.swift */; };
+		D99FC9E42C0FF3DC00E7FC79 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99FC9E32C0FF3DC00E7FC79 /* BackButton.swift */; };
+		D9A072732C0509C5004BD3A0 /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A072722C0509C5004BD3A0 /* ElapsedTimeView.swift */; };
+		D9A072752C0509F7004BD3A0 /* ElapsedTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A072742C0509F7004BD3A0 /* ElapsedTimeFormatter.swift */; };
+		D9A072772C050A4A004BD3A0 /* MetricsTimelineSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A072762C050A4A004BD3A0 /* MetricsTimelineSchedule.swift */; };
+		D9A072792C050C62004BD3A0 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A072782C050C62004BD3A0 /* Device.swift */; };
+		D9CDC9E02C0D571E003C20F1 /* StatisticTimeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CDC9DF2C0D571E003C20F1 /* StatisticTimeComponent.swift */; };
+		D9DDC0BB2C07AD260097B82C /* TimerWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DDC0BA2C07AD260097B82C /* TimerWorkoutView.swift */; };
+		D9E99D982C0BE298003F2E36 /* PickerTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E99D972C0BE298003F2E36 /* PickerTimerView.swift */; };
+		D9ECC89A2C0DF5C500A31138 /* VelocityViewComponemt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC8992C0DF5C500A31138 /* VelocityViewComponemt.swift */; };
+		D9ECC89C2C0DF5FB00A31138 /* HeartAndCaloriesViewComponemt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC89B2C0DF5FB00A31138 /* HeartAndCaloriesViewComponemt.swift */; };
+		D9ECC89E2C0DF62E00A31138 /* ExerciseProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC89D2C0DF62E00A31138 /* ExerciseProgressViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +119,10 @@
 		D908CAAF2BFFD09A00A088B3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		D908CAB12BFFD0A600A088B3 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		D908CAB62BFFD14400A088B3 /* HomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButton.swift; sourceTree = "<group>"; };
+		D914735C2C0F8D90002A8380 /* Saira-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Saira-Regular.ttf"; path = "../../../../../Downloads/fontsAscender/Saira-Regular.ttf"; sourceTree = "<group>"; };
+		D914735D2C0F8D90002A8380 /* Saira-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Saira-Black.ttf"; path = "../../../../../Downloads/fontsAscender/Saira-Black.ttf"; sourceTree = "<group>"; };
+		D914735E2C0F8D90002A8380 /* Saira-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Saira-Medium.ttf"; path = "../../../../../Downloads/fontsAscender/Saira-Medium.ttf"; sourceTree = "<group>"; };
+		D914735F2C0F8D90002A8380 /* Saira-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Saira-Bold.ttf"; path = "../../../../../Downloads/fontsAscender/Saira-Bold.ttf"; sourceTree = "<group>"; };
 		D91846052BFFD1990076F3A3 /* HomeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonView.swift; sourceTree = "<group>"; };
 		D91846082BFFD1DF0076F3A3 /* SelectEvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEvaluationView.swift; sourceTree = "<group>"; };
 		D918460A2BFFD2010076F3A3 /* SelectionBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionBox.swift; sourceTree = "<group>"; };
@@ -119,6 +143,22 @@
 		D91846302C011BB40076F3A3 /* Mini05-Watch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Mini05-Watch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D93311862C03B4160077D9BE /* PermissionDeniedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionDeniedView.swift; sourceTree = "<group>"; };
 		D93311882C03B4700077D9BE /* HealthKitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitModel.swift; sourceTree = "<group>"; };
+		D94FBF902C0DF51000C852DE /* InformationViewComponemt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewComponemt.swift; sourceTree = "<group>"; };
+		D981C9682C0BB02100003DCF /* ConfigureRunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureRunningView.swift; sourceTree = "<group>"; };
+		D981C96A2C0BB66200003DCF /* SelectButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButtonComponent.swift; sourceTree = "<group>"; };
+		D981C96C2C0BB76300003DCF /* ButtonNext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNext.swift; sourceTree = "<group>"; };
+		D99FC9E12C0F91F200E7FC79 /* ModifierFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModifierFonts.swift; path = ../../Model/ModifierFonts.swift; sourceTree = "<group>"; };
+		D99FC9E32C0FF3DC00E7FC79 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		D9A072722C0509C5004BD3A0 /* ElapsedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeView.swift; sourceTree = "<group>"; };
+		D9A072742C0509F7004BD3A0 /* ElapsedTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeFormatter.swift; sourceTree = "<group>"; };
+		D9A072762C050A4A004BD3A0 /* MetricsTimelineSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsTimelineSchedule.swift; sourceTree = "<group>"; };
+		D9A072782C050C62004BD3A0 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		D9CDC9DF2C0D571E003C20F1 /* StatisticTimeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTimeComponent.swift; sourceTree = "<group>"; };
+		D9DDC0BA2C07AD260097B82C /* TimerWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWorkoutView.swift; sourceTree = "<group>"; };
+		D9E99D972C0BE298003F2E36 /* PickerTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTimerView.swift; sourceTree = "<group>"; };
+		D9ECC8992C0DF5C500A31138 /* VelocityViewComponemt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelocityViewComponemt.swift; sourceTree = "<group>"; };
+		D9ECC89B2C0DF5FB00A31138 /* HeartAndCaloriesViewComponemt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartAndCaloriesViewComponemt.swift; sourceTree = "<group>"; };
+		D9ECC89D2C0DF62E00A31138 /* ExerciseProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseProgressViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +267,10 @@
 		D908CAAD2BFFD05100A088B3 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D914735D2C0F8D90002A8380 /* Saira-Black.ttf */,
+				D914735F2C0F8D90002A8380 /* Saira-Bold.ttf */,
+				D914735E2C0F8D90002A8380 /* Saira-Medium.ttf */,
+				D914735C2C0F8D90002A8380 /* Saira-Regular.ttf */,
 				D908CA9B2BFFD03700A088B3 /* Mini05_WatchApp.swift */,
 				D908CA9F2BFFD03800A088B3 /* Assets.xcassets */,
 			);
@@ -240,6 +284,10 @@
 				D908CAB12BFFD0A600A088B3 /* Enum.swift */,
 				D91846272BFFD65E0076F3A3 /* PUModel.swift */,
 				D93311882C03B4700077D9BE /* HealthKitModel.swift */,
+				C0EA943D2C0125340057E48B /* RunData.swift */,
+				D9A072742C0509F7004BD3A0 /* ElapsedTimeFormatter.swift */,
+				D9A072762C050A4A004BD3A0 /* MetricsTimelineSchedule.swift */,
+				D9A072782C050C62004BD3A0 /* Device.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,6 +332,9 @@
 			children = (
 				D91846082BFFD1DF0076F3A3 /* SelectEvaluationView.swift */,
 				D918460A2BFFD2010076F3A3 /* SelectionBox.swift */,
+				D981C9682C0BB02100003DCF /* ConfigureRunningView.swift */,
+				D981C96A2C0BB66200003DCF /* SelectButtonComponent.swift */,
+				D9E99D972C0BE298003F2E36 /* PickerTimerView.swift */,
 			);
 			path = SelectEvaluation;
 			sourceTree = "<group>";
@@ -311,6 +362,13 @@
 			isa = PBXGroup;
 			children = (
 				D91846172BFFD33A0076F3A3 /* ExerciseProgressView.swift */,
+				D9A072722C0509C5004BD3A0 /* ElapsedTimeView.swift */,
+				D9DDC0BA2C07AD260097B82C /* TimerWorkoutView.swift */,
+				D9CDC9DF2C0D571E003C20F1 /* StatisticTimeComponent.swift */,
+				D94FBF902C0DF51000C852DE /* InformationViewComponemt.swift */,
+				D9ECC8992C0DF5C500A31138 /* VelocityViewComponemt.swift */,
+				D9ECC89B2C0DF5FB00A31138 /* HeartAndCaloriesViewComponemt.swift */,
+				D9ECC89D2C0DF62E00A31138 /* ExerciseProgressViewModel.swift */,
 			);
 			path = ExerciseProgress;
 			sourceTree = "<group>";
@@ -327,8 +385,11 @@
 		D918461E2BFFD3AE0076F3A3 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D99FC9E12C0F91F200E7FC79 /* ModifierFonts.swift */,
 				D918461F2BFFD3C20076F3A3 /* ButtonTest.swift */,
 				D918462A2C0003DE0076F3A3 /* SectionExercise.swift */,
+				D981C96C2C0BB76300003DCF /* ButtonNext.swift */,
+				D99FC9E32C0FF3DC00E7FC79 /* BackButton.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -437,6 +498,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D908CAA32BFFD03800A088B3 /* Preview Assets.xcassets in Resources */,
+				D91473612C0F8D90002A8380 /* Saira-Black.ttf in Resources */,
+				D91473632C0F8D90002A8380 /* Saira-Bold.ttf in Resources */,
+				D91473622C0F8D90002A8380 /* Saira-Medium.ttf in Resources */,
+				D91473602C0F8D90002A8380 /* Saira-Regular.ttf in Resources */,
 				D908CAA02BFFD03800A088B3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,8 +516,11 @@
 				C0F01FF32C0FB50900FE6CC9 /* GraphExerciseAbdominalViewModel.swift in Sources */,
 				D908CA9E2BFFD03700A088B3 /* ContentView.swift in Sources */,
 				5538C6CB2BFFE21F00971930 /* AchievementView.swift in Sources */,
+				D9E99D982C0BE298003F2E36 /* PickerTimerView.swift in Sources */,
 				C0F01FF12C0FB4FB00FE6CC9 /* GraphExerciseAbdominalView.swift in Sources */,
 				C0EA943C2C0124F40057E48B /* GraphView.swift in Sources */,
+				D9DDC0BB2C07AD260097B82C /* TimerWorkoutView.swift in Sources */,
+				D9CDC9E02C0D571E003C20F1 /* StatisticTimeComponent.swift in Sources */,
 				D91846092BFFD1DF0076F3A3 /* SelectEvaluationView.swift in Sources */,
 				C0F01FE42C0FA7B100FE6CC9 /* GraphPushUpView.swift in Sources */,
 				C0F01FF52C0FB51800FE6CC9 /* AbdominalData.swift in Sources */,
@@ -460,19 +528,33 @@
 				C0F01FE02C07C75000FE6CC9 /* GraphExerciseViewModel.swift in Sources */,
 				C0EA94402C012F520057E48B /* GraphExerciseView.swift in Sources */,
 				D91846062BFFD1990076F3A3 /* HomeButtonView.swift in Sources */,
+				D94FBF912C0DF51000C852DE /* InformationViewComponemt.swift in Sources */,
 				D908CAB02BFFD09A00A088B3 /* UserModel.swift in Sources */,
+				D981C96B2C0BB66200003DCF /* SelectButtonComponent.swift in Sources */,
+				D981C96D2C0BB76300003DCF /* ButtonNext.swift in Sources */,
 				5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */,
 				C0F01FEA2C0FA80E00FE6CC9 /* PushUpData.swift in Sources */,
 				D918460B2BFFD2010076F3A3 /* SelectionBox.swift in Sources */,
+				D981C9692C0BB02100003DCF /* ConfigureRunningView.swift in Sources */,
 				D91846182BFFD33A0076F3A3 /* ExerciseProgressView.swift in Sources */,
 				D91846202BFFD3C20076F3A3 /* ButtonTest.swift in Sources */,
 				D91846152BFFD3110076F3A3 /* TabViewWorkout.swift in Sources */,
+				D99FC9E22C0F91F200E7FC79 /* ModifierFonts.swift in Sources */,
 				D91846102BFFD2CB0076F3A3 /* SummaryDataComponent.swift in Sources */,
 				D918461D2BFFD38F0076F3A3 /* StatusWorkoutView.swift in Sources */,
 				D918462B2C0003DE0076F3A3 /* SectionExercise.swift in Sources */,
+				D99FC9E42C0FF3DC00E7FC79 /* BackButton.swift in Sources */,
+				D9ECC89E2C0DF62E00A31138 /* ExerciseProgressViewModel.swift in Sources */,
 				D91846262BFFD6000076F3A3 /* PUView.swift in Sources */,
 				D908CAB22BFFD0A600A088B3 /* Enum.swift in Sources */,
+				D9ECC89C2C0DF5FB00A31138 /* HeartAndCaloriesViewComponemt.swift in Sources */,
 				D91846122BFFD2E10076F3A3 /* SummaryView.swift in Sources */,
+				D9ECC89A2C0DF5C500A31138 /* VelocityViewComponemt.swift in Sources */,
+				D908CAB72BFFD14400A088B3 /* HomeButton.swift in Sources */,
+				D93311872C03B4160077D9BE /* PermissionDeniedView.swift in Sources */,
+				D91846242BFFD5DC0076F3A3 /* PUViewModel.swift in Sources */,
+				D9A072752C0509F7004BD3A0 /* ElapsedTimeFormatter.swift in Sources */,
+				D9A072792C050C62004BD3A0 /* Device.swift in Sources */,
 				C0F01FEC2C0FAC9300FE6CC9 /* GraphChooseView.swift in Sources */,
 				D908CAB72BFFD14400A088B3 /* HomeButton.swift in Sources */,
 				D93311872C03B4160077D9BE /* PermissionDeniedView.swift in Sources */,
@@ -483,6 +565,8 @@
 				C0F01FEF2C0FB4D800FE6CC9 /* GraphAbdominalView.swift in Sources */,
 				C0F01FE62C0FA7D400FE6CC9 /* GraphExercisePushUpView.swift in Sources */,
 				D93311892C03B4700077D9BE /* HealthKitModel.swift in Sources */,
+				D9A072772C050A4A004BD3A0 /* MetricsTimelineSchedule.swift in Sources */,
+				D9A072732C0509C5004BD3A0 /* ElapsedTimeView.swift in Sources */,
 				D918462F2C00C8670076F3A3 /* RequestPermissionView.swift in Sources */,
 				D918461B2BFFD3720076F3A3 /* ButtonStatusComponent.swift in Sources */,
 				D918462D2C00C20A0076F3A3 /* HealthKitManager.swift in Sources */,
@@ -627,7 +711,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini05-Watch-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = mini05.Tracker;
+				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Para oferecer uma experiência completa e personalizada, nosso aplicativo precisa acessar seus dados de saúde. Isso nos permite rastrear suas atividades físicas, como exercícios e passos dados, para fornecer insights valiosos sobre sua saúde e bem-estar.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Nosso aplicativo necessita acessar e atualizar seus dados de saúde para fornecer um acompanhamento detalhado de suas atividades físicas e hábitos de vida. Isso inclui registrar informações sobre exercícios, monitorar métricas de saúde e oferecer recomendações personalizadas para melhorar seu condicionamento físico e bem-estar geral.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -637,7 +721,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = mini05.Tracker.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "mini05.Mini05-Watch.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -661,7 +745,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini05-Watch-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = mini05.Tracker;
+				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Para oferecer uma experiência completa e personalizada, nosso aplicativo precisa acessar seus dados de saúde. Isso nos permite rastrear suas atividades físicas, como exercícios e passos dados, para fornecer insights valiosos sobre sua saúde e bem-estar.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Nosso aplicativo necessita acessar e atualizar seus dados de saúde para fornecer um acompanhamento detalhado de suas atividades físicas e hábitos de vida. Isso inclui registrar informações sobre exercícios, monitorar métricas de saúde e oferecer recomendações personalizadas para melhorar seu condicionamento físico e bem-estar geral.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -671,7 +755,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = mini05.Tracker.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "mini05.Mini05-Watch.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -692,7 +776,7 @@
 				DEVELOPMENT_TEAM = 335BRL9A43;
 				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mini05.Tracker.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "mini05.Mini05-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -708,7 +792,7 @@
 				DEVELOPMENT_TEAM = 335BRL9A43;
 				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mini05.Tracker.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "mini05.Mini05-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
