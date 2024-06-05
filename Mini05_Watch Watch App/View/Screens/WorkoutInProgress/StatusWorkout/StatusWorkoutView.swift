@@ -53,7 +53,7 @@ struct StatusWorkoutView: View {
                 }
             }
             .navigationDestination(isPresented: $exerciseViewModel.endWorkout) {
-                SummaryView()
+//                SummaryView()
             }
             .onDisappear{
                 exerciseViewModel.isBackToView = false

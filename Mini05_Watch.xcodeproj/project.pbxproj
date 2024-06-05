@@ -14,6 +14,9 @@
 		C01C8C7F2C10D7AD001826D6 /* Saira-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */; };
 		C01C8C802C10D7AD001826D6 /* Saira-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7C2C10D7AD001826D6 /* Saira-Bold.ttf */; };
 		C01C8C842C10E05B001826D6 /* RunData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C832C10E05B001826D6 /* RunData.swift */; };
+		C01C8C8B2C110506001826D6 /* SummaryGeralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C8A2C110506001826D6 /* SummaryGeralView.swift */; };
+		C01C8C8D2C1105BE001826D6 /* SummaryGeralData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C8C2C1105BE001826D6 /* SummaryGeralData.swift */; };
+		C01C8C8F2C1105DD001826D6 /* SummaryGeralDataLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C8E2C1105DD001826D6 /* SummaryGeralDataLine.swift */; };
 		C0EA943C2C0124F40057E48B /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943B2C0124F40057E48B /* GraphView.swift */; };
 		C0EA94402C012F520057E48B /* GraphExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943F2C012F520057E48B /* GraphExerciseView.swift */; };
 		C0F01FE02C07C75000FE6CC9 /* GraphExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F01FDF2C07C75000FE6CC9 /* GraphExerciseViewModel.swift */; };
@@ -102,6 +105,9 @@
 		C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Medium.ttf"; sourceTree = "<group>"; };
 		C01C8C7C2C10D7AD001826D6 /* Saira-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Bold.ttf"; sourceTree = "<group>"; };
 		C01C8C832C10E05B001826D6 /* RunData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunData.swift; sourceTree = "<group>"; };
+		C01C8C8A2C110506001826D6 /* SummaryGeralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralView.swift; sourceTree = "<group>"; };
+		C01C8C8C2C1105BE001826D6 /* SummaryGeralData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralData.swift; sourceTree = "<group>"; };
+		C01C8C8E2C1105DD001826D6 /* SummaryGeralDataLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralDataLine.swift; sourceTree = "<group>"; };
 		C0EA943B2C0124F40057E48B /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		C0EA943F2C012F520057E48B /* GraphExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphExerciseView.swift; sourceTree = "<group>"; };
 		C0F01FDF2C07C75000FE6CC9 /* GraphExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphExerciseViewModel.swift; sourceTree = "<group>"; };
@@ -179,6 +185,16 @@
 				5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */,
 			);
 			path = Achievement;
+			sourceTree = "<group>";
+		};
+		C01C8C852C10E27A001826D6 /* SummaryComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D918460F2BFFD2CB0076F3A3 /* SummaryDataComponent.swift */,
+				C01C8C8C2C1105BE001826D6 /* SummaryGeralData.swift */,
+				C01C8C8E2C1105DD001826D6 /* SummaryGeralDataLine.swift */,
+			);
+			path = SummaryComponents;
 			sourceTree = "<group>";
 		};
 		C0EA943A2C01245D0057E48B /* Graph */ = {
@@ -341,8 +357,9 @@
 		D918460E2BFFD2B40076F3A3 /* Summary */ = {
 			isa = PBXGroup;
 			children = (
-				D918460F2BFFD2CB0076F3A3 /* SummaryDataComponent.swift */,
+				C01C8C8A2C110506001826D6 /* SummaryGeralView.swift */,
 				D91846112BFFD2E10076F3A3 /* SummaryView.swift */,
+				C01C8C852C10E27A001826D6 /* SummaryComponents */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -521,6 +538,7 @@
 				C0EA943C2C0124F40057E48B /* GraphView.swift in Sources */,
 				D9DDC0BB2C07AD260097B82C /* TimerWorkoutView.swift in Sources */,
 				D9CDC9E02C0D571E003C20F1 /* StatisticTimeComponent.swift in Sources */,
+				C01C8C8B2C110506001826D6 /* SummaryGeralView.swift in Sources */,
 				D91846092BFFD1DF0076F3A3 /* SelectEvaluationView.swift in Sources */,
 				C0F01FE42C0FA7B100FE6CC9 /* GraphPushUpView.swift in Sources */,
 				C0F01FF52C0FB51800FE6CC9 /* AbdominalData.swift in Sources */,
@@ -551,6 +569,7 @@
 				D91846122BFFD2E10076F3A3 /* SummaryView.swift in Sources */,
 				D9ECC89A2C0DF5C500A31138 /* VelocityViewComponemt.swift in Sources */,
 				D908CAB72BFFD14400A088B3 /* HomeButton.swift in Sources */,
+				C01C8C8F2C1105DD001826D6 /* SummaryGeralDataLine.swift in Sources */,
 				D93311872C03B4160077D9BE /* PermissionDeniedView.swift in Sources */,
 				D91846242BFFD5DC0076F3A3 /* PUViewModel.swift in Sources */,
 				D9A072752C0509F7004BD3A0 /* ElapsedTimeFormatter.swift in Sources */,
@@ -569,6 +588,7 @@
 				D918462F2C00C8670076F3A3 /* RequestPermissionView.swift in Sources */,
 				D918461B2BFFD3720076F3A3 /* ButtonStatusComponent.swift in Sources */,
 				D918462D2C00C20A0076F3A3 /* HealthKitManager.swift in Sources */,
+				C01C8C8D2C1105BE001826D6 /* SummaryGeralData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

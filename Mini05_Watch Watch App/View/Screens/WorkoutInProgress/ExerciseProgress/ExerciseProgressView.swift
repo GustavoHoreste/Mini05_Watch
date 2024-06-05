@@ -37,9 +37,9 @@ struct ExerciseProgressView: View {
                 }
             }
             .navigationDestination(isPresented: $callSummaryView) {
-                withAnimation {
-                    SummaryView()
-                }
+//                withAnimation {
+//                    SummaryView()
+//                }
             }
         }
     }
