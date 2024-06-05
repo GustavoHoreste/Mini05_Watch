@@ -10,35 +10,55 @@ import SwiftUI
 struct SummaryView: View {
     @EnvironmentObject private var healthManager: HealthKitManager
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
+    
+    var exerciseType: WorkoutViewsEnun
+    
+    @State private var navigateToNextView = false
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                SummaryDataComponent(title: "Total Time",
-                                     extensionName: "",
-                                     value: 0)
-                    .foregroundStyle(.yellow)
-                SummaryDataComponent(title: "Total Distance",
-                                     extensionName: "m",
-                                     value: healthManager.distanceWalkingRunning)
-                    .foregroundStyle(.green)
-                SummaryDataComponent(title: "Total Energy",
-                                     extensionName: "Cal",
-                                     value: healthManager.activeEnergyBurned)
-                        .foregroundStyle(.pink)
-                SummaryDataComponent(title: "Avg. Heart Rate",
-                                     extensionName: "bpm",
-                                     value: healthManager.heartRate)
-                    .foregroundStyle(.red)
-                SummaryDataComponent(title: "Avg. Speed",
-                                     extensionName: "M/s",
-                                     value: healthManager.runningSpeed) //se pa nao ta pegando velocidade media
-                    .foregroundStyle(.orange)
-                
-                NavigationLink {
-                    HomeView()
-                } label: {
-                    Text("Done")
+        NavigationStack {
+            ScrollView {
+                VStack {
+                    Text("Relatório")
+                        .myCustonFont(fontName: .sairaMedium, size: 25, valueScaleFactor: 0.8)
+                    Text(exerciseType.rawValue)
+                        .myCustonFont(fontName: .sairaRegular, size: 18, valueScaleFactor: 0.8)
+                        .foregroundStyle(.myOrange)
+                    HStack {
+                        SummaryDataComponent(title: "Tempo de corrida",
+                                             value: "20:05")
+                        SummaryDataComponent(title: "Tempo Recorde",
+                                             value: "48:10")
+                    }
+                    HStack {
+                        SummaryDataComponent(title: exerciseType.speedOrRep,
+                                             value: "20Km/h")
+                        SummaryDataComponent(title: exerciseType.speedOrRepRecord,
+                                             value: "67Km/h")
+                    }
+                    HStack {
+                        SummaryDataComponent(title: "Frequência cardíaca",
+                                             value: "138bpm")
+                        SummaryDataComponent(title: "Calorias queimadas",
+                                             value: "300kcal")
+                    }
+                    Button(action: {
+                        navigateToNextView.toggle()
+                    }, label: {
+                        Text("Iniciar próximo exercício")
+                            .padding(.leading, 15)
+                            .padding(.trailing, 15)
+                    })
+                    .myCustonFont(fontName: .sairaMedium, size: 12, valueScaleFactor: 0.8)
+                    .frame(width: .infinity)
+                    .padding()
+                    .background(.myOrange)
+                    .buttonStyle(.plain)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                }
+                .onDisappear{
+                    healthManager.resetWorkoutData()
+                    exerciseViewModel.reseatAll()
                 }
             }
             .scenePadding()
@@ -48,15 +68,17 @@ struct SummaryView: View {
             }
             .onAppear {
                 healthManager.togglePauseOrStart()
+
+
+            }
+            .navigationBarBackButtonHidden()
+            .navigationDestination(isPresented: $navigateToNextView) { SummaryView(exerciseType: .abdominal) // MUDAR PARA O CERTO
             }
         }
-        .navigationTitle("Summary")
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden()
     }
 }
 
-#Preview {
-    SummaryView()
-}
+//#Preview {
+//    SummaryView(exerciseType: .running12min)
+//}
 

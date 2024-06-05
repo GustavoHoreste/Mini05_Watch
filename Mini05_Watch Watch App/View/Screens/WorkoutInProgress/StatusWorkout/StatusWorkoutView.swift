@@ -62,6 +62,7 @@ struct StatusWorkoutView: View {
                 if exerciseViewModel.callSumaryView{
                     SummaryView()// Chama o sumario parcial
                 }
+//                SummaryView()
             }
             .onDisappear{
                 exerciseViewModel.isBackToView = false
