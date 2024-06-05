@@ -15,7 +15,6 @@ class HealthKitManager: NSObject, ObservableObject{
     private let readData: Set<HKObjectType> = DataRequest.readData
     private let writeData: Set<HKSampleType> = DataRequest.writeData
     
-    
     ///Dados de workout
     public var session: HKWorkoutSession?
     public var builder: HKLiveWorkoutBuilder?
@@ -33,7 +32,7 @@ class HealthKitManager: NSObject, ObservableObject{
     
     
     ///timer descrecente
-    @Published private(set) var totalDuration: TimeInterval = 720
+    @Published private(set) var totalDuration: TimeInterval = 20
     
     override init() { }
     
@@ -66,10 +65,7 @@ class HealthKitManager: NSObject, ObservableObject{
     }
     
 
-    //TODO: Mudar de onde a funcao e chamada
-    ///start workout
     public func startWorkout() async {
-        
         if session?.state.rawValue == 4 || session?.state.rawValue == 2{
             print("Pausado")
             return
@@ -90,7 +86,6 @@ class HealthKitManager: NSObject, ObservableObject{
         } catch {
             print("Error em comecar workout: ", error.localizedDescription)
         }
-        
     }
     
     private func executeExercise() async throws{
@@ -101,30 +96,7 @@ class HealthKitManager: NSObject, ObservableObject{
         let startDate = Date()
         self.session?.startActivity(with: startDate)
         try await builder?.beginCollection(at: startDate)
-
     }
-    
-    
-    ///Query de pesso e altura -> Utilizado no imc
-    public func queryUserData(_ type: HKQuantityTypeIdentifier) async -> String{
-        let type = HKQuantityType(type)
-        var results: [HKQuantitySample] = []
-        
-        let description = HKSampleQueryDescriptor(predicates: [.quantitySample(type: type)], sortDescriptors: [SortDescriptor(\.endDate, order: .reverse)], limit: 1)
-        
-        do{
-            results = try await description.result(for: healthStore)
-        }catch{
-            print("error in queryData: ", error.localizedDescription)
-        }
-        
-        for result in results{
-            print(result.quantity)
-            return String("\(result.quantity)")
-        }
-        return "nil"
-    }
-    
     
     
     private func updateStatistics(_ statistics: HKStatistics){
@@ -143,7 +115,8 @@ class HealthKitManager: NSObject, ObservableObject{
                 self.distanceWalkingRunning = statistics.sumQuantity()?.doubleValue(for: unit!) ?? 0
             case HKQuantityType(.runningSpeed):
                 unit = HKUnit.meter().unitDivided(by: .second())
-                self.runningSpeed = statistics.averageQuantity()?.doubleValue(for: unit!) ?? 0
+                self.runningSpeed = statistics.mostRecentQuantity()?.doubleValue(for: unit!) ?? 0
+//                self.runningSpeed = statistics.averageQuantity()?.doubleValue(for: unit!) ?? 0
             case HKQuantityType(.runningPower):
                 unit = HKUnit.watt()
                 self.runningPower = statistics.averageQuantity()?.doubleValue(for: unit!) ?? 0
@@ -167,7 +140,6 @@ class HealthKitManager: NSObject, ObservableObject{
         session?.pause()
     }
     
-
     public func togglePauseOrStart(){
         switch session?.state.rawValue{ ///E do tipo `HKWorkoutSessionState`
         case 2: ///session em execucao
@@ -226,7 +198,9 @@ extension HealthKitManager: HKLiveWorkoutBuilderDelegate{
                 print("Valor de workoutBuilder e nil ou invalido")
                 return
             }
-            print("Running: ", quantityType, "...")
+            DispatchQueue.main.async {
+                print("Rodando...")
+            }
             self.updateStatistics(statistics)
         }
     }

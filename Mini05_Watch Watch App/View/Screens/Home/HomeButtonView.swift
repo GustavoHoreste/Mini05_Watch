@@ -10,7 +10,6 @@ import SwiftData
 
 struct HomeView: View {
     @Environment(\.modelContext) var context
-    @Query(sort: \RunData.date) var runData: [RunData]
     
     private let buttons: [HomeButtonData] = [
         HomeButtonData(name: "Iniciar", destination: AnyView(SelectEvaluationView()), description: "Iniciar uma nova\n avaliação", id: 0),
@@ -101,7 +100,6 @@ struct HomeView: View {
                     //                    print(runData.description)
                     //                }
                 }
-            
             
         }
     }

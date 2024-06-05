@@ -9,42 +9,55 @@ import SwiftUI
 
 struct StatusWorkoutView: View {
     @EnvironmentObject private var healthManager: HealthKitManager
-    @State private var nextView: Bool = false
-    
+    @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
+
     var body: some View {
         NavigationStack{
-            VStack {
-                HStack {
-                    ButtonStatusComponent(symbol: ["pause.fill", "play.fill"],
-                                          nameButton: ["Pause", "Play"],
-                                          action:  {healthManager.togglePauseOrStart()},
-                                          isPauseOrPlay: true)
+            VStack(spacing: 0){
+                Text(exerciseViewModel.returnNameExercise())
+                    .myCustonFont(fontName: .sairaMedium, size: 21.5, valueScaleFactor: 0.8)
+                
+                HStack{
+                    ButtonStatusComponent(symbol: [.pauseSimbolo, .despauseSimbolo],
+                                          nameButton: ["Pausar", "Recomeçar"],
+                                          action:  {
+                                                healthManager.togglePauseOrStart()
+                                                exerciseViewModel.backToView()
+                                            })
                     
-                    Spacer()
-                    
-                    ButtonStatusComponent(symbol: ["xmark"],
-                                          nameButton: ["Sair"],
-                                          action:  
+                    ButtonStatusComponent(symbol: [.endSimbolo],
+                                          nameButton: ["Finalizar"],
+                                          action:
                                             {
                                                 healthManager.endSession()
-                                                nextView = true
-                                            },
-                                          isPauseOrPlay: false)
+                                                exerciseViewModel.toggleValueEnd()
+                                                exerciseViewModel.backToView()
+                                            })
                 }
                 
                 HStack{
-                    Spacer()
-                    ButtonStatusComponent(symbol: ["arrowshape.turn.up.right.fill"],
+                    ButtonStatusComponent(symbol: [.backSImbolo],
+                                          nameButton: ["Anterior"],
+                                          action:  {
+                                                
+                                          }).disabled(true)
+                    
+                    ButtonStatusComponent(symbol: [.endNext],
                                           nameButton: ["Próximo"],
-                                          action:  {print("Próximo")},
-                                          isPauseOrPlay: false)
-                }.padding(.top)
-                
-            }.padding(.top)
-            .navigationTitle("Status")
-                .navigationDestination(isPresented: $nextView) {
-                    SummaryView()
+                                          action:  {
+                                                //healthManager.togglePauseOrStart()
+                                                exerciseViewModel.nextExercise()
+                                                exerciseViewModel.backToView()
+                                          })
+                    
                 }
+            }
+            .navigationDestination(isPresented: $exerciseViewModel.endWorkout) {
+                SummaryView()
+            }
+            .onDisappear{
+                exerciseViewModel.isBackToView = false
+            }
         }
     }
 }
@@ -54,6 +67,7 @@ struct StatusWorkoutView: View {
 #Preview {
     StatusWorkoutView()
         .environmentObject(HealthKitManager())
+        .environmentObject(ExerciseProgressViewModel())
 }
 
 

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SummaryView: View {
     @EnvironmentObject private var healthManager: HealthKitManager
-    
+    @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -38,12 +39,15 @@ struct SummaryView: View {
                     HomeView()
                 } label: {
                     Text("Done")
-                }.onTapGesture{
-                    healthManager.resetWorkoutData()
                 }
-
             }
             .scenePadding()
+            .onDisappear{
+                healthManager.resetWorkoutData()
+                exerciseViewModel.reseatAll()
+            }
+
+
         }
         .navigationTitle("Summary")
         .navigationBarTitleDisplayMode(.inline)
