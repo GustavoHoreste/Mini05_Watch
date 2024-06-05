@@ -9,9 +9,9 @@ import SwiftUI
 
 struct SelectionBox: View {
     @State private var checkState: Bool = false
-    @Binding var selectedExercises: [String]
-    let exerciseName: String
-    var allExercises: [String]
+    @Binding var selectedExercises: [WorkoutViewsEnun]
+    let exerciseName: WorkoutViewsEnun
+    var allExercises: [WorkoutViewsEnun]
     var isCompleteButton: Bool
     
     var body: some View {
@@ -22,6 +22,9 @@ struct SelectionBox: View {
             if self.isCompleteButton {
                 if self.checkState {
                     self.selectedExercises = self.allExercises
+//                    if !self.selectedExercises.contains(.summary){
+//                        self.selectedExercises.append(.summary)
+//                    }
                 } else {
                     self.selectedExercises.removeAll()
                 }
@@ -49,7 +52,7 @@ struct SelectionBox: View {
                         Image(systemName: "circle")
                     }
                 }
-                Text(exerciseName)
+                Text(exerciseName.rawValue)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()

@@ -8,9 +8,5 @@
 import Foundation
 
 class PUModel {
-    var pushUps: Int
-    
-    init(pushUps: Int = 0) {
-        self.pushUps = pushUps
-    }
+    var pushUps: Float = 0
 }
