@@ -11,21 +11,22 @@ struct HeartAndCaloriesViewComponemt: View {
     @EnvironmentObject private var healthManager: HealthKitManager
 
     var body: some View {
-        VStack{
-            Rectangle()
-                .frame(height: 1)
+        VStack(spacing: 0){
+            Divider()
+                .overlay(Color(.spacer))
+                
             SectionExercise(model: SectionExerciseModel(
                                 exetensionSection: "bpm",
                                 systemImage: "bolt.heart",
                                 value: healthManager.heartRate))
             
-            Rectangle()
-                .frame(height: 1)
+            Divider()
+                .overlay(Color(.spacer))
             SectionExercise(model: SectionExerciseModel(
                                 exetensionSection: "cal",
                                 systemImage: "flame.fill",
                                 value: healthManager.activeEnergyBurned))
-        }
+        }.padding(.horizontal)
     }
 }
 

@@ -47,6 +47,7 @@
 		D981C96B2C0BB66200003DCF /* SelectButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981C96A2C0BB66200003DCF /* SelectButtonComponent.swift */; };
 		D981C96D2C0BB76300003DCF /* ButtonNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D981C96C2C0BB76300003DCF /* ButtonNext.swift */; };
 		D99FC9E22C0F91F200E7FC79 /* ModifierFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99FC9E12C0F91F200E7FC79 /* ModifierFonts.swift */; };
+		D99FC9E42C0FF3DC00E7FC79 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99FC9E32C0FF3DC00E7FC79 /* BackButton.swift */; };
 		D9A072732C0509C5004BD3A0 /* ElapsedTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A072722C0509C5004BD3A0 /* ElapsedTimeView.swift */; };
 		D9A072752C0509F7004BD3A0 /* ElapsedTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A072742C0509F7004BD3A0 /* ElapsedTimeFormatter.swift */; };
 		D9A072772C050A4A004BD3A0 /* MetricsTimelineSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A072762C050A4A004BD3A0 /* MetricsTimelineSchedule.swift */; };
@@ -126,7 +127,8 @@
 		D981C9682C0BB02100003DCF /* ConfigureRunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureRunningView.swift; sourceTree = "<group>"; };
 		D981C96A2C0BB66200003DCF /* SelectButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectButtonComponent.swift; sourceTree = "<group>"; };
 		D981C96C2C0BB76300003DCF /* ButtonNext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNext.swift; sourceTree = "<group>"; };
-		D99FC9E12C0F91F200E7FC79 /* ModifierFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierFonts.swift; sourceTree = "<group>"; };
+		D99FC9E12C0F91F200E7FC79 /* ModifierFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModifierFonts.swift; path = ../../Model/ModifierFonts.swift; sourceTree = "<group>"; };
+		D99FC9E32C0FF3DC00E7FC79 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		D9A072722C0509C5004BD3A0 /* ElapsedTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeView.swift; sourceTree = "<group>"; };
 		D9A072742C0509F7004BD3A0 /* ElapsedTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElapsedTimeFormatter.swift; sourceTree = "<group>"; };
 		D9A072762C050A4A004BD3A0 /* MetricsTimelineSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricsTimelineSchedule.swift; sourceTree = "<group>"; };
@@ -231,7 +233,6 @@
 				D9A072742C0509F7004BD3A0 /* ElapsedTimeFormatter.swift */,
 				D9A072762C050A4A004BD3A0 /* MetricsTimelineSchedule.swift */,
 				D9A072782C050C62004BD3A0 /* Device.swift */,
-				D99FC9E12C0F91F200E7FC79 /* ModifierFonts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -329,9 +330,11 @@
 		D918461E2BFFD3AE0076F3A3 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D99FC9E12C0F91F200E7FC79 /* ModifierFonts.swift */,
 				D918461F2BFFD3C20076F3A3 /* ButtonTest.swift */,
 				D918462A2C0003DE0076F3A3 /* SectionExercise.swift */,
 				D981C96C2C0BB76300003DCF /* ButtonNext.swift */,
+				D99FC9E32C0FF3DC00E7FC79 /* BackButton.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				D91846102BFFD2CB0076F3A3 /* SummaryDataComponent.swift in Sources */,
 				D918461D2BFFD38F0076F3A3 /* StatusWorkoutView.swift in Sources */,
 				D918462B2C0003DE0076F3A3 /* SectionExercise.swift in Sources */,
+				D99FC9E42C0FF3DC00E7FC79 /* BackButton.swift in Sources */,
 				D9ECC89E2C0DF62E00A31138 /* ExerciseProgressViewModel.swift in Sources */,
 				D91846262BFFD6000076F3A3 /* PUView.swift in Sources */,
 				D908CAB22BFFD0A600A088B3 /* Enum.swift in Sources */,

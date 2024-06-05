@@ -17,7 +17,7 @@ struct ConfigureRunningView: View {
                 Text("Corrida")
                     .font(.system(size: 21.5, weight: .medium))
                 
-                SelectBoxConponent(isSelect: $isSelectTime, nameButtom: "Tempo\nEstabelecido"){
+                SelectBoxConponent(isSelect: $isSelectTime, nameButtom: "Tempo Estabelecido"){
                     self.isNotSelectTime = false
                 }
                 SelectBoxConponent(isSelect: $isNotSelectTime, nameButtom: "Tempo livre"){
@@ -39,7 +39,7 @@ struct ConfigureRunningView: View {
                 self.isSelectTime = false
                 self.isNotSelectTime = false
             }
-        }
+        }.myBackButton()
     }
 }
 

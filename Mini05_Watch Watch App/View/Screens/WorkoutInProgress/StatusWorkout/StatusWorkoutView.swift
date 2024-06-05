@@ -13,43 +13,45 @@ struct StatusWorkoutView: View {
 
     var body: some View {
         NavigationStack{
-            VStack {
-                HStack {
-                    ButtonStatusComponent(symbol: ["pause.fill", "play.fill"],
-                                          nameButton: ["Pause", "Play"],
+            VStack(spacing: 0){
+                Text(exerciseViewModel.returnNameExercise())
+                    .myCustonFont(fontName: .sairaMedium, size: 21.5, valueScaleFactor: 0.8)
+                
+                HStack{
+                    ButtonStatusComponent(symbol: [.pauseSimbolo, .despauseSimbolo],
+                                          nameButton: ["Pausar", "Recomeçar"],
                                           action:  {
                                                 healthManager.togglePauseOrStart()
                                                 exerciseViewModel.backToView()
-                                            },
-                                          isPauseOrPlay: true)
+                                            })
                     
-                    Spacer()
-                    ButtonStatusComponent(symbol: ["xmark"],
-                                          nameButton: ["Sair"],
-                                          action:  
+                    ButtonStatusComponent(symbol: [.endSimbolo],
+                                          nameButton: ["Finalizar"],
+                                          action:
                                             {
                                                 healthManager.endSession()
                                                 exerciseViewModel.toggleValueEnd()
                                                 exerciseViewModel.backToView()
-                                            },
-                                          isPauseOrPlay: false)
+                                            })
                 }
                 
                 HStack{
-                    Spacer()
-                    ButtonStatusComponent(symbol: ["arrowshape.turn.up.right.fill"],
+                    ButtonStatusComponent(symbol: [.backSImbolo],
+                                          nameButton: ["Anterior"],
+                                          action:  {
+                                                
+                                          }).disabled(true)
+                    
+                    ButtonStatusComponent(symbol: [.endNext],
                                           nameButton: ["Próximo"],
                                           action:  {
-                                                print("Próximo")
+                                                //healthManager.togglePauseOrStart()
                                                 exerciseViewModel.nextExercise()
                                                 exerciseViewModel.backToView()
-                                            },
-                                          isPauseOrPlay: false)
-                }.padding(.top)
-                
+                                          })
+                    
+                }
             }
-            .padding(.top)
-            .navigationTitle(exerciseViewModel.selectExercise.first?.rawValue ?? "Status")
             .navigationDestination(isPresented: $exerciseViewModel.endWorkout) {
                 SummaryView()
             }
@@ -65,6 +67,7 @@ struct StatusWorkoutView: View {
 #Preview {
     StatusWorkoutView()
         .environmentObject(HealthKitManager())
+        .environmentObject(ExerciseProgressViewModel())
 }
 
 

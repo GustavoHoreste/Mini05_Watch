@@ -15,18 +15,6 @@ struct HomeView: View {
     var body: some View {
         NavigationStack{
             List{
-                Text("ola mundo Saira-Regular")
-                    .myCustonFont(fontName: .sairaRegular, size: 20)
-                
-                Text("ola mundo Saira-Black")
-                    .myCustonFont(fontName: .sairaBlack, size: 20)
-                
-                Text("ola mundo Saira-Medium")
-                    .myCustonFont(fontName: .sairaMedium, size: 20)
-                
-                Text("ola mundo Saira-Bold")
-                    .myCustonFont(fontName: .sairaBold, size: 20)
-                
                 HomeButton(name: "Avaliação", destination: SelectEvaluationView())
                     .padding(20)
 //                HomeButton(name: "Gráficos", destination: GraphView())

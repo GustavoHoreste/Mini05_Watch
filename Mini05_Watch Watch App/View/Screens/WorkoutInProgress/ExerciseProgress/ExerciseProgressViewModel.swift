@@ -36,6 +36,7 @@ class ExerciseProgressViewModel: ObservableObject{
         self.selectExercise = []
         self.endWorkout = false
         self.isBackToView = false
+        self.startDate = nil
 //        self.isDecrementingTimer = false
     }
     

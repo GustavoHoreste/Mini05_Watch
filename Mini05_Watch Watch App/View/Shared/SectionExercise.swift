@@ -13,14 +13,14 @@ struct SectionExercise: View {
     var body: some View {
         HStack{
             Text("\(formattedValue())\(model.exetensionSection)")
-                .font(.system(size: 21.5))
+                .myCustonFont(fontName: .sairaRegular, size: 21.5, valueScaleFactor: 0.8)
             
             Spacer()
-            
             Image(systemName: model.systemImage)
-                .font(.system(size: 21.5))
+                .myCustonFont(fontName: .sairaRegular, size: 21.5, valueScaleFactor: 0.8)
+                .foregroundStyle(Color(.myOrange))
+            
         }.padding(.horizontal)
-
     }
 }
 

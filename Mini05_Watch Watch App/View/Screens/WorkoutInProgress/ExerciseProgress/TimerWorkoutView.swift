@@ -11,7 +11,6 @@ struct TimerWorkoutView: View {
     @EnvironmentObject private var healthManager: HealthKitManager
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
     
-    
     var body: some View {
         VStack(alignment: .center){
             Text(self.exerciseViewModel.returnNameExercise())
@@ -49,6 +48,9 @@ struct TimerWorkoutView: View {
 
 extension TimerWorkoutView{
     private func upadateTimerValue(at value: Date) -> Double{
+        if exerciseViewModel.startDate == nil{
+            exerciseViewModel.startDate = Date()
+        }
         if exerciseViewModel.isDecrementingTimer && exerciseViewModel.selectExercise.first == .running12min{
             return exerciseViewModel.remainingTime(at: value)
         }

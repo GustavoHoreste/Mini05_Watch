@@ -17,7 +17,7 @@ struct SelectBoxConponent: View {
             Image(systemName: isSelect ? "smallcircle.filled.circle" : "circle")
             Text(nameButtom)
                 .lineLimit(2)
-                .font(.system(size: 12))
+                .myCustonFont(fontName: .sairaRegular, size: 16, valueScaleFactor: 0.5)
         }.onTapGesture {
             self.isSelect.toggle()
             self.action()

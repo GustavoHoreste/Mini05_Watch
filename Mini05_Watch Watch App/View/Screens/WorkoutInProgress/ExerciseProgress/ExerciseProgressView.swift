@@ -18,7 +18,7 @@ struct ExerciseProgressView: View {
                 switch exerciseViewModel.selectExercise.first ?? .running12min{
                 case .running12min:
                     MakeExerciseProgressView{
-                        InformationViewComponemt(nameExercise: "Corrida",
+                        InformationViewComponemt(nameExercise: exerciseViewModel.returnNameExercise(),
                                                  value: healthManager.runningSpeed)
                     }
                 case .pushUps, .abdominal:
@@ -35,11 +35,8 @@ struct ExerciseProgressView: View {
                 if exerciseViewModel.selectExercise.first == .summary{
                     self.callSummaryView = true
                 }
-//                exerciseViewModel.injectionStartDate(healthManager.builder?.startDate ?? Date())
-                exerciseViewModel.startDate = Date()
             }
             .navigationDestination(isPresented: $callSummaryView) {
-//                self.healthManager.endSession()
                 withAnimation {
                     SummaryView()
                 }
@@ -63,6 +60,7 @@ struct MakeExerciseProgressView<T: View>: View {
             TimerWorkoutView()
             self.content
         }.tabViewStyle(.carousel)
+//            .background(.bg)
     }
 }
 

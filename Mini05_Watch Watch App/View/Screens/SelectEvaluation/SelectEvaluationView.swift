@@ -33,7 +33,9 @@ struct SelectEvaluationView: View {
                     NavigationLink("NextView") {
                         self.configRinning()
                     }
+                    .disabled(exerciseViewModel.selectExercise.isEmpty)
             }
+            .myBackButton()
         }
     }
 }
@@ -51,6 +53,6 @@ extension SelectEvaluationView{
 
 #Preview {
     SelectEvaluationView()
-        .environmentObject(HealthKitManager())
+        .environmentObject(ExerciseProgressViewModel())
 }
 

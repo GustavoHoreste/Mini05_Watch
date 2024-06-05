@@ -8,26 +8,29 @@
 import SwiftUI
 
 struct ButtonStatusComponent: View {
-    let symbol: [String]
+    let symbol: [ImageResource]
     let nameButton: [String]
     let action: () -> Void
-    let isPauseOrPlay: Bool
+//    let isPauseOrPlay: Bool
     
     @State var buttonChange: Bool = false
     
     var body: some View {
-        VStack{
+        VStack(alignment: .center, spacing: -3){
             Button{
                 verifiStatusButton()
             }label: {
-                Image(systemName: buttonChange ? symbol[1] : symbol[0])
-                    
-            }.frame(maxWidth: DeviceScreen.getDimension(proportion: 0.4, forWidth: true),
-                    maxHeight: DeviceScreen.getDimension(proportion: 0.15, forWidth: false))
-                
+                Image(buttonChange ? symbol[1] : symbol[0])
+                    .frame(width: DeviceScreen.getDimension(proportion: 0.45, forWidth: true),
+                            height: DeviceScreen.getDimension(proportion: 0.35, forWidth: true))
+            }
+            .buttonStyle(.plain)
+            .background(
+                RoundedRectangle(cornerRadius: 9)
+            )
+            
             Text(buttonChange ? nameButton[1] : nameButton[0])
-                .font(.footnote)
-                .padding(.top)
+                .myCustonFont(fontName: .sairaMedium, size: 14, valueScaleFactor: 0.8)
         }
     }
 }
@@ -36,7 +39,7 @@ struct ButtonStatusComponent: View {
 extension ButtonStatusComponent{
     //TODO: - Verifica se e butao e de play e pause, se for, a logica de mudar label e ativada.
     private func verifiStatusButton(){
-        if isPauseOrPlay{
+        if nameButton.first == "Pause"{
             buttonChange.toggle()
             self.action()
             return
@@ -46,9 +49,8 @@ extension ButtonStatusComponent{
 }
 
 #Preview {
-    ButtonStatusComponent(symbol: ["pause.fill", "play.fill"],
+    ButtonStatusComponent(symbol: [.pauseSimbolo, .despauseSimbolo],
                           nameButton: ["Pause", "Play"],
-                          action: {print("ola mundo")},
-                          isPauseOrPlay: true)
+                          action: {print("ola mundo")})
 }
 
