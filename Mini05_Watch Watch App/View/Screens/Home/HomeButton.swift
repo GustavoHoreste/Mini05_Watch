@@ -20,7 +20,7 @@ struct HomeButton<Destination: View>: View {
                     .foregroundStyle(.gray)
                 Text(name)
                     .foregroundStyle(.black)
-                    .font(.caption)
+                    .font(.system(size: 12))
                 
                 
             }
