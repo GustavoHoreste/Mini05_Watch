@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5538C6CB2BFFE21F00971930 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CA2BFFE21F00971930 /* AchievementView.swift */; };
 		5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */; };
-		55B1D2B62C10EB8100878B4A /* RunData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1D2B52C10EB8100878B4A /* RunData.swift */; };
 		C01C8C7D2C10D7AD001826D6 /* Saira-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C792C10D7AD001826D6 /* Saira-Regular.ttf */; };
 		C01C8C7E2C10D7AD001826D6 /* Saira-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7A2C10D7AD001826D6 /* Saira-Black.ttf */; };
 		C01C8C7F2C10D7AD001826D6 /* Saira-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */; };
@@ -98,7 +97,6 @@
 /* Begin PBXFileReference section */
 		5538C6CA2BFFE21F00971930 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
 		5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementIcon.swift; sourceTree = "<group>"; };
-		55B1D2B52C10EB8100878B4A /* RunData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunData.swift; sourceTree = "<group>"; };
 		C01C8C792C10D7AD001826D6 /* Saira-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Regular.ttf"; sourceTree = "<group>"; };
 		C01C8C7A2C10D7AD001826D6 /* Saira-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Black.ttf"; sourceTree = "<group>"; };
 		C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Medium.ttf"; sourceTree = "<group>"; };
@@ -535,7 +533,6 @@
 				D981C96B2C0BB66200003DCF /* SelectButtonComponent.swift in Sources */,
 				D981C96D2C0BB76300003DCF /* ButtonNext.swift in Sources */,
 				5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */,
-				55B1D2B62C10EB8100878B4A /* RunData.swift in Sources */,
 				C0F01FEA2C0FA80E00FE6CC9 /* PushUpData.swift in Sources */,
 				D918460B2BFFD2010076F3A3 /* SelectionBox.swift in Sources */,
 				D981C9692C0BB02100003DCF /* ConfigureRunningView.swift in Sources */,

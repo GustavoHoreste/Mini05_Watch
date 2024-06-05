@@ -12,7 +12,7 @@ struct HomeView: View {
     @Environment(\.modelContext) var context
     
     private let buttons: [HomeButtonData] = [
-        HomeButtonData(name: "Iniciar", destination: AnyView(SelectEvaluationView()), description: "Iniciar uma nova \navaliação", id: 0),
+        HomeButtonData(name: "Iniciar", destination: AnyView(SelectEvaluationView()), description: "Iniciar uma nova\n avaliação", id: 0),
         HomeButtonData(name: "Avaliações", destination: AnyView(GraphView()), description: "Visualizar avaliações\n passadas", id: 1),
     ]
     
@@ -20,31 +20,30 @@ struct HomeView: View {
         NavigationStack{
                 ScrollView(.horizontal, showsIndicators: false){
                     LazyHStack{
+                        Rectangle()
+                            .frame(width: 30)
+                            .foregroundStyle(.clear)
+                        
                         ForEach(buttons, id: \.name) { button in
+                            
                             VStack{
                                 if button.id == 0 {
                                     Text("Ascender")
-                                        .myCustonFont(fontName: .sairaMedium, size: 20, valueScaleFactor: 12)
-                                        .foregroundStyle(Color("myOrange"))
-                                        .padding(.top, -9)
-                                        .padding(.trailing, 87)
-                                        .padding(.bottom, -15)
+                                        .padding(.trailing, 43)
                                         .scrollTransition(axis: .horizontal) { content, phase in
                                             content
                                                 .opacity(phase.isIdentity ? 1 : 0.2)
                                         }
                                     Text(button.description)
-                                        .myCustonFont(fontName: .sairaRegular, size: 14, valueScaleFactor: 0)
+                                        .font(.caption)
                                         .multilineTextAlignment(.leading)
-                                        .padding(.trailing, 60)
-                                        .padding(.bottom, -5)
                                         .scrollTransition(axis: .horizontal) { content, phase in
                                             content
                                                 .opacity(phase.isIdentity ? 1 : 0.2)
                                         }
                                 } else if button.id == 1 {
                                     Text(button.description)
-                                        .myCustonFont(fontName: .sairaRegular, size: 14, valueScaleFactor: 0)
+                                        .font(.caption)
                                         .multilineTextAlignment(.trailing)
                                         .scrollTransition(axis: .horizontal) { content, phase in
                                             content
@@ -52,24 +51,23 @@ struct HomeView: View {
                                         }
 
                                 }
-                                HStack{
-                                    HomeButton(name: button.name, destination: button.destination)
-                                        .scrollTransition(axis: .horizontal) { content, phase in
-                                            content
-                                                .scaleEffect(x: phase.isIdentity ? 1 : 0.4,
-                                                             y: phase.isIdentity ? 1 : 0.4)
-                                                .offset(x: phase.isIdentity ? 1 : 2,
-                                                        y: phase.isIdentity ? 1 : 30)
-                                                .opacity(phase.isIdentity ? 1 : 0.2)
-                                            
-                                        }
-                                        .padding()
-                                        .padding(.leading, (button.id != 0) ? 1 : -1)
-                                        .padding(.trailing, (button.id == 0) ? 1 : 20)
-                                }
+                                Spacer()
+                                HomeButton(name: button.name, destination: button.destination)
+                                    .scrollTransition(axis: .horizontal) { content, phase in
+                                        content
+                                            .scaleEffect(x: phase.isIdentity ? 1 : 0.4,
+                                                         y: phase.isIdentity ? 1 : 0.4)
+                                            .offset(x: phase.isIdentity ? 1 : 2,
+                                                    y: phase.isIdentity ? 1 : 30)
+                                            .opacity(phase.isIdentity ? 1 : 0.2)
+                                        
+                                    }
+                                    .padding(10)
                             }
                         }
-                        
+                        Rectangle()
+                            .frame(width: 30)
+                            .foregroundStyle(.clear)
                     }
                     
                     //                Button("Save data") {
