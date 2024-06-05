@@ -13,19 +13,25 @@ struct HomeButton<Destination: View>: View {
     
     var body: some View {
         NavigationLink(destination: destination){
-            HStack {
-                Spacer()
+            ZStack{
+                RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
+                    .rotation(.degrees(45))
+                    .frame(width: 70,height: 70)
+                    .foregroundStyle(.gray)
                 Text(name)
-                    .padding(15)
-                Spacer()
+                    .foregroundStyle(.black)
+                    .font(.system(size: 12))
+                
+                
             }
         }
+        .buttonStyle(PlainButtonStyle())
     }
 }
 
 
 #Preview {
     HomeButton(name: "Avaliação", destination: ContentView())
-        
+    
 }
 
