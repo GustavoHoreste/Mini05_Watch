@@ -47,6 +47,7 @@ struct SummaryView: View {
                         healthManager.resumeSession()
                         exerciseViewModel.callSumaryView = false
                         exerciseViewModel.nextExercise()
+                        exerciseViewModel.startDate = nil
                         exerciseViewModel.backToView()
                         self.dismiss()
                     }, label: {

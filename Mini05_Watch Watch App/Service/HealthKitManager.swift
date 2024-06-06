@@ -191,7 +191,6 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
                             self.calcFinishDate(date)
                         }
                     }
-//                    workout?.allStatistics.
                 }
             }
         }
