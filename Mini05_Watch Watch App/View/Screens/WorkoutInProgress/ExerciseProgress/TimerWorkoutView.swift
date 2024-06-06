@@ -42,8 +42,7 @@ struct TimerWorkoutView: View {
             .padding(.top)
             .onChange(of: exerciseViewModel.selectExercise) { oldValue, newValue in
                 if newValue.count != oldValue.count{
-                    exerciseViewModel.startDate = Date()
-                    healthManager.calcFinishDate(exerciseViewModel.startDate!, newValue.first ?? .summary)
+//                    exerciseViewModel.startDate = Date()
                     self.canCallSummaryView = true
                     print("nova date")
                 }

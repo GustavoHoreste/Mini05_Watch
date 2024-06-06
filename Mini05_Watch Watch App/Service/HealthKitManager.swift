@@ -214,8 +214,6 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
                             print(self.timerFinishGeneral)
                         }
                     }
-                    let test = workout?.allStatistics
-                    
                 }
             }
         }

@@ -105,11 +105,6 @@ struct HomeView: View {
                     //                    print(runData.description)
                     //                }
                 }
-                
-                .onAppear {
-                    exerciseViewModel.reseatAll()
-                    healthManager.resetWorkoutData()
-                }
         }.navigationBarBackButtonHidden()
     }
 }

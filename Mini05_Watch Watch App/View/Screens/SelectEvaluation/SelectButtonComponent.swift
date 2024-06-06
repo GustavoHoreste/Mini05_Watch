@@ -14,7 +14,7 @@ struct SelectBoxConponent: View {
     
     var body: some View {
         HStack{
-            Image(systemName: isSelect ? "smallcircle.filled.circle" : "circle")
+            Image(systemName: isSelect ? "circle.inset.filled" : "circle")
             Text(nameButtom)
                 .lineLimit(2)
                 .myCustonFont(fontName: .sairaRegular, size: 16, valueScaleFactor: 0.5)
