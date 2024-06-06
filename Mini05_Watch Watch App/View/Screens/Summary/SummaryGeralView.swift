@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct SummaryGeralView: View {
-//    @EnvironmentObject private var healthManager: HealthKitManager
+    @EnvironmentObject private var healthManager: HealthKitManager
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
     
     @Environment(\.modelContext) var modelContext

@@ -38,6 +38,14 @@ enum WorkoutViewsEnun: String{
         }
     }
     
+    var keyPathTimer: KeyPath<HealthKitManager, Double>{
+        switch self {
+        case .running12min: return \.timerFinishRun
+        case .pushUps: return \.timerFinishPushUps
+        default: return \.timerFinishAbdominal
+        }
+    }
+    
 }
 
 
