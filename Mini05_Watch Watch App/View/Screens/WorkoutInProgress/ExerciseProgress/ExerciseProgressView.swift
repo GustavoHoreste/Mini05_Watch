@@ -15,7 +15,7 @@ struct ExerciseProgressView: View {
     var body: some View {
         NavigationStack{
             Group{
-                switch exerciseViewModel.selectExercise.first ?? .running12min{
+                switch exerciseViewModel.selectExercise.first ?? .running12min {
                 case .running12min:
                     MakeExerciseProgressView{
                         InformationViewComponemt(nameExercise: exerciseViewModel.returnNameExercise(),
@@ -24,7 +24,7 @@ struct ExerciseProgressView: View {
                 case .pushUps, .abdominal:
                     MakeExerciseProgressView {
                         InformationViewComponemt(nameExercise: "Abdominal",
-                                                 value: healthManager.runningSpeed)
+                                                 value: exerciseViewModel.abdomemTrincado)
                     }
                 default:
                     EmptyView()
