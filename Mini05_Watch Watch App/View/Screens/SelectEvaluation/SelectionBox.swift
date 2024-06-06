@@ -55,7 +55,7 @@ struct SelectionBox: View {
                 Text("|")
                     .padding(-5)
                     .padding(.top, 3)
-                Image(systemName: "figure.run")
+//                Image(systemName: "figure.run")
                 Text(exerciseName.rawValue)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
