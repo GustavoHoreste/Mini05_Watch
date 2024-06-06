@@ -44,9 +44,10 @@ struct SummaryView: View {
                         SummaryDataComponent(title: "Frequência cardíaca",
                                              value: "\(Int(healthManager.heartRate))bpm")
                         SummaryDataComponent(title: "Calorias queimadas",
-                                             value: "\(Int(healthManager.activeEnergyBurned))kcal")
+                                             value: "\(Int(healthManager.calories))kcal")
                     }
                     Button(action: {
+                        healthManager.calories = 0
                         healthManager.resumeSession()
                         exerciseViewModel.callSumaryView = false
                         exerciseViewModel.nextExercise()

@@ -71,15 +71,15 @@ struct StatusWorkoutView: View {
         print("SELECT EXERCISE FIRST: \(exerciseViewModel.selectExercise.first!)")
         switch exerciseViewModel.selectExercise.first! {
         case .running12min:
-            let runData = RunData(date: Date(), totalEnergy: healthManager.activeEnergyBurned, avgHeartRate: healthManager.heartRate, avgSpeed: healthManager.runningSpeed)
+            let runData = RunData(date: Date(), totalEnergy: healthManager.calories, avgHeartRate: healthManager.heartRate, avgSpeed: healthManager.runningSpeed)
             
             modelContext.insert(runData)
         case .pushUps:
-            let pushUpData = PushUpData(date: Date(), totalEnergy: healthManager.activeEnergyBurned, avgHeartRate: healthManager.heartRate, repetitions: healthManager.repetitions)
+            let pushUpData = PushUpData(date: Date(), totalEnergy: healthManager.calories, avgHeartRate: healthManager.heartRate, repetitions: healthManager.repetitions)
             
             modelContext.insert(pushUpData)
         default:
-            let abdominalData = AbdominalData(date: Date(), totalEnergy: healthManager.activeEnergyBurned, avgHeartRate: healthManager.heartRate, repetitions: healthManager.repetitions)
+            let abdominalData = AbdominalData(date: Date(), totalEnergy: healthManager.calories, avgHeartRate: healthManager.heartRate, repetitions: healthManager.repetitions)
             
             modelContext.insert(abdominalData)
         }

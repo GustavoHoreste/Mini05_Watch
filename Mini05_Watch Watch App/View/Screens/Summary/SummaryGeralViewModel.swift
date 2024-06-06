@@ -111,13 +111,13 @@ class SummaryGeralViewModel {
         
         let total = dataArray.reduce(0, +)
         
-        array.append("\(Int(total.isNaN ? 0 : total))kcal")
+        array.append("\(String(format: "%.1f", total.isNaN ? 0 : total))kcal")
 
         for enun in enums {
             switch enun {
-            case .running12min: array.append("\(Int(lastRun))kcal")
-            case .pushUps: array.append("\(Int(lastPush))kcal")
-            default: array.append("\(Int(lastAbd))kcal")
+            case .running12min: array.append("\(String(format: "%.1f", total.isNaN ? 0 : lastRun))kcal")
+            case .pushUps: array.append("\(String(format: "%.1f", total.isNaN ? 0 : lastPush))kcal")
+            default: array.append("\(String(format: "%.1f", total.isNaN ? 0 : lastAbd))kcal")
             }
         }
         
