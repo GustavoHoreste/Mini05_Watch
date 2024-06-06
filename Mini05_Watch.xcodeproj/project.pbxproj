@@ -730,7 +730,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini05-Watch-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
+				INFOPLIST_KEY_CFBundleDisplayName = Ascender;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Para oferecer uma experiência completa e personalizada, nosso aplicativo precisa acessar seus dados de saúde. Isso nos permite rastrear suas atividades físicas, como exercícios e passos dados, para fornecer insights valiosos sobre sua saúde e bem-estar.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Nosso aplicativo necessita acessar e atualizar seus dados de saúde para fornecer um acompanhamento detalhado de suas atividades físicas e hábitos de vida. Isso inclui registrar informações sobre exercícios, monitorar métricas de saúde e oferecer recomendações personalizadas para melhorar seu condicionamento físico e bem-estar geral.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -764,7 +764,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini05-Watch-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
+				INFOPLIST_KEY_CFBundleDisplayName = Ascender;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Para oferecer uma experiência completa e personalizada, nosso aplicativo precisa acessar seus dados de saúde. Isso nos permite rastrear suas atividades físicas, como exercícios e passos dados, para fornecer insights valiosos sobre sua saúde e bem-estar.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Nosso aplicativo necessita acessar e atualizar seus dados de saúde para fornecer um acompanhamento detalhado de suas atividades físicas e hábitos de vida. Isso inclui registrar informações sobre exercícios, monitorar métricas de saúde e oferecer recomendações personalizadas para melhorar seu condicionamento físico e bem-estar geral.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";

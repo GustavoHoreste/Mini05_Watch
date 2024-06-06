@@ -10,7 +10,7 @@ import SwiftUI
 struct TimerWorkoutView: View {
     @EnvironmentObject private var healthManager: HealthKitManager
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
-    @State private var nextView: Bool = false
+    @State private var canCallSummaryView: Bool = true
     
     var body: some View {
         VStack(alignment: .center, spacing: 0){
@@ -43,6 +43,7 @@ struct TimerWorkoutView: View {
             .onChange(of: exerciseViewModel.selectExercise) { oldValue, newValue in
                 if newValue.count != oldValue.count{
                     exerciseViewModel.startDate = Date()
+                    self.canCallSummaryView = true
                     print("nova date")
                 }
             }
@@ -57,6 +58,13 @@ extension TimerWorkoutView{
         }
         if exerciseViewModel.isDecrementingTimer && exerciseViewModel.selectExercise.first == .running12min && !exerciseViewModel.toSummaryViewAfterTime{
             let time = exerciseViewModel.remainingTime(at: value)
+            
+            if time == 0 && self.canCallSummaryView {
+                self.exerciseViewModel.callSumarryView()
+                DispatchQueue.main.async {
+                    self.canCallSummaryView = false
+                }
+            }
             return time
         }
         return value.timeIntervalSince(exerciseViewModel.startDate!)

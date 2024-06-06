@@ -44,8 +44,9 @@ struct SummaryView: View {
                                              value: "300kcal")
                     }
                     Button(action: {
-                        exerciseViewModel.nextExercise()
                         healthManager.resumeSession()
+                        exerciseViewModel.callSumaryView = false
+                        exerciseViewModel.nextExercise()
                         exerciseViewModel.backToView()
                         self.dismiss()
                     }, label: {
@@ -54,14 +55,10 @@ struct SummaryView: View {
                             .padding(.trailing, 15)
                     })
                     .myCustonFont(fontName: .sairaMedium, size: 12, valueScaleFactor: 0.8)
-//                    .frame(width: .infinity)
                     .padding()
                     .background(.myOrange)
                     .buttonStyle(.plain)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
-                }
-                .onAppear{
-                    
                 }
             }
             .navigationBarBackButtonHidden()

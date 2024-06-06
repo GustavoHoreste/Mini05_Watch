@@ -8,6 +8,8 @@
 import SwiftUI
 
 class ExerciseProgressViewModel: ObservableObject{
+    public var healthManager: HealthKitManager?
+    
     @Published public var endWorkout: Bool = false
     @Published public var isBackToView: Bool = false
     @Published public var toSummaryViewAfterTime: Bool = false
@@ -21,9 +23,11 @@ class ExerciseProgressViewModel: ObservableObject{
         }
     }
     @Published public var selectExercise: [WorkoutViewsEnun] = []
+    
 
     public var startDate: Date?
-
+    private var hasExecute: Bool = false
+    
     public func nextExercise(){
         if !selectExercise.isEmpty{
             self.selectExercise.removeFirst()
@@ -32,13 +36,20 @@ class ExerciseProgressViewModel: ObservableObject{
     
     public func toggleValueEnd(){
         DispatchQueue.main.async {
-            self.endWorkout.toggle()
+            if !self.endWorkout{
+                self.endWorkout = true
+            }
         }
     }
     
-    private func callSumarryView(_ value: Double){
-        if value == 0{
-            self.toggleValueEnd()
+    public func callSumarryView(){
+        DispatchQueue.main.async {
+            if self.selectExercise[1] == .summary{
+//                self.endSession()
+                self.toggleValueEnd()
+            }else if !self.callSumaryView{
+                self.callSumaryView = true
+            }
         }
     }
     
@@ -50,6 +61,7 @@ class ExerciseProgressViewModel: ObservableObject{
         self.toSummaryViewAfterTime = false
         self.callSumaryView = false
         self.isDecrementingTimer = false
+        self.hasExecute = false
         self.totalDuration = nil
         self.timerValue = Date()
         self.allselectExercise = []
@@ -85,7 +97,7 @@ class ExerciseProgressViewModel: ObservableObject{
         let elapsedTime = date.timeIntervalSince(startDate)
         let timer = max(totalDuration - elapsedTime, 0)
         
-        self.callSumarryView(timer)
+        print(timer)
         
         return timer
     }

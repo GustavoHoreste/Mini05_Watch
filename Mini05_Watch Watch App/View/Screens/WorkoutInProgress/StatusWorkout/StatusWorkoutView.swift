@@ -52,30 +52,14 @@ struct StatusWorkoutView: View {
                                                     healthManager.endSession()
                                                     exerciseViewModel.toggleValueEnd()
                                                 }
-                                                
                                           })
-                    
                 }
             }
             .onAppear{
                 
             }
-            .navigationDestination(isPresented: $exerciseViewModel.endWorkout) {
-                if exerciseViewModel.endWorkout{
-                    SummaryGeralView()// Quando Termina chama a view final
-                }
-            }
-            .sheet(isPresented: $exerciseViewModel.callSumaryView) {
-                if exerciseViewModel.callSumaryView{
-                    withAnimation {
-                        SummaryView()
-                            .toolbar(.hidden, for: .navigationBar)
-                    }
-                }
-            }
             .onDisappear{
                 exerciseViewModel.isBackToView = false
-                exerciseViewModel.callSumaryView = false
             }
         }
     }

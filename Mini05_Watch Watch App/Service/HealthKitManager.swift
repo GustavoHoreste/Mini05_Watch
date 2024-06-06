@@ -31,8 +31,10 @@ class HealthKitManager: NSObject, ObservableObject{
     @Published private(set) var generalTimeWorkout: String = ""
     
     
-    ///timer descrecente
+    ///timer
     @Published private(set) var forcePause:  Bool = false
+    @Published private(set) var timerFinish: Double = 0
+    
     
     
     override init() { }
@@ -145,6 +147,16 @@ class HealthKitManager: NSObject, ObservableObject{
         }
     }
     
+    public func calcFinishDate(_ finishDate: Date){
+        guard let startDate = builder?.startDate else {
+            print("Data de início não encontrada")
+            return
+        }
+        let elapsedTime = finishDate.timeIntervalSince(startDate)
+        print("Tempo final e: ", elapsedTime)
+        self.timerFinish = elapsedTime
+    }
+    
     public func resetWorkoutData() {
         session = nil
         builder = nil
@@ -175,7 +187,11 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
                         print("Error: ", error?.localizedDescription as Any)
                     }else{
                         print("Session terminada")
+                        DispatchQueue.main.async {
+                            self.calcFinishDate(date)
+                        }
                     }
+//                    workout?.allStatistics.
                 }
             }
         }
@@ -202,7 +218,7 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
 extension HealthKitManager: HKLiveWorkoutBuilderDelegate{
     func workoutBuilder(_ workoutBuilder: HKLiveWorkoutBuilder, didCollectDataOf collectedTypes: Set<HKSampleType>) {
         if self.forcePause{
-            print("Pausad0...")
+            print("Pausad0...")// abrindo view quando entra em exercicio? ou quando da sumario?
             return
         }
         for type in collectedTypes{
