@@ -8,33 +8,29 @@
 import WidgetKit
 import SwiftUI
 
-struct Provider: AppIntentTimelineProvider {
+struct Provider: TimelineProvider {
+    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
+        let entry = SimpleEntry(date: Date())
+        completion(entry)
+    }
+    
+    func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> Void) {
+        var entries: [SimpleEntry] = []
+        
+        // Create a timeline entry for the current date.
+        let currentDate = Date()
+        let entry = SimpleEntry(date: currentDate)
+        entries.append(entry)
+        
+        // Generate a timeline consisting of a single entry for now.
+        let timeline = Timeline(entries: entries, policy: .atEnd)
+        completion(timeline)
+    }
+    
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date())
     }
-
-    func snapshot(for configuration: ConfigurationAppIntent, in context: Context) async -> SimpleEntry {
-        SimpleEntry(date: Date())
-    }
     
-    func timeline(for configuration: ConfigurationAppIntent, in context: Context) async -> Timeline<SimpleEntry> {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
-            entries.append(entry)
-        }
-
-        return Timeline(entries: entries, policy: .atEnd)
-    }
-
-    func recommendations() -> [AppIntentRecommendation<ConfigurationAppIntent>] {
-        // Create an array with all the preconfigured widgets to show.
-        [AppIntentRecommendation(intent: ConfigurationAppIntent(), description: "Example Widget")]
-    }
 }
 
 struct SimpleEntry: TimelineEntry {
@@ -43,27 +39,33 @@ struct SimpleEntry: TimelineEntry {
 
 struct ComplicationEntryView : View {
     var entry: Provider.Entry
-
+    
     var body: some View {
-        if let image = UIImage(named: "49mm"){
-            Image("49mm")
-                .resizable()
-                .scaledToFit()
-        } else {
-            
+        ZStack{
+            if let image = UIImage(named: "49mm"){
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+            } else {
+                Text("Image not found")
+                    .foregroundColor(.red)
+            }
         }
+        .containerBackground(.fill.tertiary, for: .widget)
     }
 }
 
 @main
 struct Complication: Widget {
     let kind: String = "Complication"
-
+    
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: kind, intent: ConfigurationAppIntent.self, provider: Provider()) { entry in
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
             ComplicationEntryView(entry: entry)
-                .containerBackground(.fill.tertiary, for: .widget)
         }
+        .configurationDisplayName("My Widget")
+        .description("This is a sample widget.")
+        
     }
 }
 
@@ -72,5 +74,4 @@ struct Complication: Widget {
     Complication()
 } timeline: {
     SimpleEntry(date: .now)
-    SimpleEntry(date: .now)
-}    
+}
