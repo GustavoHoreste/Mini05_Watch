@@ -31,12 +31,12 @@ class GraphExercisePushUpViewModel {
     
     func minYValue()-> Double {
         let yValues = graphData.map { $0[keyPath: pushUpEnum.keyPath] }
-        return (yValues.min() ?? 0) - 10 < 0 ? 0 : (yValues.min() ?? 0) - 10
+        return (yValues.min() ?? 0) - 20
     }
     
     func maxYValue()-> Double {
         let yValues = graphData.map { $0[keyPath: pushUpEnum.keyPath] }
-        return (yValues.max() ?? 0) + 10
+        return (yValues.max() ?? 0) + 20
     }
     
     func minXDate()-> Date {
@@ -74,21 +74,10 @@ class GraphExercisePushUpViewModel {
                 let allValues = sameDateData.map { $0[keyPath: pushUpEnum.keyPath] }
                 let total = allValues.reduce(0, +)
                 let average = total / Double(allValues.count)
-                let pushUpDataToShow = PushUpData(date: dateFormatted ?? Date(), totalEnergy: average, avgHeartRate: average, repetitions: average)
+                let pushUpDataToShow = PushUpData(date: dateFormatted ?? Date(), totalTime: average, totalEnergy: average, avgHeartRate: average, repetitions: average)
                 
                 graphData.append(pushUpDataToShow)
             }
-        }
-    }
-    
-    func complementValue()-> String {
-        switch pushUpEnum {
-        case .totalEnergy:
-            return "kcal"
-        case .avgHeartRate:
-            return "bpm"
-        case .repetitions:
-            return ""
         }
     }
 }

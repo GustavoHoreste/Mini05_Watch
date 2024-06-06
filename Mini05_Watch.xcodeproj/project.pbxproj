@@ -9,7 +9,15 @@
 /* Begin PBXBuildFile section */
 		5538C6CB2BFFE21F00971930 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CA2BFFE21F00971930 /* AchievementView.swift */; };
 		5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */; };
+
 		55B1D2DA2C1236CD00878B4A /* CalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1D2D92C1236CD00878B4A /* CalibrationView.swift */; };
+		55B1D2C52C122AAA00878B4A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B1D2C42C122AAA00878B4A /* WidgetKit.framework */; };
+		55B1D2C72C122AAA00878B4A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B1D2C62C122AAA00878B4A /* SwiftUI.framework */; };
+		55B1D2CA2C122AAA00878B4A /* Complication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1D2C92C122AAA00878B4A /* Complication.swift */; };
+		55B1D2CC2C122AAA00878B4A /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1D2CB2C122AAA00878B4A /* AppIntent.swift */; };
+		55B1D2CE2C122AAB00878B4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55B1D2CD2C122AAB00878B4A /* Assets.xcassets */; };
+		55B1D2D22C122AAB00878B4A /* ComplicationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 55B1D2C22C122AAA00878B4A /* ComplicationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+
 		C01C8C7D2C10D7AD001826D6 /* Saira-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C792C10D7AD001826D6 /* Saira-Regular.ttf */; };
 		C01C8C7E2C10D7AD001826D6 /* Saira-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7A2C10D7AD001826D6 /* Saira-Black.ttf */; };
 		C01C8C7F2C10D7AD001826D6 /* Saira-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */; };
@@ -18,8 +26,6 @@
 		C01C8C8B2C110506001826D6 /* SummaryGeralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C8A2C110506001826D6 /* SummaryGeralView.swift */; };
 		C01C8C8D2C1105BE001826D6 /* SummaryGeralData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C8C2C1105BE001826D6 /* SummaryGeralData.swift */; };
 		C01C8C8F2C1105DD001826D6 /* SummaryGeralDataLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C8E2C1105DD001826D6 /* SummaryGeralDataLine.swift */; };
-		C01C8C912C112F7C001826D6 /* SummaryGeralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C902C112F7C001826D6 /* SummaryGeralViewModel.swift */; };
-		C01C8C932C11F27A001826D6 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C922C11F27A001826D6 /* SummaryViewModel.swift */; };
 		C0EA943C2C0124F40057E48B /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943B2C0124F40057E48B /* GraphView.swift */; };
 		C0EA94402C012F520057E48B /* GraphExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943F2C012F520057E48B /* GraphExerciseView.swift */; };
 		C0F01FE02C07C75000FE6CC9 /* GraphExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F01FDF2C07C75000FE6CC9 /* GraphExerciseViewModel.swift */; };
@@ -103,7 +109,17 @@
 /* Begin PBXFileReference section */
 		5538C6CA2BFFE21F00971930 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
 		5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementIcon.swift; sourceTree = "<group>"; };
+
 		55B1D2D92C1236CD00878B4A /* CalibrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationView.swift; sourceTree = "<group>"; };
+
+		55B1D2C22C122AAA00878B4A /* ComplicationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ComplicationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		55B1D2C42C122AAA00878B4A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		55B1D2C62C122AAA00878B4A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		55B1D2C92C122AAA00878B4A /* Complication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complication.swift; sourceTree = "<group>"; };
+		55B1D2CB2C122AAA00878B4A /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		55B1D2CD2C122AAB00878B4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55B1D2CF2C122AAB00878B4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+
 		C01C8C792C10D7AD001826D6 /* Saira-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Regular.ttf"; sourceTree = "<group>"; };
 		C01C8C7A2C10D7AD001826D6 /* Saira-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Black.ttf"; sourceTree = "<group>"; };
 		C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Medium.ttf"; sourceTree = "<group>"; };
@@ -112,8 +128,6 @@
 		C01C8C8A2C110506001826D6 /* SummaryGeralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralView.swift; sourceTree = "<group>"; };
 		C01C8C8C2C1105BE001826D6 /* SummaryGeralData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralData.swift; sourceTree = "<group>"; };
 		C01C8C8E2C1105DD001826D6 /* SummaryGeralDataLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralDataLine.swift; sourceTree = "<group>"; };
-		C01C8C902C112F7C001826D6 /* SummaryGeralViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralViewModel.swift; sourceTree = "<group>"; };
-		C01C8C922C11F27A001826D6 /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		C0EA943B2C0124F40057E48B /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		C0EA943F2C012F520057E48B /* GraphExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphExerciseView.swift; sourceTree = "<group>"; };
 		C0F01FDF2C07C75000FE6CC9 /* GraphExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphExerciseViewModel.swift; sourceTree = "<group>"; };
@@ -193,12 +207,33 @@
 			path = Achievement;
 			sourceTree = "<group>";
 		};
+
 		55B1D2D82C1236B000878B4A /* Abdominal */ = {
 			isa = PBXGroup;
 			children = (
 				55B1D2D92C1236CD00878B4A /* CalibrationView.swift */,
 			);
 			path = Abdominal;
+
+		55B1D2C32C122AAA00878B4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55B1D2C42C122AAA00878B4A /* WidgetKit.framework */,
+				55B1D2C62C122AAA00878B4A /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55B1D2C82C122AAA00878B4A /* Complication */ = {
+			isa = PBXGroup;
+			children = (
+				55B1D2C92C122AAA00878B4A /* Complication.swift */,
+				55B1D2CB2C122AAA00878B4A /* AppIntent.swift */,
+				55B1D2CD2C122AAB00878B4A /* Assets.xcassets */,
+				55B1D2CF2C122AAB00878B4A /* Info.plist */,
+			);
+			path = Complication;
+
 			sourceTree = "<group>";
 		};
 		C01C8C852C10E27A001826D6 /* SummaryComponents */ = {
@@ -340,7 +375,6 @@
 				C0EA943A2C01245D0057E48B /* Graph */,
 				D918460E2BFFD2B40076F3A3 /* Summary */,
 				D91846072BFFD1C50076F3A3 /* SelectEvaluation */,
-				55B1D2D82C1236B000878B4A /* Abdominal */,
 				D908CAB52BFFD11F00A088B3 /* Home */,
 			);
 			path = Screens;
@@ -373,9 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				C01C8C8A2C110506001826D6 /* SummaryGeralView.swift */,
-				C01C8C902C112F7C001826D6 /* SummaryGeralViewModel.swift */,
 				D91846112BFFD2E10076F3A3 /* SummaryView.swift */,
-				C01C8C922C11F27A001826D6 /* SummaryViewModel.swift */,
 				C01C8C852C10E27A001826D6 /* SummaryComponents */,
 			);
 			path = Summary;
@@ -562,12 +594,10 @@
 				D91846282BFFD65E0076F3A3 /* PUModel.swift in Sources */,
 				C0F01FE02C07C75000FE6CC9 /* GraphExerciseViewModel.swift in Sources */,
 				C0EA94402C012F520057E48B /* GraphExerciseView.swift in Sources */,
-				C01C8C912C112F7C001826D6 /* SummaryGeralViewModel.swift in Sources */,
 				D91846062BFFD1990076F3A3 /* HomeButtonView.swift in Sources */,
 				D94FBF912C0DF51000C852DE /* InformationViewComponemt.swift in Sources */,
 				D908CAB02BFFD09A00A088B3 /* UserModel.swift in Sources */,
 				D981C96B2C0BB66200003DCF /* SelectButtonComponent.swift in Sources */,
-				C01C8C932C11F27A001826D6 /* SummaryViewModel.swift in Sources */,
 				D981C96D2C0BB76300003DCF /* ButtonNext.swift in Sources */,
 				5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */,
 				C0F01FEA2C0FA80E00FE6CC9 /* PushUpData.swift in Sources */,
@@ -584,7 +614,6 @@
 				D9ECC89E2C0DF62E00A31138 /* ExerciseProgressViewModel.swift in Sources */,
 				D91846262BFFD6000076F3A3 /* PUView.swift in Sources */,
 				D908CAB22BFFD0A600A088B3 /* Enum.swift in Sources */,
-				55B1D2DA2C1236CD00878B4A /* CalibrationView.swift in Sources */,
 				D9ECC89C2C0DF5FB00A31138 /* HeartAndCaloriesViewComponemt.swift in Sources */,
 				D91846122BFFD2E10076F3A3 /* SummaryView.swift in Sources */,
 				D9ECC89A2C0DF5C500A31138 /* VelocityViewComponemt.swift in Sources */,
@@ -750,7 +779,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini05-Watch-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Ascender;
+				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Para oferecer uma experiência completa e personalizada, nosso aplicativo precisa acessar seus dados de saúde. Isso nos permite rastrear suas atividades físicas, como exercícios e passos dados, para fornecer insights valiosos sobre sua saúde e bem-estar.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Nosso aplicativo necessita acessar e atualizar seus dados de saúde para fornecer um acompanhamento detalhado de suas atividades físicas e hábitos de vida. Isso inclui registrar informações sobre exercícios, monitorar métricas de saúde e oferecer recomendações personalizadas para melhorar seu condicionamento físico e bem-estar geral.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -784,7 +813,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini05-Watch-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Ascender;
+				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Para oferecer uma experiência completa e personalizada, nosso aplicativo precisa acessar seus dados de saúde. Isso nos permite rastrear suas atividades físicas, como exercícios e passos dados, para fornecer insights valiosos sobre sua saúde e bem-estar.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Nosso aplicativo necessita acessar e atualizar seus dados de saúde para fornecer um acompanhamento detalhado de suas atividades físicas e hábitos de vida. Isso inclui registrar informações sobre exercícios, monitorar métricas de saúde e oferecer recomendações personalizadas para melhorar seu condicionamento físico e bem-estar geral.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
