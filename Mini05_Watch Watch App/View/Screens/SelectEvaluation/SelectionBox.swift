@@ -22,6 +22,9 @@ struct SelectionBox: View {
             if self.isCompleteButton {
                 if self.checkState {
                     self.selectedExercises = self.allExercises
+//                    if !self.selectedExercises.contains(.summary){
+//                        self.selectedExercises.append(.summary)
+//                    }
                 } else {
                     self.selectedExercises.removeAll()
                 }

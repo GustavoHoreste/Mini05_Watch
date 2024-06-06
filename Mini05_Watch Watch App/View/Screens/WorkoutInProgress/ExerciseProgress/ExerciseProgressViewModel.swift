@@ -10,17 +10,15 @@ import SwiftUI
 class ExerciseProgressViewModel: ObservableObject{
     @Published public var endWorkout: Bool = false
     @Published public var isBackToView: Bool = false
-    @Published public var toSummaryViewAfterTime: Bool = false
-    @Published public var allselectExercise: [WorkoutViewsEnun] = []
-    @Published public var callSumaryView: Bool = false
+    @Published public var selectExercise: [WorkoutViewsEnun] = []
+    @Published public var sixeSelectExercise: Int = 0
     @Published public var isDecrementingTimer: Bool = false
-    @Published public var totalDuration: TimeInterval?
+    @Published private(set) var totalDuration: TimeInterval = 0
     @Published public var timerValue: Date = Date(){
         didSet{
             self.convertDateToDouble(timerValue)
         }
     }
-    @Published public var selectExercise: [WorkoutViewsEnun] = []
 
     public var startDate: Date?
 
@@ -31,15 +29,7 @@ class ExerciseProgressViewModel: ObservableObject{
     }
     
     public func toggleValueEnd(){
-        DispatchQueue.main.async {
-            self.endWorkout.toggle()
-        }
-    }
-    
-    private func callSumarryView(_ value: Double){
-        if value == 0{
-            self.toggleValueEnd()
-        }
+        self.endWorkout.toggle()
     }
     
     public func reseatAll(){
@@ -47,11 +37,7 @@ class ExerciseProgressViewModel: ObservableObject{
         self.endWorkout = false
         self.isBackToView = false
         self.startDate = nil
-        self.toSummaryViewAfterTime = false
-        self.callSumaryView = false
 //        self.isDecrementingTimer = false
-        
-        print("reseatado variavies do exercicio vm")
     }
     
     public func backToView(){
@@ -74,17 +60,11 @@ class ExerciseProgressViewModel: ObservableObject{
     
     
     public func remainingTime(at date: Date) -> TimeInterval {
-        guard let totalDuration = self.totalDuration else {return 1}
-        
         guard let startDate = startDate else {
-            return 1
+            return totalDuration
         }
         let elapsedTime = date.timeIntervalSince(startDate)
-        let timer = max(totalDuration - elapsedTime, 0)
-        
-        self.callSumarryView(timer)
-        
-        return timer
+        return max(totalDuration - elapsedTime, 0)
     }
     
     public func returnNameExercise() -> String{

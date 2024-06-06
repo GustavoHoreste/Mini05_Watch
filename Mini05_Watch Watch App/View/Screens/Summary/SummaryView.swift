@@ -10,9 +10,8 @@ import SwiftUI
 struct SummaryView: View {
     @EnvironmentObject private var healthManager: HealthKitManager
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
-    @Environment(\.dismiss) private var dismiss
     
-    var exerciseType: WorkoutViewsEnun = .running12min
+    var exerciseType: WorkoutViewsEnun
     
     @State private var navigateToNextView = false
 
@@ -44,9 +43,7 @@ struct SummaryView: View {
                                              value: "300kcal")
                     }
                     Button(action: {
-                        exerciseViewModel.nextExercise()
-                        healthManager.resumeSession()
-                        self.dismiss()
+                        navigateToNextView.toggle()
                     }, label: {
                         Text("Iniciar próximo exercício")
                             .padding(.leading, 15)
@@ -59,11 +56,21 @@ struct SummaryView: View {
                     .buttonStyle(.plain)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                 }
+                .onDisappear{
+                    healthManager.resetWorkoutData()
+                    exerciseViewModel.reseatAll()
+                }
+
+
             }
             .navigationBarBackButtonHidden()
-            .toolbar(.hidden, for: .navigationBar)
+            .navigationDestination(isPresented: $navigateToNextView) { SummaryView(exerciseType: .abdominal) // MUDAR PARA O CERTO
+            }
         }
     }
 }
 
+//#Preview {
+//    SummaryView(exerciseType: .running12min)
+//}
 
