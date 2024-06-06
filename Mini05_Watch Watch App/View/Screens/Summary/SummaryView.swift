@@ -11,6 +11,7 @@ import SwiftData
 struct SummaryView: View {
     @EnvironmentObject private var healthManager: HealthKitManager
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
+    @Environment(\.dismiss) private var dismiss
     
     @State private var viewModel = SummaryViewModel()
     
@@ -44,35 +45,30 @@ struct SummaryView: View {
                                              value: "\(healthManager.activeEnergyBurned)")
                     }
                     Button(action: {
-                        navigateToNextView.toggle()
+                        exerciseViewModel.nextExercise()
+                        healthManager.resumeSession()
+                        exerciseViewModel.backToView()
+                        self.dismiss()
                     }, label: {
                         Text("Iniciar próximo exercício")
                             .padding(.leading, 15)
                             .padding(.trailing, 15)
                     })
                     .myCustonFont(fontName: .sairaMedium, size: 12, valueScaleFactor: 0.8)
-                    .frame(width: .infinity)
+//                    .frame(width: .infinity)
                     .padding()
                     .background(.myOrange)
                     .buttonStyle(.plain)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                 }
-                .onDisappear{
-                    healthManager.resetWorkoutData()
-                    exerciseViewModel.reseatAll()
+                .onAppear{
+                    
                 }
-
-
             }
             .navigationBarBackButtonHidden()
-            .navigationDestination(isPresented: $navigateToNextView) { 
-                SummaryView()
-            }
+            .toolbar(.hidden, for: .navigationBar)
         }
     }
 }
 
-//#Preview {
-//    SummaryView(exerciseType: .running12min)
-//}
 

@@ -33,18 +33,11 @@ class HealthKitManager: NSObject, ObservableObject{
     
     
     ///timer descrecente
-    @Published private(set) var totalDuration: TimeInterval = 20
+    @Published private(set) var forcePause:  Bool = false
+    
     
     override init() { }
     
-    
-    public func remainingTime(at date: Date) -> TimeInterval {
-        guard let startDate = builder?.startDate else {
-            return totalDuration
-        }
-        let elapsedTime = date.timeIntervalSince(startDate)
-        return max(totalDuration - elapsedTime, 0)
-    }
     
     public func requestPermission() async -> [HKObjectType: HKAuthorizationStatus]{
         do {
@@ -67,7 +60,7 @@ class HealthKitManager: NSObject, ObservableObject{
     
 
     public func startWorkout() async {
-        if session?.state.rawValue == 4 || session?.state.rawValue == 2{
+        if session?.state == .running || session?.state == .paused{
             print("Pausado")
             return
         }
@@ -142,10 +135,11 @@ class HealthKitManager: NSObject, ObservableObject{
     }
     
     public func togglePauseOrStart(){
-        switch session?.state.rawValue{ ///E do tipo `HKWorkoutSessionState`
-        case 2: ///session em execucao
+        print("estado ", session?.state.rawValue as Any)
+        switch session?.state{ ///E do tipo `HKWorkoutSessionState`
+        case .running: ///session em execucao
             self.pauseSession()
-        case 4: ///session pausada
+        case .paused: ///session pausada
             self.resumeSession()
         default:
             print("Estado desconhecido da sessão.")
@@ -163,6 +157,7 @@ class HealthKitManager: NSObject, ObservableObject{
         runningPower = 0
         bodyMass = 0
         height = 0
+        self.forcePause = false
         
         print("Todos os dados do workout e do HealthKit foram resetados.")
     }
@@ -185,6 +180,19 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
                 }
             }
         }
+        
+        
+        if toState == .paused{
+            DispatchQueue.main.async {
+                self.forcePause = true
+            }
+        }
+        
+        if toState == .running{
+            DispatchQueue.main.async {
+                self.forcePause = false
+            }
+        }
     }
     
     func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
@@ -194,6 +202,10 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
 
 extension HealthKitManager: HKLiveWorkoutBuilderDelegate{
     func workoutBuilder(_ workoutBuilder: HKLiveWorkoutBuilder, didCollectDataOf collectedTypes: Set<HKSampleType>) {
+        if self.forcePause{
+            print("Pausad0...")
+            return
+        }
         for type in collectedTypes{
             guard let quantityType = type as? HKQuantityType, let statistics = workoutBuilder.statistics(for: quantityType) else {
                 print("Valor de workoutBuilder e nil ou invalido")
