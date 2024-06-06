@@ -26,17 +26,15 @@ struct TabViewWorkout: View {
                 .tag(Tabs.nowPlaying)
             
         }
-        .background(.bg)
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: isLuminanceReduced ? .never : .automatic))
         .tabViewStyle(.page)
         .onAppear{
             Task{
                 await healthManager.startWorkout()
             }
-            if !exerciseViewModel.selectExercise.contains(.summary){
-                exerciseViewModel.selectExercise.append(.summary)
-            }
-            let _ = print("O valor tem que ser 4 da quantidade de exercicios: ", exerciseViewModel.selectExercise.count, " e esses sao os valores ", exerciseViewModel.selectExercise)
+            
+            exerciseViewModel.selectExercise.append(.summary)
+            
         }
         .onChange(of: exerciseViewModel.isBackToView){ oldValue, newValue in
             displayMetricsView()

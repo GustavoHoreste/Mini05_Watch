@@ -9,19 +9,19 @@ import SwiftUI
 
 struct InformationViewComponemt: View {
     let nameExercise: String
-    let subTitle: String
     let value: Double
-    let extensionName: String
     
     var body: some View {
         VStack(spacing: -10){
             Text(nameExercise)
                 .myCustonFont(fontName: .sairaRegular, size: 23.5, valueScaleFactor: 0.8)
             
-                Text(subTitle)
+//            VStack(spacing: -10){
+                Text("Velocidade atual")
                 .myCustonFont(fontName: .sairaRegular, size: 18, valueScaleFactor: 0.8)
+    //                .padding(.top)
                 
-            Text("\(value, specifier: "%.0f")\(self.extensionName)")
+                Text("\(value, specifier: "%.0f")Km/h")
                 .myCustonFont(fontName: .sairaBlack, size: 60, valueScaleFactor: 0.8)
                     .foregroundStyle(Color(.myOrange))
                     .minimumScaleFactor(0.7)

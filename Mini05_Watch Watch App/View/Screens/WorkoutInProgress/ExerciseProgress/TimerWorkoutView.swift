@@ -10,36 +10,32 @@ import SwiftUI
 struct TimerWorkoutView: View {
     @EnvironmentObject private var healthManager: HealthKitManager
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
-    @State private var nextView: Bool = false
     
     var body: some View {
-        VStack(alignment: .center, spacing: 0){
+        VStack(alignment: .center){
             Text(self.exerciseViewModel.returnNameExercise())
-                .myCustonFont(fontName: .sairaRegular, size: 23.5, valueScaleFactor: 0.8)
+                .font(.system(size: 20))
             
             Text("Cronômetro")
-                .myCustonFont(fontName: .sairaRegular, size: 18, valueScaleFactor: 0.8)
+                .font(.system(size: 14))
             
             ///Tempo de avalição atual
             TimelineView(MetricsTimelineSchedule(from: exerciseViewModel.startDate ?? Date(), isPaused: healthManager.session?.state == .paused)) { value in
-                ElapsedTimeView(elapsedTime: upadateTimerValue(at: value.date), showSubseconds: false, size: 60, font: .sairaBlack)
-                    .foregroundStyle(.myOrange)
+                ElapsedTimeView(elapsedTime: upadateTimerValue(at: value.date), showSubseconds: false)
+                    .font(.system(size: 30))
             }
             
             ///Tempo geral
             TimelineView(MetricsTimelineSchedule(from: healthManager.builder?.startDate ?? Date(), isPaused: healthManager.session?.state == .paused)) { value in
                 
-                ElapsedTimeView(elapsedTime: healthManager.builder?.elapsedTime(at: value.date) ?? 0, showSubseconds: value.cadence == .live, size: 23.5, font: .sairaRegular)
-                    .foregroundStyle(.myOrange.opacity(0.7))
+                ElapsedTimeView(elapsedTime: healthManager.builder?.elapsedTime(at: value.date) ?? 0, showSubseconds: value.cadence == .live)
             }
             
-            Group{
-                Divider()
-                    .overlay(Color(.spacer))
-                    .padding(.horizontal, 20)
+            Divider()
+            HStack{
                 RecordTimeComponent(value: .constant(42.4), name: "Maior Tempo")
+                RecordTimeComponent(value: .constant(12.4), name: "Menor Tempo")
             }
-            .padding(.top)
             .onChange(of: exerciseViewModel.selectExercise) { oldValue, newValue in
                 if newValue.count != oldValue.count{
                     exerciseViewModel.startDate = Date()
@@ -55,9 +51,8 @@ extension TimerWorkoutView{
         if exerciseViewModel.startDate == nil{
             exerciseViewModel.startDate = Date()
         }
-        if exerciseViewModel.isDecrementingTimer && exerciseViewModel.selectExercise.first == .running12min && !exerciseViewModel.toSummaryViewAfterTime{
-            let time = exerciseViewModel.remainingTime(at: value)
-            return time
+        if exerciseViewModel.isDecrementingTimer && exerciseViewModel.selectExercise.first == .running12min{
+            return exerciseViewModel.remainingTime(at: value)
         }
         return value.timeIntervalSince(exerciseViewModel.startDate!)
     }

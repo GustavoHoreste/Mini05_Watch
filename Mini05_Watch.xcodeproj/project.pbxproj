@@ -9,16 +9,12 @@
 /* Begin PBXBuildFile section */
 		5538C6CB2BFFE21F00971930 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CA2BFFE21F00971930 /* AchievementView.swift */; };
 		5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */; };
-		55B1D2DA2C1236CD00878B4A /* CalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1D2D92C1236CD00878B4A /* CalibrationView.swift */; };
 		C01C8C7D2C10D7AD001826D6 /* Saira-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C792C10D7AD001826D6 /* Saira-Regular.ttf */; };
 		C01C8C7E2C10D7AD001826D6 /* Saira-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7A2C10D7AD001826D6 /* Saira-Black.ttf */; };
 		C01C8C7F2C10D7AD001826D6 /* Saira-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */; };
 		C01C8C802C10D7AD001826D6 /* Saira-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7C2C10D7AD001826D6 /* Saira-Bold.ttf */; };
-		C01C8C842C10E05B001826D6 /* RunData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C832C10E05B001826D6 /* RunData.swift */; };
-		C01C8C8B2C110506001826D6 /* SummaryGeralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C8A2C110506001826D6 /* SummaryGeralView.swift */; };
-		C01C8C8D2C1105BE001826D6 /* SummaryGeralData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C8C2C1105BE001826D6 /* SummaryGeralData.swift */; };
-		C01C8C8F2C1105DD001826D6 /* SummaryGeralDataLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C8E2C1105DD001826D6 /* SummaryGeralDataLine.swift */; };
 		C0EA943C2C0124F40057E48B /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943B2C0124F40057E48B /* GraphView.swift */; };
+		C0EA943E2C0125340057E48B /* RunData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943D2C0125340057E48B /* RunData.swift */; };
 		C0EA94402C012F520057E48B /* GraphExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943F2C012F520057E48B /* GraphExerciseView.swift */; };
 		C0F01FE02C07C75000FE6CC9 /* GraphExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F01FDF2C07C75000FE6CC9 /* GraphExerciseViewModel.swift */; };
 		C0F01FE42C0FA7B100FE6CC9 /* GraphPushUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F01FE32C0FA7B100FE6CC9 /* GraphPushUpView.swift */; };
@@ -101,16 +97,12 @@
 /* Begin PBXFileReference section */
 		5538C6CA2BFFE21F00971930 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
 		5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementIcon.swift; sourceTree = "<group>"; };
-		55B1D2D92C1236CD00878B4A /* CalibrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationView.swift; sourceTree = "<group>"; };
 		C01C8C792C10D7AD001826D6 /* Saira-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Regular.ttf"; sourceTree = "<group>"; };
 		C01C8C7A2C10D7AD001826D6 /* Saira-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Black.ttf"; sourceTree = "<group>"; };
 		C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Medium.ttf"; sourceTree = "<group>"; };
 		C01C8C7C2C10D7AD001826D6 /* Saira-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Bold.ttf"; sourceTree = "<group>"; };
-		C01C8C832C10E05B001826D6 /* RunData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunData.swift; sourceTree = "<group>"; };
-		C01C8C8A2C110506001826D6 /* SummaryGeralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralView.swift; sourceTree = "<group>"; };
-		C01C8C8C2C1105BE001826D6 /* SummaryGeralData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralData.swift; sourceTree = "<group>"; };
-		C01C8C8E2C1105DD001826D6 /* SummaryGeralDataLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralDataLine.swift; sourceTree = "<group>"; };
 		C0EA943B2C0124F40057E48B /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		C0EA943D2C0125340057E48B /* RunData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunData.swift; sourceTree = "<group>"; };
 		C0EA943F2C012F520057E48B /* GraphExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphExerciseView.swift; sourceTree = "<group>"; };
 		C0F01FDF2C07C75000FE6CC9 /* GraphExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphExerciseViewModel.swift; sourceTree = "<group>"; };
 		C0F01FE32C0FA7B100FE6CC9 /* GraphPushUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphPushUpView.swift; sourceTree = "<group>"; };
@@ -189,24 +181,6 @@
 			path = Achievement;
 			sourceTree = "<group>";
 		};
-		55B1D2D82C1236B000878B4A /* Abdominal */ = {
-			isa = PBXGroup;
-			children = (
-				55B1D2D92C1236CD00878B4A /* CalibrationView.swift */,
-			);
-			path = Abdominal;
-			sourceTree = "<group>";
-		};
-		C01C8C852C10E27A001826D6 /* SummaryComponents */ = {
-			isa = PBXGroup;
-			children = (
-				D918460F2BFFD2CB0076F3A3 /* SummaryDataComponent.swift */,
-				C01C8C8C2C1105BE001826D6 /* SummaryGeralData.swift */,
-				C01C8C8E2C1105DD001826D6 /* SummaryGeralDataLine.swift */,
-			);
-			path = SummaryComponents;
-			sourceTree = "<group>";
-		};
 		C0EA943A2C01245D0057E48B /* Graph */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +198,7 @@
 				C0EA943B2C0124F40057E48B /* GraphView.swift */,
 				C0EA943F2C012F520057E48B /* GraphExerciseView.swift */,
 				C0F01FDF2C07C75000FE6CC9 /* GraphExerciseViewModel.swift */,
+				C0EA943D2C0125340057E48B /* RunData.swift */,
 			);
 			path = Run;
 			sourceTree = "<group>";
@@ -305,11 +280,11 @@
 		D908CAAE2BFFD06F00A088B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C01C8C832C10E05B001826D6 /* RunData.swift */,
 				D908CAAF2BFFD09A00A088B3 /* UserModel.swift */,
 				D908CAB12BFFD0A600A088B3 /* Enum.swift */,
 				D91846272BFFD65E0076F3A3 /* PUModel.swift */,
 				D93311882C03B4700077D9BE /* HealthKitModel.swift */,
+				C0EA943D2C0125340057E48B /* RunData.swift */,
 				D9A072742C0509F7004BD3A0 /* ElapsedTimeFormatter.swift */,
 				D9A072762C050A4A004BD3A0 /* MetricsTimelineSchedule.swift */,
 				D9A072782C050C62004BD3A0 /* Device.swift */,
@@ -336,7 +311,6 @@
 				C0EA943A2C01245D0057E48B /* Graph */,
 				D918460E2BFFD2B40076F3A3 /* Summary */,
 				D91846072BFFD1C50076F3A3 /* SelectEvaluation */,
-				55B1D2D82C1236B000878B4A /* Abdominal */,
 				D908CAB52BFFD11F00A088B3 /* Home */,
 			);
 			path = Screens;
@@ -368,9 +342,8 @@
 		D918460E2BFFD2B40076F3A3 /* Summary */ = {
 			isa = PBXGroup;
 			children = (
-				C01C8C8A2C110506001826D6 /* SummaryGeralView.swift */,
+				D918460F2BFFD2CB0076F3A3 /* SummaryDataComponent.swift */,
 				D91846112BFFD2E10076F3A3 /* SummaryView.swift */,
-				C01C8C852C10E27A001826D6 /* SummaryComponents */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -540,7 +513,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C01C8C842C10E05B001826D6 /* RunData.swift in Sources */,
 				C0F01FF32C0FB50900FE6CC9 /* GraphExerciseAbdominalViewModel.swift in Sources */,
 				D908CA9E2BFFD03700A088B3 /* ContentView.swift in Sources */,
 				5538C6CB2BFFE21F00971930 /* AchievementView.swift in Sources */,
@@ -549,7 +521,6 @@
 				C0EA943C2C0124F40057E48B /* GraphView.swift in Sources */,
 				D9DDC0BB2C07AD260097B82C /* TimerWorkoutView.swift in Sources */,
 				D9CDC9E02C0D571E003C20F1 /* StatisticTimeComponent.swift in Sources */,
-				C01C8C8B2C110506001826D6 /* SummaryGeralView.swift in Sources */,
 				D91846092BFFD1DF0076F3A3 /* SelectEvaluationView.swift in Sources */,
 				C0F01FE42C0FA7B100FE6CC9 /* GraphPushUpView.swift in Sources */,
 				C0F01FF52C0FB51800FE6CC9 /* AbdominalData.swift in Sources */,
@@ -576,12 +547,10 @@
 				D9ECC89E2C0DF62E00A31138 /* ExerciseProgressViewModel.swift in Sources */,
 				D91846262BFFD6000076F3A3 /* PUView.swift in Sources */,
 				D908CAB22BFFD0A600A088B3 /* Enum.swift in Sources */,
-				55B1D2DA2C1236CD00878B4A /* CalibrationView.swift in Sources */,
 				D9ECC89C2C0DF5FB00A31138 /* HeartAndCaloriesViewComponemt.swift in Sources */,
 				D91846122BFFD2E10076F3A3 /* SummaryView.swift in Sources */,
 				D9ECC89A2C0DF5C500A31138 /* VelocityViewComponemt.swift in Sources */,
 				D908CAB72BFFD14400A088B3 /* HomeButton.swift in Sources */,
-				C01C8C8F2C1105DD001826D6 /* SummaryGeralDataLine.swift in Sources */,
 				D93311872C03B4160077D9BE /* PermissionDeniedView.swift in Sources */,
 				D91846242BFFD5DC0076F3A3 /* PUViewModel.swift in Sources */,
 				D9A072752C0509F7004BD3A0 /* ElapsedTimeFormatter.swift in Sources */,
@@ -591,6 +560,7 @@
 				D93311872C03B4160077D9BE /* PermissionDeniedView.swift in Sources */,
 				D91846242BFFD5DC0076F3A3 /* PUViewModel.swift in Sources */,
 				C0F01FE82C0FA7E800FE6CC9 /* GraphExercisePushUpViewModel.swift in Sources */,
+				C0EA943E2C0125340057E48B /* RunData.swift in Sources */,
 				D908CA9C2BFFD03700A088B3 /* Mini05_WatchApp.swift in Sources */,
 				C0F01FEF2C0FB4D800FE6CC9 /* GraphAbdominalView.swift in Sources */,
 				C0F01FE62C0FA7D400FE6CC9 /* GraphExercisePushUpView.swift in Sources */,
@@ -600,7 +570,6 @@
 				D918462F2C00C8670076F3A3 /* RequestPermissionView.swift in Sources */,
 				D918461B2BFFD3720076F3A3 /* ButtonStatusComponent.swift in Sources */,
 				D918462D2C00C20A0076F3A3 /* HealthKitManager.swift in Sources */,
-				C01C8C8D2C1105BE001826D6 /* SummaryGeralData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
