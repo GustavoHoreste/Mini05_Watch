@@ -14,7 +14,7 @@ enum Tabs {
 
 
 enum WorkoutViewsEnun: String{
-    case running12min = "Corrida", pushUps = "Flexão", abdominal = "Abdominal", complete = "Completa", summary = "Summary"
+    case running12min = "Corrida", pushUps = "Flexão", abdominal = "Abdominal", complete = "Avaliação Completa", summary = "Summary"
 }
 
 
