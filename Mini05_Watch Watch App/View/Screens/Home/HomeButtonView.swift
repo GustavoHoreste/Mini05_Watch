@@ -11,6 +11,7 @@ import SwiftData
 struct HomeView: View {
     @Environment(\.modelContext) var context
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
+    @EnvironmentObject private var healthManager: HealthKitManager
     
     private let buttons: [HomeButtonData] = [
         HomeButtonData(name: "Iniciar", destination: AnyView(SelectEvaluationView()), description: "Iniciar uma nova \navaliação", id: 0),
@@ -106,6 +107,7 @@ struct HomeView: View {
                 
                 .onAppear {
                     exerciseViewModel.reseatAll()
+                    healthManager.resetWorkoutData()
                 }
         }.navigationBarBackButtonHidden()
     }
@@ -114,6 +116,7 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+        .environmentObject(ExerciseProgressViewModel())
         .environmentObject(HealthKitManager())
 }
 

@@ -13,6 +13,7 @@ struct ButtonStatusComponent: View {
     let action: () -> Void
     
     @State var buttonChange: Bool = false
+//    @Binding var buttonLabelPlay: Bool
     
     var body: some View {
         VStack(alignment: .center, spacing: -3){

@@ -42,16 +42,19 @@ class ExerciseProgressViewModel: ObservableObject{
         }
     }
     
-    public func reseatAll(){
+    public func reseatAll() {
         self.selectExercise = []
         self.endWorkout = false
         self.isBackToView = false
         self.startDate = nil
         self.toSummaryViewAfterTime = false
         self.callSumaryView = false
-//        self.isDecrementingTimer = false
-        
-        print("reseatado variavies do exercicio vm")
+        self.isDecrementingTimer = false
+        self.totalDuration = nil
+        self.timerValue = Date()
+        self.allselectExercise = []
+
+        print("Resetei as variáveis do exercício view model")
     }
     
     public func backToView(){

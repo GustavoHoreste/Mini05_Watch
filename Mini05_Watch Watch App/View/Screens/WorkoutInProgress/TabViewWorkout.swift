@@ -33,7 +33,9 @@ struct TabViewWorkout: View {
             Task{
                 await healthManager.startWorkout()
             }
-            exerciseViewModel.selectExercise.append(.summary)
+            if !exerciseViewModel.selectExercise.contains(.summary){
+                exerciseViewModel.selectExercise.append(.summary)
+            }
             let _ = print("O valor tem que ser 4 da quantidade de exercicios: ", exerciseViewModel.selectExercise.count, " e esses sao os valores ", exerciseViewModel.selectExercise)
         }
         .onChange(of: exerciseViewModel.isBackToView){ oldValue, newValue in

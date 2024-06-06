@@ -32,20 +32,11 @@ class HealthKitManager: NSObject, ObservableObject{
     
     
     ///timer descrecente
-    @Published private(set) var totalDuration: TimeInterval = 20
     @Published private(set) var forcePause:  Bool = false
     
     
     override init() { }
     
-    
-    public func remainingTime(at date: Date) -> TimeInterval {
-        guard let startDate = builder?.startDate else {
-            return totalDuration
-        }
-        let elapsedTime = date.timeIntervalSince(startDate)
-        return max(totalDuration - elapsedTime, 0)
-    }
     
     public func requestPermission() async -> [HKObjectType: HKAuthorizationStatus]{
         do {
@@ -165,6 +156,7 @@ class HealthKitManager: NSObject, ObservableObject{
         runningPower = 0
         bodyMass = 0
         height = 0
+        self.forcePause = false
         
         print("Todos os dados do workout e do HealthKit foram resetados.")
     }

@@ -45,7 +45,7 @@ struct StatusWorkoutView: View {
                                           nameButton: ["Próximo"],
                                           action:  {
                                                 healthManager.pauseSession()
-                                                exerciseViewModel.backToView()
+//                                                exerciseViewModel.backToView()
                                                 if !(exerciseViewModel.selectExercise[1] == .summary){
                                                     exerciseViewModel.callSumaryView = true
                                                 }else{
@@ -66,13 +66,16 @@ struct StatusWorkoutView: View {
                 }
             }
             .sheet(isPresented: $exerciseViewModel.callSumaryView) {
-                withAnimation {
-                    SummaryView()
-                        .toolbar(.hidden, for: .navigationBar)
+                if exerciseViewModel.callSumaryView{
+                    withAnimation {
+                        SummaryView()
+                            .toolbar(.hidden, for: .navigationBar)
+                    }
                 }
             }
             .onDisappear{
                 exerciseViewModel.isBackToView = false
+                exerciseViewModel.callSumaryView = false
             }
         }
     }
