@@ -18,25 +18,23 @@ enum WorkoutViewsEnun: String{
     
     var speedOrRep: String {
         switch self {
-        case .running12min: return "Velocidade média"
-        default: return "Repetições"
+        case .running12min:
+            return "Velocidade média"
+        default:
+            return "Repetições"
         }
     }
     
     var speedOrRepRecord: String {
         switch self {
-        case .running12min: return "Velocidade Recorde"
-        default: return "Repetições Recorde"
+        case .running12min:
+            return "Velocidade Recorde"
+        default:
+            return "Repetições Recorde"
         }
     }
     
-    var keyPath: KeyPath<HealthKitManager, Double>{
-        switch self {
-        case .running12min: return \.runningSpeed
-        case .pushUps: return \.repetitions
-        default: return \.repetitions
-        }
-    }
+    
     
 }
 

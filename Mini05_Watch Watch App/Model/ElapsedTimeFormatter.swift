@@ -22,10 +22,7 @@ class ElapsedTimeFormatter: Formatter {
             return nil
         }
 
-        if time < 0 {
-            return "00:00"
-        }
-
+        let isNegative = time < 0
         let absTime = abs(time)
 
         guard let formattedString = componentsFormatter.string(from: absTime) else {
@@ -36,6 +33,6 @@ class ElapsedTimeFormatter: Formatter {
             return String(format: "%@", formattedString)
         }
 
-        return formattedString
+        return isNegative ? "-\(formattedString)" : formattedString
     }
 }

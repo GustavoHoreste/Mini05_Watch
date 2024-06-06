@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GraphView: View {
-    @State private var enums: [RunEnum] = [.avgHeartRate, .avgSpeed, .totalEnergy]
+    @State private var enums: [RunEnum] = [.avgHeartRate, .avgSpeed, .totalDistance, .totalEnergy, .totalTime]
 
     var body: some View {
         TabView {

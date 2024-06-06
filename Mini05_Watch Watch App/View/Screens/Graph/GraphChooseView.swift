@@ -10,24 +10,20 @@ import SwiftUI
 struct GraphChooseView: View {
     var body: some View {
         NavigationStack{
-            ScrollView {
-                VStack{
-                    HomeButton(name: "Corrida", destination: GraphView())
-                        .padding(20)
-                    HomeButton(name: "Flexao", destination: GraphPushUpView())
-                        .padding(20)
-                    HomeButton(name: "Abdominal", destination: GraphAbdominalView())
-                        .padding(20)
-                }
+            List{
+                HomeButton(name: "Corrida", destination: GraphView())
+                    .padding(20)
+                HomeButton(name: "Flexao", destination: GraphPushUpView())
+                    .padding(20)
+                HomeButton(name: "Abdominal", destination: GraphAbdominalView())
+                    .padding(20)
             }
-//            .listStyle(.carousel)
+            .listStyle(.carousel)
         }
         .navigationTitle("Gráficos")
     }
 }
 
 #Preview {
-    NavigationStack {
-        GraphChooseView()
-    }
+    GraphChooseView()
 }

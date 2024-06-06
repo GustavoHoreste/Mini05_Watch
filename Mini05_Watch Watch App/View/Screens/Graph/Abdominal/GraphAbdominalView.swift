@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GraphAbdominalView: View {
-    @State private var enums: [AbdominalEnum] = [.repetitions, .avgHeartRate, .totalEnergy]
+    @State private var enums: [AbdominalEnum] = [.repetitions, .avgHeartRate, .totalEnergy, .totalTime]
 
     var body: some View {
         TabView {
