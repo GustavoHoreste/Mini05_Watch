@@ -13,35 +13,38 @@ struct TimerWorkoutView: View {
     @State private var nextView: Bool = false
     
     var body: some View {
-        VStack(alignment: .center){
+        VStack(alignment: .center, spacing: 0){
             Text(self.exerciseViewModel.returnNameExercise())
-                .font(.system(size: 20))
+                .myCustonFont(fontName: .sairaRegular, size: 23.5, valueScaleFactor: 0.8)
             
             Text("Cronômetro")
-                .font(.system(size: 14))
+                .myCustonFont(fontName: .sairaRegular, size: 18, valueScaleFactor: 0.8)
             
             ///Tempo de avalição atual
             TimelineView(MetricsTimelineSchedule(from: exerciseViewModel.startDate ?? Date(), isPaused: healthManager.session?.state == .paused)) { value in
-                ElapsedTimeView(elapsedTime: upadateTimerValue(at: value.date), showSubseconds: false)
-                    .font(.system(size: 30))
+                ElapsedTimeView(elapsedTime: upadateTimerValue(at: value.date), showSubseconds: false, size: 60, font: .sairaBlack)
+                    .foregroundStyle(.myOrange)
             }
             
             ///Tempo geral
             TimelineView(MetricsTimelineSchedule(from: healthManager.builder?.startDate ?? Date(), isPaused: healthManager.session?.state == .paused)) { value in
                 
-                ElapsedTimeView(elapsedTime: healthManager.builder?.elapsedTime(at: value.date) ?? 0, showSubseconds: value.cadence == .live)
+                ElapsedTimeView(elapsedTime: healthManager.builder?.elapsedTime(at: value.date) ?? 0, showSubseconds: value.cadence == .live, size: 23.5, font: .sairaRegular)
+                    .foregroundStyle(.myOrange.opacity(0.7))
             }
             
-            Divider()
-            RecordTimeComponent(value: .constant(42.4), name: "Maior Tempo")
+            Group{
+                Divider()
+                    .overlay(Color(.spacer))
+                    .padding(.horizontal, 20)
+                RecordTimeComponent(value: .constant(42.4), name: "Maior Tempo")
+            }
+            .padding(.top)
             .onChange(of: exerciseViewModel.selectExercise) { oldValue, newValue in
                 if newValue.count != oldValue.count{
                     exerciseViewModel.startDate = Date()
                     print("nova date")
                 }
-            }
-            .navigationDestination(isPresented: $exerciseViewModel.toSummaryViewAfterTime) {
-                SummaryView()// sumario parcial
             }
         }
     }

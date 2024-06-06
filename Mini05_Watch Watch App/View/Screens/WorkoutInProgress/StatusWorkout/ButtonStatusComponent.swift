@@ -11,7 +11,6 @@ struct ButtonStatusComponent: View {
     let symbol: [ImageResource]
     let nameButton: [String]
     let action: () -> Void
-//    let isPauseOrPlay: Bool
     
     @State var buttonChange: Bool = false
     
@@ -27,6 +26,7 @@ struct ButtonStatusComponent: View {
             .buttonStyle(.plain)
             .background(
                 RoundedRectangle(cornerRadius: 9)
+                    .foregroundStyle(.myWhite)
             )
             
             Text(buttonChange ? nameButton[1] : nameButton[0])
@@ -39,7 +39,7 @@ struct ButtonStatusComponent: View {
 extension ButtonStatusComponent{
     //TODO: - Verifica se e butao e de play e pause, se for, a logica de mudar label e ativada.
     private func verifiStatusButton(){
-        if nameButton.first == "Pause"{
+        if nameButton.contains("Pausar"){
             buttonChange.toggle()
             self.action()
             return

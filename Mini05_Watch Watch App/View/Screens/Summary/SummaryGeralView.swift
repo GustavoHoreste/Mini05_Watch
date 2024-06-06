@@ -9,7 +9,11 @@ import SwiftUI
 
 struct SummaryGeralView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            NavigationLink("Voltar Home") {
+                HomeView()
+            }.navigationBarBackButtonHidden()
+        }
     }
 }
 

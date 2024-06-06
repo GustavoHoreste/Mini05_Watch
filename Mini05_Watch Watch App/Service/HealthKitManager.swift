@@ -143,6 +143,7 @@ class HealthKitManager: NSObject, ObservableObject{
     }
     
     public func togglePauseOrStart(){
+        print("estado ", session?.state.rawValue as Any)
         switch session?.state{ ///E do tipo `HKWorkoutSessionState`
         case .running: ///session em execucao
             self.pauseSession()
@@ -187,12 +188,17 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
             }
         }
         
+        
         if toState == .paused{
-            self.forcePause = true
+            DispatchQueue.main.async {
+                self.forcePause = true
+            }
         }
         
-        if toState == .running {
-            self.forcePause = false
+        if toState == .running{
+            DispatchQueue.main.async {
+                self.forcePause = false
+            }
         }
     }
     

@@ -11,7 +11,7 @@ class ExerciseProgressViewModel: ObservableObject{
     @Published public var endWorkout: Bool = false
     @Published public var isBackToView: Bool = false
     @Published public var toSummaryViewAfterTime: Bool = false
-    @Published public var selectExercise: [WorkoutViewsEnun] = []
+    @Published public var allselectExercise: [WorkoutViewsEnun] = []
     @Published public var callSumaryView: Bool = false
     @Published public var isDecrementingTimer: Bool = false
     @Published public var totalDuration: TimeInterval?
@@ -20,6 +20,7 @@ class ExerciseProgressViewModel: ObservableObject{
             self.convertDateToDouble(timerValue)
         }
     }
+    @Published public var selectExercise: [WorkoutViewsEnun] = []
 
     public var startDate: Date?
 
@@ -30,12 +31,14 @@ class ExerciseProgressViewModel: ObservableObject{
     }
     
     public func toggleValueEnd(){
-        self.endWorkout.toggle()
+        DispatchQueue.main.async {
+            self.endWorkout.toggle()
+        }
     }
     
     private func callSumarryView(_ value: Double){
         if value == 0{
-            self.toSummaryViewAfterTime = true
+            self.toggleValueEnd()
         }
     }
     
@@ -47,6 +50,8 @@ class ExerciseProgressViewModel: ObservableObject{
         self.toSummaryViewAfterTime = false
         self.callSumaryView = false
 //        self.isDecrementingTimer = false
+        
+        print("reseatado variavies do exercicio vm")
     }
     
     public func backToView(){
