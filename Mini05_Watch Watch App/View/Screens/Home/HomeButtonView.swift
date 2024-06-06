@@ -106,6 +106,10 @@ struct HomeView: View {
                     //                }
                 }
         }.navigationBarBackButtonHidden()
+            .onAppear{
+                healthManager.resetWorkoutData()
+                exerciseViewModel.reseatAll()
+            }
     }
 }
 

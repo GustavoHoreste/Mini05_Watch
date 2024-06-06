@@ -42,6 +42,8 @@ struct StatusWorkoutView: View {
                                           action:  {
                                                 
                                           }).disabled(true)
+                                            .hidden()
+                    
                     
                     ButtonStatusComponent(symbol: [.endNext],
                                           nameButton: ["Próximo"],

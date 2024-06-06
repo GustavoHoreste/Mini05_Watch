@@ -158,22 +158,27 @@ class HealthKitManager: NSObject, ObservableObject{
             return
         }
         let elapsedTime = finishDate.timeIntervalSince(startDate)
-        print("Tempo final e: ", elapsedTime)
-        
-        switch typeExercise{
-        case .running12min:
-            self.timerFinishRun = elapsedTime
-        case .pushUps:
-            self.timerFinishPushUps = elapsedTime
-        case .abdominal:
-            self.timerFinishAbdominal = elapsedTime
-        case .complete:
-            self.timerFinishGeneral = elapsedTime
-        default:
-            print("valor invalido")
-        }
-        
+        self.timerFinishGeneral = elapsedTime
     }
+    
+    public func calcTimeExercise(_ value: Date, _ startTime: Date, _ typeExercise: WorkoutViewsEnun){
+        let elapsedTime = value.timeIntervalSince(startTime)
+        
+        DispatchQueue.main.async {
+            switch typeExercise{
+            case .running12min:
+                self.timerFinishRun = elapsedTime
+            case .pushUps:
+                self.timerFinishPushUps = elapsedTime
+            case .abdominal:
+                self.timerFinishAbdominal = elapsedTime
+            default:
+                print("valor invalido")
+            }
+        }
+    }
+    
+    
     
     public func resetWorkoutData() {
         session = nil
@@ -186,7 +191,11 @@ class HealthKitManager: NSObject, ObservableObject{
         runningPower = 0
         bodyMass = 0
         height = 0
-        self.forcePause = false
+        timerFinishRun = 0
+        timerFinishAbdominal = 0
+        timerFinishPushUps = 0
+        timerFinishGeneral = 0
+        forcePause = false
         
         print("Todos os dados do workout e do HealthKit foram resetados.")
     }
@@ -199,6 +208,7 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
         print("Estado da session: ", toState.rawValue)
         
         if toState == .ended{
+            
             builder?.endCollection(withEnd: date) { (success, error) in
                 self.builder?.finishWorkout { (workout, error) in
                     if error != nil{
@@ -206,6 +216,8 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
                     }else{
                         print("Session terminada")
                         DispatchQueue.main.async {
+                            self.forcePause = true
+                            
                             self.calcFinishDate(date, .complete)
                             print("Timers abaixo: ")
                             print(self.timerFinishRun)
