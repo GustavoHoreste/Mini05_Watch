@@ -18,22 +18,24 @@ struct SelectEvaluationView: View {
                     SelectionBox(selectedExercises: $exerciseViewModel.selectExercise, exerciseName: .complete, allExercises: exercises, isCompleteButton: true)
                     
                     Divider()
-                    
+                    Spacer()
                     HStack{
-                        Text("Exercícios")
-                        Spacer()
                     }
                     
                     ForEach(exercises, id: \.self) { exercise in
                         SelectionBox(selectedExercises: $exerciseViewModel.selectExercise, exerciseName: exercise, allExercises: exercises, isCompleteButton: false)
                     }
                 
-                    Divider()
                     
-                    NavigationLink("NextView") {
+                    NavigationLink {
                         self.configRinning()
+                    } label: {
+                        ButtonNextLabel()
                     }
                     .disabled(exerciseViewModel.selectExercise.isEmpty)
+                    .buttonStyle(PlainButtonStyle())
+                    .padding(.leading, 80)
+                    .padding(.top, 5)
             }
             .myBackButton()
         }
