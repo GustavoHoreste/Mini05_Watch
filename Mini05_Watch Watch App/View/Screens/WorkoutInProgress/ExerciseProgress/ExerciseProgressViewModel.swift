@@ -45,7 +45,6 @@ class ExerciseProgressViewModel: ObservableObject{
     public func callSumarryView(){
         DispatchQueue.main.async {
             if self.selectExercise[1] == .summary{
-//                self.endSession()
                 self.toggleValueEnd()
             }else if !self.callSumaryView{
                 self.callSumaryView = true
