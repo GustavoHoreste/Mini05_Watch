@@ -18,19 +18,18 @@ struct StatusWorkoutView: View {
                     .myCustonFont(fontName: .sairaMedium, size: 21.5, valueScaleFactor: 0.8)
                 
                 HStack{
-                    ButtonStatusComponent(symbol: [.pauseSimbolo, .despauseSimbolo],
-                                          nameButton: ["Pausar", "Recomeçar"],
-                                          action:  {
-                                                healthManager.togglePauseOrStart()
-                                                exerciseViewModel.backToView()
-                                            })
-                    
                     ButtonStatusComponent(symbol: [.endSimbolo],
                                           nameButton: ["Finalizar"],
                                           action:
                                             {
                                                 healthManager.endSession()
                                                 exerciseViewModel.toggleValueEnd()
+                                            })
+                    
+                    ButtonStatusComponent(symbol: [.pauseSimbolo, .despauseSimbolo],
+                                          nameButton: ["Pausar", "Retomar"],
+                                          action:  {
+                                                healthManager.togglePauseOrStart()
                                                 exerciseViewModel.backToView()
                                             })
                 }
@@ -45,15 +44,19 @@ struct StatusWorkoutView: View {
                     ButtonStatusComponent(symbol: [.endNext],
                                           nameButton: ["Próximo"],
                                           action:  {
-                                                //healthManager.togglePauseOrStart()
-                                                exerciseViewModel.nextExercise()
-                                                exerciseViewModel.backToView()
+                                                healthManager.pauseSession()
+//                                                exerciseViewModel.backToView()
+                                                if !(exerciseViewModel.selectExercise[1] == .summary){
+                                                    exerciseViewModel.callSumaryView = true
+                                                }else{
+                                                    healthManager.endSession()
+                                                    exerciseViewModel.toggleValueEnd()
+                                                }
                                           })
-                    
                 }
             }
-            .navigationDestination(isPresented: $exerciseViewModel.endWorkout) {
-                SummaryView()
+            .onAppear{
+                
             }
             .onDisappear{
                 exerciseViewModel.isBackToView = false
