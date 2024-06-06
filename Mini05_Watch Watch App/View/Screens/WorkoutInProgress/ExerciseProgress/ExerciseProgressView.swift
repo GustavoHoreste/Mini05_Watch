@@ -10,7 +10,7 @@ import SwiftUI
 struct ExerciseProgressView: View {
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
     @EnvironmentObject private var healthManager: HealthKitManager
-    @State private var callSummaryView: Bool = false
+    @State private var callSummaryGeralView: Bool = false
 
     var body: some View {
         NavigationStack{
@@ -19,7 +19,9 @@ struct ExerciseProgressView: View {
                 case .running12min:
                     MakeExerciseProgressView{
                         InformationViewComponemt(nameExercise: exerciseViewModel.returnNameExercise(),
-                                                 value: healthManager.runningSpeed)
+                                                 subTitle: "Velocidade atual",
+                                                 value: healthManager.runningSpeed,
+                                                 extensionName: "Km/h")
                     }
                 case .pushUps, .abdominal:
                     MakeExerciseProgressView {
@@ -32,14 +34,7 @@ struct ExerciseProgressView: View {
                 }
             }
             .onAppear{
-                if exerciseViewModel.selectExercise.first == .summary{
-                    self.callSummaryView = true
-                }
-            }
-            .navigationDestination(isPresented: $callSummaryView) {
-                withAnimation {
-                    SummaryView()
-                }
+                let _ = print(exerciseViewModel.selectExercise.first?.rawValue ?? "nil")
             }
         }
     }
@@ -60,7 +55,7 @@ struct MakeExerciseProgressView<T: View>: View {
             TimerWorkoutView()
             self.content
         }.tabViewStyle(.carousel)
-//            .background(.bg)
+            .background(.bg)
     }
 }
 

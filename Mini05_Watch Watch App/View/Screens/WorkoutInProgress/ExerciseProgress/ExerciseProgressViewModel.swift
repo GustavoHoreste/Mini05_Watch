@@ -148,17 +148,18 @@ class ExerciseProgressViewModel: ObservableObject {
             
             if ultimoPonto == "baixo" && rotationX >= pontoAlto {
                 ultimoPonto = "alto"
-                abdomemTrincado += 0.5
+                abdomemTrincado += 1
             }
             
             if ultimoPonto == "alto" && rotationX <= pontoBaixo {
                 ultimoPonto = "baixo"
-                abdomemTrincado += 0.5
+                abdomemTrincado += 1
             }
         }
         
         debugMessage = ultimoPonto
     }
+    
     
     public func stopGyroscope() {
         motionManager.stopDeviceMotionUpdates()
