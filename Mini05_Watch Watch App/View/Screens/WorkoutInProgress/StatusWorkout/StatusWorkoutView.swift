@@ -56,29 +56,13 @@ struct StatusWorkoutView: View {
                                                 }
                                                 saveData()
                                           })
-                    
                 }
             }
             .onAppear{
                 
             }
-            .navigationDestination(isPresented: $exerciseViewModel.endWorkout) {
-                if exerciseViewModel.endWorkout{
-                    SummaryGeralView()// Quando Termina chama a view final
-                        .toolbar(.hidden, for: .navigationBar)
-                }
-            }
-            .sheet(isPresented: $exerciseViewModel.callSumaryView) {
-                if exerciseViewModel.callSumaryView{
-                    withAnimation {
-                        SummaryView()
-                            .toolbar(.hidden, for: .navigationBar)
-                    }
-                }
-            }
             .onDisappear{
                 exerciseViewModel.isBackToView = false
-                exerciseViewModel.callSumaryView = false
             }
         }
     }
