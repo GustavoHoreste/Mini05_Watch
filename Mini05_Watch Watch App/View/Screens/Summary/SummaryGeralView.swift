@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct SummaryGeralView: View {
-//    @EnvironmentObject private var healthManager: HealthKitManager
+    @EnvironmentObject private var healthManager: HealthKitManager
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
     
     @Environment(\.modelContext) var modelContext
@@ -31,7 +31,7 @@ struct SummaryGeralView: View {
                         .myCustonFont(fontName: .sairaRegular, size: 18, valueScaleFactor: 0.8)
                         .foregroundStyle(.white)
                     // MUDAR PARA O ARRAY COM TODOS OS EXERCICIOS SELECIONADOS AQUI
-                    SummaryGeralData(title: "Tempo", subTitle: viewModel.arraySubTitle(enums: exerciseViewModel.allselectExercise, addMedia: false), subValue: ["40:05", "20:05", "10:00", "10:00"])
+                    SummaryGeralData(title: "Tempo", subTitle: viewModel.arraySubTitle(enums: exerciseViewModel.allselectExercise, addMedia: false), subValue: viewModel.arrayTimeValue(healthManager: healthManager, excViewModel: exerciseViewModel))
                     // MUDAR PARA O ARRAY COM TODOS OS EXERCICIOS SELECIONADOS AQUI
                     SummaryGeralData(title: "Frequência Cardíaca", subTitle: viewModel.arraySubTitle(enums: exerciseViewModel.allselectExercise, addMedia: true), subValue: viewModel.arrayHeartValue(enums: exerciseViewModel.allselectExercise))
                     // MUDAR PARA O ARRAY COM TODOS OS EXERCICIOS SELECIONADOS AQUI
@@ -65,6 +65,7 @@ struct SummaryGeralView: View {
         .onAppear {
             viewModel.modelContext = modelContext
             viewModel.fetchData()
+            healthManager.endSession()
         }
     }
 }

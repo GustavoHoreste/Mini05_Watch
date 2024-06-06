@@ -30,9 +30,9 @@ struct SummaryView: View {
                         .foregroundStyle(.myOrange)
                     HStack {
                         SummaryDataComponent(title: "Tempo de exercício",
-                                             value: "20:05")
+                                             value: Int(healthManager[keyPath: exerciseViewModel.selectExercise.first!.keyPathTimer]).formatTime())
                         SummaryDataComponent(title: "Tempo Recorde",
-                                             value: "48:10")
+                                             value: viewModel.tempoRecord(enun: exerciseViewModel.selectExercise.first!, value: healthManager[keyPath: exerciseViewModel.selectExercise.first!.keyPathTimer]))
                     }
                     HStack {
                         SummaryDataComponent(title: exerciseViewModel.selectExercise.first!.speedOrRep,

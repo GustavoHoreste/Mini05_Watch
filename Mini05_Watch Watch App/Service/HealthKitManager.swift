@@ -28,7 +28,6 @@ class HealthKitManager: NSObject, ObservableObject{
     @Published private(set) var runningPower: Double = 0
     @Published private(set) var bodyMass: Double = 0
     @Published private(set) var height: Double = 0
-    @Published private(set) var generalTimeWorkout: String = ""
     @Published private(set) var repetitions: Double = 0
     @Published public var calories: Double = 0
     
@@ -215,8 +214,6 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
                             print(self.timerFinishGeneral)
                         }
                     }
-                    let test = workout?.allStatistics
-                    
                 }
             }
         }

@@ -53,6 +53,24 @@ class SummaryGeralViewModel {
         return array
     }
     
+    func arrayTimeValue(healthManager: HealthKitManager, excViewModel: ExerciseProgressViewModel)-> [String] {
+        var array: [String] = []
+        var dataArray: [Double] = []
+        
+        for enun in excViewModel.allselectExercise {
+            dataArray.append(healthManager[keyPath: enun.keyPathTimer])
+        }
+        
+        let total = dataArray.reduce(0, +)
+        array.append(Int(healthManager.timerFinishGeneral).formatTime())
+        
+        for data in dataArray {
+            array.append(Int(data).formatTime())
+        }
+        
+        return array
+    }
+    
     func arrayHeartValue(enums: [WorkoutViewsEnun])-> [String] {
         var array: [String] = []
         var dataArray: [Double] = []
