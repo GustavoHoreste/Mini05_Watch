@@ -25,7 +25,7 @@ struct HeartAndCaloriesViewComponemt: View {
             SectionExercise(model: SectionExerciseModel(
                                 exetensionSection: "cal",
                                 systemImage: "flame.fill",
-                                value: healthManager.calories))
+                                value: healthManager.activeEnergyBurned))
         }.padding(.horizontal)
     }
 }

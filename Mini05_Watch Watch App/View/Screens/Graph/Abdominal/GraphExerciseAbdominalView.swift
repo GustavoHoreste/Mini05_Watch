@@ -23,9 +23,9 @@ struct GraphExerciseAbdominalView: View {
                 VStack {
                     HStack {
                         Spacer()
-                        Image(systemName: viewModel.abdominalEnum.sfSymbol)
+                        Image(systemName: "heart.fill")
                             .foregroundStyle(viewModel.abdominalEnum.color)
-                        Text("\(viewModel.getAverage(), specifier: "%.0f")\(viewModel.complementValue())")
+                        Text("\(viewModel.getAverage(), specifier: "%.0f")")
                             .font(.system(size: 26))
                     }
                     .padding(.trailing)

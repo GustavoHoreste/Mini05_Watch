@@ -26,9 +26,9 @@ struct GraphExerciseView: View {
                 VStack {
                     HStack {
                         Spacer()
-                        Image(systemName: viewModel.runEnum.sfSymbol)
+                        Image(systemName: "heart.fill")
                             .foregroundStyle(viewModel.runEnum.color)
-                        Text("\(viewModel.getAverage(), specifier: "%.0f")\(viewModel.complementValue())")
+                        Text("\(viewModel.getAverage(), specifier: "%.0f")")
                             .font(.system(size: 26))
                     }
                     .padding(.trailing)
