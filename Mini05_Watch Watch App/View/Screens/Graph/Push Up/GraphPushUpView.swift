@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GraphPushUpView: View {
-    @State private var enums: [PushUpEnum] = [.repetitions, .avgHeartRate, .totalEnergy, .totalTime]
+    @State private var enums: [PushUpEnum] = [.repetitions, .avgHeartRate, .totalEnergy]
 
     var body: some View {
         TabView {

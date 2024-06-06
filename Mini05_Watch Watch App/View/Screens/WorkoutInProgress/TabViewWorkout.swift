@@ -41,6 +41,19 @@ struct TabViewWorkout: View {
         .onChange(of: exerciseViewModel.isBackToView){ oldValue, newValue in
             displayMetricsView()
         }
+        .navigationDestination(isPresented: $exerciseViewModel.endWorkout) {
+            if exerciseViewModel.endWorkout{
+                SummaryGeralView()// Quando Termina chama a view final
+            }
+        }
+        .sheet(isPresented: $exerciseViewModel.callSumaryView) {
+            if exerciseViewModel.callSumaryView{
+                withAnimation {
+                    SummaryView()
+                        .toolbar(.hidden, for: .navigationBar)
+                }
+            }
+        }
         .navigationBarBackButtonHidden()
         
     }
