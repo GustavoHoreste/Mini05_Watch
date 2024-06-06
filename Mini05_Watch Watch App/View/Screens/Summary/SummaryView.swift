@@ -12,6 +12,8 @@ struct SummaryView: View {
     @EnvironmentObject private var healthManager: HealthKitManager
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
     
+    @State private var viewModel = SummaryViewModel()
+    
     @State private var navigateToNextView = false
 
     var body: some View {
@@ -31,9 +33,9 @@ struct SummaryView: View {
                     }
                     HStack {
                         SummaryDataComponent(title: exerciseViewModel.selectExercise.first!.speedOrRep,
-                                             value: "\(healthManager.runningSpeed)")
+                                             value: "\(Int(healthManager[keyPath: exerciseViewModel.selectExercise.first!.keyPath]))")
                         SummaryDataComponent(title: exerciseViewModel.selectExercise.first!.speedOrRepRecord,
-                                             value: "67Km/h")
+                                             value: viewModel.speedOrRepRecord(enun: exerciseViewModel.selectExercise.first!, value: healthManager[keyPath: exerciseViewModel.selectExercise.first!.keyPath]))
                     }
                     HStack {
                         SummaryDataComponent(title: "Frequência cardíaca",

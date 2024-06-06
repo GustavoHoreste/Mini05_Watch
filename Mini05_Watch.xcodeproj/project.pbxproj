@@ -18,6 +18,7 @@
 		C01C8C8D2C1105BE001826D6 /* SummaryGeralData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C8C2C1105BE001826D6 /* SummaryGeralData.swift */; };
 		C01C8C8F2C1105DD001826D6 /* SummaryGeralDataLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C8E2C1105DD001826D6 /* SummaryGeralDataLine.swift */; };
 		C01C8C912C112F7C001826D6 /* SummaryGeralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C902C112F7C001826D6 /* SummaryGeralViewModel.swift */; };
+		C01C8C932C11F27A001826D6 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C922C11F27A001826D6 /* SummaryViewModel.swift */; };
 		C0EA943C2C0124F40057E48B /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943B2C0124F40057E48B /* GraphView.swift */; };
 		C0EA94402C012F520057E48B /* GraphExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943F2C012F520057E48B /* GraphExerciseView.swift */; };
 		C0F01FE02C07C75000FE6CC9 /* GraphExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F01FDF2C07C75000FE6CC9 /* GraphExerciseViewModel.swift */; };
@@ -110,6 +111,7 @@
 		C01C8C8C2C1105BE001826D6 /* SummaryGeralData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralData.swift; sourceTree = "<group>"; };
 		C01C8C8E2C1105DD001826D6 /* SummaryGeralDataLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralDataLine.swift; sourceTree = "<group>"; };
 		C01C8C902C112F7C001826D6 /* SummaryGeralViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralViewModel.swift; sourceTree = "<group>"; };
+		C01C8C922C11F27A001826D6 /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		C0EA943B2C0124F40057E48B /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		C0EA943F2C012F520057E48B /* GraphExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphExerciseView.swift; sourceTree = "<group>"; };
 		C0F01FDF2C07C75000FE6CC9 /* GraphExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphExerciseViewModel.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				C01C8C8A2C110506001826D6 /* SummaryGeralView.swift */,
 				C01C8C902C112F7C001826D6 /* SummaryGeralViewModel.swift */,
 				D91846112BFFD2E10076F3A3 /* SummaryView.swift */,
+				C01C8C922C11F27A001826D6 /* SummaryViewModel.swift */,
 				C01C8C852C10E27A001826D6 /* SummaryComponents */,
 			);
 			path = Summary;
@@ -553,6 +556,7 @@
 				D94FBF912C0DF51000C852DE /* InformationViewComponemt.swift in Sources */,
 				D908CAB02BFFD09A00A088B3 /* UserModel.swift in Sources */,
 				D981C96B2C0BB66200003DCF /* SelectButtonComponent.swift in Sources */,
+				C01C8C932C11F27A001826D6 /* SummaryViewModel.swift in Sources */,
 				D981C96D2C0BB76300003DCF /* ButtonNext.swift in Sources */,
 				5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */,
 				C0F01FEA2C0FA80E00FE6CC9 /* PushUpData.swift in Sources */,

@@ -30,11 +30,11 @@ enum WorkoutViewsEnun: String{
         }
     }
     
-    var keyPath: AnyKeyPath{
+    var keyPath: KeyPath<HealthKitManager, Double>{
         switch self {
-        case .running12min: return \SummaryGeralViewModel.lastRunData
-        case .pushUps: return \SummaryGeralViewModel.lastPushUpData
-        default: return \SummaryGeralViewModel.lastAbdominalData
+        case .running12min: return \.runningSpeed
+        case .pushUps: return \.repetitions
+        default: return \.repetitions
         }
     }
     

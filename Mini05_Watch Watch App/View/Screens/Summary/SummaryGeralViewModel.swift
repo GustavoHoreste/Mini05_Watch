@@ -11,7 +11,6 @@ import SwiftData
 
 @Observable
 class SummaryGeralViewModel {
-    
     var modelContext: ModelContext? = nil
     
     var lastRunData: RunData?
