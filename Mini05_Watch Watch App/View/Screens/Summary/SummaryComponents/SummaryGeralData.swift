@@ -17,13 +17,14 @@ struct SummaryGeralData: View {
         VStack {
             HStack {
                 Text(title)
-                    .myCustonFont(fontName: .sairaBold, size: 20, valueScaleFactor: 0.8)
+                    .myCustonFont(fontName: .sairaBold, size: 18, valueScaleFactor: 0.8)
                     .foregroundStyle(.myOrange)
                 Spacer()
             }
             ForEach(Array(zip(subTitle, subValue)), id: \.0) { title, value in
                 SummaryGeralDataLine(title: title, value: value)
             }
+            Divider()
         }
     }
 }

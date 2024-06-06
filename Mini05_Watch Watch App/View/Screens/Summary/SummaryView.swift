@@ -6,12 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SummaryView: View {
     @EnvironmentObject private var healthManager: HealthKitManager
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
-    
-    var exerciseType: WorkoutViewsEnun
     
     @State private var navigateToNextView = false
 
@@ -21,26 +20,26 @@ struct SummaryView: View {
                 VStack {
                     Text("Relatório")
                         .myCustonFont(fontName: .sairaMedium, size: 25, valueScaleFactor: 0.8)
-                    Text(exerciseType.rawValue)
+                    Text(exerciseViewModel.selectExercise.first!.rawValue)
                         .myCustonFont(fontName: .sairaRegular, size: 18, valueScaleFactor: 0.8)
                         .foregroundStyle(.myOrange)
                     HStack {
-                        SummaryDataComponent(title: "Tempo de corrida",
+                        SummaryDataComponent(title: "Tempo de exercício",
                                              value: "20:05")
                         SummaryDataComponent(title: "Tempo Recorde",
                                              value: "48:10")
                     }
                     HStack {
-                        SummaryDataComponent(title: exerciseType.speedOrRep,
-                                             value: "20Km/h")
-                        SummaryDataComponent(title: exerciseType.speedOrRepRecord,
+                        SummaryDataComponent(title: exerciseViewModel.selectExercise.first!.speedOrRep,
+                                             value: "\(healthManager.runningSpeed)")
+                        SummaryDataComponent(title: exerciseViewModel.selectExercise.first!.speedOrRepRecord,
                                              value: "67Km/h")
                     }
                     HStack {
                         SummaryDataComponent(title: "Frequência cardíaca",
-                                             value: "138bpm")
+                                             value: "\(healthManager.heartRate)")
                         SummaryDataComponent(title: "Calorias queimadas",
-                                             value: "300kcal")
+                                             value: "\(healthManager.activeEnergyBurned)")
                     }
                     Button(action: {
                         navigateToNextView.toggle()
@@ -64,7 +63,8 @@ struct SummaryView: View {
 
             }
             .navigationBarBackButtonHidden()
-            .navigationDestination(isPresented: $navigateToNextView) { SummaryView(exerciseType: .abdominal) // MUDAR PARA O CERTO
+            .navigationDestination(isPresented: $navigateToNextView) { 
+                SummaryView()
             }
         }
     }

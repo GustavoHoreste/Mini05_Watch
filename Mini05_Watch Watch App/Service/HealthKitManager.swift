@@ -109,14 +109,14 @@ class HealthKitManager: NSObject, ObservableObject{
                 self.activeEnergyBurned = statistics.sumQuantity()?.doubleValue(for: unit!) ?? 0
             case HKQuantityType(.heartRate):
                 unit = HKUnit.count().unitDivided(by: HKUnit.minute())
-                self.heartRate = statistics.mostRecentQuantity()?.doubleValue(for: unit!) ?? 0
+                self.heartRate = statistics.averageQuantity()?.doubleValue(for: unit!) ?? 0
             case HKQuantityType(.distanceWalkingRunning):
                 unit = HKUnit.meter()
                 self.distanceWalkingRunning = statistics.sumQuantity()?.doubleValue(for: unit!) ?? 0
             case HKQuantityType(.runningSpeed):
                 unit = HKUnit.meter().unitDivided(by: .second())
-                self.runningSpeed = statistics.mostRecentQuantity()?.doubleValue(for: unit!) ?? 0
-//                self.runningSpeed = statistics.averageQuantity()?.doubleValue(for: unit!) ?? 0
+//                self.runningSpeed = statistics.mostRecentQuantity()?.doubleValue(for: unit!) ?? 0
+                self.runningSpeed = statistics.averageQuantity()?.doubleValue(for: unit!) ?? 0
             case HKQuantityType(.runningPower):
                 unit = HKUnit.watt()
                 self.runningPower = statistics.averageQuantity()?.doubleValue(for: unit!) ?? 0
