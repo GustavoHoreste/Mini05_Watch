@@ -31,7 +31,7 @@ struct ExerciseProgressView: View {
                                                  extensionName: "")
                     }
                 default:
-                    EmptyView()
+//                    EmptyView()
                     let _ = print("view vazia")
                 }
             }
