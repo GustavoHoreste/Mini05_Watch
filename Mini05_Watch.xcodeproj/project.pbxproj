@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A9B224F2C123B570044DE8C /* RunData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943D2C0125340057E48B /* RunData.swift */; };
 		5538C6CB2BFFE21F00971930 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CA2BFFE21F00971930 /* AchievementView.swift */; };
 		5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */; };
 		C01C8C7D2C10D7AD001826D6 /* Saira-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C792C10D7AD001826D6 /* Saira-Regular.ttf */; };
@@ -14,7 +15,6 @@
 		C01C8C7F2C10D7AD001826D6 /* Saira-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */; };
 		C01C8C802C10D7AD001826D6 /* Saira-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7C2C10D7AD001826D6 /* Saira-Bold.ttf */; };
 		C0EA943C2C0124F40057E48B /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943B2C0124F40057E48B /* GraphView.swift */; };
-		C0EA943E2C0125340057E48B /* RunData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943D2C0125340057E48B /* RunData.swift */; };
 		C0EA94402C012F520057E48B /* GraphExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943F2C012F520057E48B /* GraphExerciseView.swift */; };
 		C0F01FE02C07C75000FE6CC9 /* GraphExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F01FDF2C07C75000FE6CC9 /* GraphExerciseViewModel.swift */; };
 		C0F01FE42C0FA7B100FE6CC9 /* GraphPushUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F01FE32C0FA7B100FE6CC9 /* GraphPushUpView.swift */; };
@@ -198,7 +198,6 @@
 				C0EA943B2C0124F40057E48B /* GraphView.swift */,
 				C0EA943F2C012F520057E48B /* GraphExerciseView.swift */,
 				C0F01FDF2C07C75000FE6CC9 /* GraphExerciseViewModel.swift */,
-				C0EA943D2C0125340057E48B /* RunData.swift */,
 			);
 			path = Run;
 			sourceTree = "<group>";
@@ -513,6 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A9B224F2C123B570044DE8C /* RunData.swift in Sources */,
 				C0F01FF32C0FB50900FE6CC9 /* GraphExerciseAbdominalViewModel.swift in Sources */,
 				D908CA9E2BFFD03700A088B3 /* ContentView.swift in Sources */,
 				5538C6CB2BFFE21F00971930 /* AchievementView.swift in Sources */,
@@ -560,7 +560,6 @@
 				D93311872C03B4160077D9BE /* PermissionDeniedView.swift in Sources */,
 				D91846242BFFD5DC0076F3A3 /* PUViewModel.swift in Sources */,
 				C0F01FE82C0FA7E800FE6CC9 /* GraphExercisePushUpViewModel.swift in Sources */,
-				C0EA943E2C0125340057E48B /* RunData.swift in Sources */,
 				D908CA9C2BFFD03700A088B3 /* Mini05_WatchApp.swift in Sources */,
 				C0F01FEF2C0FB4D800FE6CC9 /* GraphAbdominalView.swift in Sources */,
 				C0F01FE62C0FA7D400FE6CC9 /* GraphExercisePushUpView.swift in Sources */,

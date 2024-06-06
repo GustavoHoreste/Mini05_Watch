@@ -22,14 +22,14 @@ struct TimerWorkoutView: View {
             
             ///Tempo de avalição atual
             TimelineView(MetricsTimelineSchedule(from: exerciseViewModel.startDate ?? Date(), isPaused: healthManager.session?.state == .paused)) { value in
-                ElapsedTimeView(elapsedTime: upadateTimerValue(at: value.date), showSubseconds: false, size: 60, font: .sairaBlack)
+                ElapsedTimeView(elapsedTime: upadateTimerValue(at: value.date), showSubseconds: false)
                     .foregroundStyle(.myOrange)
             }
             
             ///Tempo geral
             TimelineView(MetricsTimelineSchedule(from: healthManager.builder?.startDate ?? Date(), isPaused: healthManager.session?.state == .paused)) { value in
                 
-                ElapsedTimeView(elapsedTime: healthManager.builder?.elapsedTime(at: value.date) ?? 0, showSubseconds: value.cadence == .live, size: 23.5, font: .sairaRegular)
+                ElapsedTimeView(elapsedTime: healthManager.builder?.elapsedTime(at: value.date) ?? 0, showSubseconds: value.cadence == .live)
                     .foregroundStyle(.myOrange.opacity(0.7))
             }
             
