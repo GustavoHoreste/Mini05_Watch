@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SummaryView: View {
     @EnvironmentObject private var healthManager: HealthKitManager
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
     @Environment(\.dismiss) private var dismiss
     
-    var exerciseType: WorkoutViewsEnun = .running12min
+//    @Environment(\.modelContext) var modelContext
+    
+    @State private var viewModel = SummaryViewModel()
     
     @State private var navigateToNextView = false
 
@@ -22,28 +25,29 @@ struct SummaryView: View {
                 VStack {
                     Text("Relatório")
                         .myCustonFont(fontName: .sairaMedium, size: 25, valueScaleFactor: 0.8)
-                    Text(exerciseType.rawValue)
+                    Text(exerciseViewModel.selectExercise.first!.rawValue)
                         .myCustonFont(fontName: .sairaRegular, size: 18, valueScaleFactor: 0.8)
                         .foregroundStyle(.myOrange)
                     HStack {
-                        SummaryDataComponent(title: "Tempo de corrida",
+                        SummaryDataComponent(title: "Tempo de exercício",
                                              value: "20:05")
                         SummaryDataComponent(title: "Tempo Recorde",
                                              value: "48:10")
                     }
                     HStack {
-                        SummaryDataComponent(title: exerciseType.speedOrRep,
-                                             value: "20Km/h")
-                        SummaryDataComponent(title: exerciseType.speedOrRepRecord,
-                                             value: "67Km/h")
+                        SummaryDataComponent(title: exerciseViewModel.selectExercise.first!.speedOrRep,
+                                             value: "\(Int(healthManager[keyPath: exerciseViewModel.selectExercise.first!.keyPath]))")
+                        SummaryDataComponent(title: exerciseViewModel.selectExercise.first!.speedOrRepRecord,
+                                             value: viewModel.speedOrRepRecord(enun: exerciseViewModel.selectExercise.first!, value: healthManager[keyPath: exerciseViewModel.selectExercise.first!.keyPath]))
                     }
                     HStack {
                         SummaryDataComponent(title: "Frequência cardíaca",
-                                             value: "138bpm")
+                                             value: "\(Int(healthManager.heartRate))bpm")
                         SummaryDataComponent(title: "Calorias queimadas",
-                                             value: "300kcal")
+                                             value: "\(Int(healthManager.calories))kcal")
                     }
                     Button(action: {
+                        healthManager.calories = 0
                         healthManager.resumeSession()
                         exerciseViewModel.callSumaryView = false
                         exerciseViewModel.nextExercise()
@@ -66,6 +70,7 @@ struct SummaryView: View {
             .toolbar(.hidden, for: .navigationBar)
         }
     }
+    
 }
 
 

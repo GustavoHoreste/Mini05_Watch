@@ -19,7 +19,6 @@ struct SummaryGeralDataLine: View {
             Spacer()
             Text(value)
                 .myCustonFont(fontName: .sairaRegular, size: 15, valueScaleFactor: 0.8)
-
         }
     }
 }

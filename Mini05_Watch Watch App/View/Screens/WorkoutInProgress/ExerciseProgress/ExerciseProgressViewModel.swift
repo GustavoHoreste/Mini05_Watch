@@ -13,7 +13,7 @@ class ExerciseProgressViewModel: ObservableObject{
     @Published public var endWorkout: Bool = false
     @Published public var isBackToView: Bool = false
     @Published public var toSummaryViewAfterTime: Bool = false
-    @Published public var allselectExercise: [WorkoutViewsEnun] = []
+    @Published public var allselectExercise: [WorkoutViewsEnun] = [.running12min, .pushUps, .abdominal]
     @Published public var callSumaryView: Bool = false
     @Published public var isDecrementingTimer: Bool = false
     @Published public var totalDuration: TimeInterval?
@@ -63,7 +63,7 @@ class ExerciseProgressViewModel: ObservableObject{
         self.hasExecute = false
         self.totalDuration = nil
         self.timerValue = Date()
-        self.allselectExercise = []
+//        self.allselectExercise = []
 
         print("Resetei as variáveis do exercício view model")
     }
