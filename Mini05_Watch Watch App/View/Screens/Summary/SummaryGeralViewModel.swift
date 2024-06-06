@@ -13,9 +13,9 @@ import SwiftData
 class SummaryGeralViewModel {
     var modelContext: ModelContext? = nil
     
-    var lastRunData: RunData?
-    var lastPushUpData: PushUpData?
-    var lastAbdominalData: AbdominalData?
+    var runData: [RunData] = []
+    var pushUpData: [PushUpData] = []
+    var abdominalData: [AbdominalData] = []
     
     func fetchData() {
         let fetchDescriptor = FetchDescriptor<AbdominalData>(
@@ -28,13 +28,9 @@ class SummaryGeralViewModel {
             sortBy: [SortDescriptor(\PushUpData.date)]
         )
         
-        let abdominalData = (try? (modelContext?.fetch(fetchDescriptor) ?? [])) ?? []
-        let runData = (try? (modelContext?.fetch(fetchDescriptorRun) ?? [])) ?? []
-        let pushData = (try? (modelContext?.fetch(fetchDescriptorPush) ?? [])) ?? []
-        
-        lastRunData = runData.last
-        lastPushUpData = pushData.last
-        lastAbdominalData = abdominalData.last
+        abdominalData = (try? (modelContext?.fetch(fetchDescriptor) ?? [])) ?? []
+        runData = (try? (modelContext?.fetch(fetchDescriptorRun) ?? [])) ?? []
+        pushUpData = (try? (modelContext?.fetch(fetchDescriptorPush) ?? [])) ?? []
     }
     
     func arraySubTitle(enums: [WorkoutViewsEnun], addMedia: Bool)-> [String] {
@@ -60,9 +56,14 @@ class SummaryGeralViewModel {
     func arrayHeartValue(enums: [WorkoutViewsEnun])-> [String] {
         var array: [String] = []
         var dataArray: [Double] = []
-        let lastRun = lastRunData!.avgHeartRate
-        let lastPush = lastPushUpData!.avgHeartRate
-        let lastAbd = lastAbdominalData!.avgHeartRate
+        
+        let run = runData.last ?? RunData(date: Date(), totalEnergy: 0, avgHeartRate: 0, avgSpeed: 0)
+        let push = pushUpData.last ?? PushUpData(date: Date(), totalEnergy: 0, avgHeartRate: 0, repetitions: 0)
+        let abd = abdominalData.last ?? AbdominalData(date: Date(), totalEnergy: 0, avgHeartRate: 0, repetitions: 0)
+        
+        let lastRun = run.avgHeartRate
+        let lastPush = push.avgHeartRate
+        let lastAbd = abd.avgHeartRate
         
         for enun in enums {
             switch enun {
@@ -75,7 +76,7 @@ class SummaryGeralViewModel {
         let total = dataArray.reduce(0, +)
         let average = total / Double(dataArray.count)
         
-        array.append("\(Int(average))")
+        array.append("\(Int(average.isNaN ? 0 : average))bpm")
         
         for enun in enums {
             switch enun {
@@ -91,9 +92,14 @@ class SummaryGeralViewModel {
     func arrayCaloriesValue(enums: [WorkoutViewsEnun])-> [String] {
         var array: [String] = []
         var dataArray: [Double] = []
-        let lastRun = lastRunData!.totalEnergy
-        let lastPush = lastPushUpData!.totalEnergy
-        let lastAbd = lastAbdominalData!.totalEnergy
+        
+        let run = runData.last ?? RunData(date: Date(), totalEnergy: 0, avgHeartRate: 0, avgSpeed: 0)
+        let push = pushUpData.last ?? PushUpData(date: Date(), totalEnergy: 0, avgHeartRate: 0, repetitions: 0)
+        let abd = abdominalData.last ?? AbdominalData(date: Date(), totalEnergy: 0, avgHeartRate: 0, repetitions: 0)
+        
+        let lastRun = run.totalEnergy
+        let lastPush = push.totalEnergy
+        let lastAbd = abd.totalEnergy
         
         for enun in enums {
             switch enun {
@@ -104,10 +110,9 @@ class SummaryGeralViewModel {
         }
         
         let total = dataArray.reduce(0, +)
-        let average = total / Double(dataArray.count)
         
-        array.append("\(Int(average))")
-        
+        array.append("\(Int(total.isNaN ? 0 : total))kcal")
+
         for enun in enums {
             switch enun {
             case .running12min: array.append("\(Int(lastRun))kcal")
@@ -120,14 +125,19 @@ class SummaryGeralViewModel {
     }
     
     func arraySpeedValue()-> [String] {
-        let lastRun = lastRunData!.avgSpeed
+        let run = runData.last ?? RunData(date: Date(), totalEnergy: 0, avgHeartRate: 0, avgSpeed: 0)
+        let lastRun = run.avgSpeed
+        
         return ["\(Int(lastRun))Km/h"]
     }
     
     func arrayRepsValue(enums: [WorkoutViewsEnun])-> [String] {
         var array: [String] = []
-        let lastPush = lastPushUpData!.repetitions
-        let lastAbd = lastAbdominalData!.repetitions
+        let push = pushUpData.last ?? PushUpData(date: Date(), totalEnergy: 0, avgHeartRate: 0, repetitions: 0)
+        let abd = abdominalData.last ?? AbdominalData(date: Date(), totalEnergy: 0, avgHeartRate: 0, repetitions: 0)
+        
+        let lastPush = push.repetitions
+        let lastAbd = abd.repetitions
         
         for enun in enums {
             switch enun {

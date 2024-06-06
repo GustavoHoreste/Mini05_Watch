@@ -15,7 +15,7 @@ struct HomeView: View {
     
     private let buttons: [HomeButtonData] = [
         HomeButtonData(name: "Iniciar", destination: AnyView(SelectEvaluationView()), description: "Iniciar uma nova \navaliação", id: 0),
-        HomeButtonData(name: "Avaliações", destination: AnyView(GraphView()), description: "Visualizar avaliações\n passadas", id: 1),
+        HomeButtonData(name: "Avaliações", destination: AnyView(GraphChooseView()), description: "Visualizar avaliações\n passadas", id: 1),
     ]
     
     var body: some View {

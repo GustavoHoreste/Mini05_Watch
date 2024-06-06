@@ -10,6 +10,8 @@ import SwiftUI
 struct StatusWorkoutView: View {
     @EnvironmentObject private var healthManager: HealthKitManager
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
+    
+    @Environment(\.modelContext) var modelContext
 
     var body: some View {
         NavigationStack{
@@ -52,7 +54,7 @@ struct StatusWorkoutView: View {
                                                     healthManager.endSession()
                                                     exerciseViewModel.toggleValueEnd()
                                                 }
-                                                
+                                                saveData()
                                           })
                     
                 }
@@ -63,6 +65,7 @@ struct StatusWorkoutView: View {
             .navigationDestination(isPresented: $exerciseViewModel.endWorkout) {
                 if exerciseViewModel.endWorkout{
                     SummaryGeralView()// Quando Termina chama a view final
+                        .toolbar(.hidden, for: .navigationBar)
                 }
             }
             .sheet(isPresented: $exerciseViewModel.callSumaryView) {
@@ -77,6 +80,24 @@ struct StatusWorkoutView: View {
                 exerciseViewModel.isBackToView = false
                 exerciseViewModel.callSumaryView = false
             }
+        }
+    }
+    
+    private func saveData() {
+        print("SELECT EXERCISE FIRST: \(exerciseViewModel.selectExercise.first!)")
+        switch exerciseViewModel.selectExercise.first! {
+        case .running12min:
+            let runData = RunData(date: Date(), totalEnergy: healthManager.activeEnergyBurned, avgHeartRate: healthManager.heartRate, avgSpeed: healthManager.runningSpeed)
+            
+            modelContext.insert(runData)
+        case .pushUps:
+            let pushUpData = PushUpData(date: Date(), totalEnergy: healthManager.activeEnergyBurned, avgHeartRate: healthManager.heartRate, repetitions: healthManager.repetitions)
+            
+            modelContext.insert(pushUpData)
+        default:
+            let abdominalData = AbdominalData(date: Date(), totalEnergy: healthManager.activeEnergyBurned, avgHeartRate: healthManager.heartRate, repetitions: healthManager.repetitions)
+            
+            modelContext.insert(abdominalData)
         }
     }
 }

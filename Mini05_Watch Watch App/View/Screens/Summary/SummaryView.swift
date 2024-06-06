@@ -13,6 +13,8 @@ struct SummaryView: View {
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
     @Environment(\.dismiss) private var dismiss
     
+//    @Environment(\.modelContext) var modelContext
+    
     @State private var viewModel = SummaryViewModel()
     
     @State private var navigateToNextView = false
@@ -40,11 +42,12 @@ struct SummaryView: View {
                     }
                     HStack {
                         SummaryDataComponent(title: "Frequência cardíaca",
-                                             value: "\(healthManager.heartRate)")
+                                             value: "\(Int(healthManager.heartRate))bpm")
                         SummaryDataComponent(title: "Calorias queimadas",
-                                             value: "\(healthManager.activeEnergyBurned)")
+                                             value: "\(Int(healthManager.activeEnergyBurned))kcal")
                     }
                     Button(action: {
+//                        saveData()
                         exerciseViewModel.nextExercise()
                         healthManager.resumeSession()
                         exerciseViewModel.backToView()
@@ -69,6 +72,25 @@ struct SummaryView: View {
             .toolbar(.hidden, for: .navigationBar)
         }
     }
+    
+//    private func saveData() {
+//        print("SELECT EXERCISE FIRST: \(exerciseViewModel.selectExercise.first!)")
+//        switch exerciseViewModel.selectExercise.first! {
+//        case .running12min:
+//            let runData = RunData(date: Date(), totalTime: exerciseViewModel.totalDuration!, totalEnergy: healthManager.activeEnergyBurned, avgHeartRate: healthManager.heartRate, avgSpeed: healthManager.runningSpeed)
+//            
+//            modelContext.insert(runData)
+//        case .pushUps:
+//            let pushUpData = PushUpData(date: Date(), totalTime: exerciseViewModel.totalDuration!, totalEnergy: healthManager.activeEnergyBurned, avgHeartRate: healthManager.heartRate, repetitions: healthManager.repetitions)
+//            
+//            modelContext.insert(pushUpData)
+//        default:
+//            let abdominalData = AbdominalData(date: Date(), totalTime: exerciseViewModel.totalDuration!, totalEnergy: healthManager.activeEnergyBurned, avgHeartRate: healthManager.heartRate, repetitions: healthManager.repetitions)
+//            
+//            modelContext.insert(abdominalData)
+//        }
+//    }
+    
 }
 
 
