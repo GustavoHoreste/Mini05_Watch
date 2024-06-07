@@ -27,7 +27,9 @@ struct ConfigureRunningView: View {
                 HStack{
                     Spacer()
                     NavigationLink{ self.verifyNextView() }label: {
-                        ButtonNextLabel()
+                        withAnimation {
+                            ButtonNextLabel()
+                        }
                     }
                     .disabled(!isSelectTime && !isNotSelectTime)
                     .buttonStyle(.plain)
@@ -39,7 +41,9 @@ struct ConfigureRunningView: View {
                 self.isSelectTime = false
                 self.isNotSelectTime = false
             }
-        }.myBackButton()
+        }
+        .background(.bg)
+        .myBackButton()
     }
 }
 
@@ -48,9 +52,14 @@ extension ConfigureRunningView{
     @ViewBuilder
     private func verifyNextView() -> some View{
         if isNotSelectTime{
-            TabViewWorkout()//chamar cronometro view
+            withAnimation {
+                TimerAnimation(destination: TabViewWorkout())
+                    .background(.bg)
+            }
         }else if isSelectTime{
-            PickerTimerView()
+            withAnimation {
+                PickerTimerView()
+            }
         }
     }
 }

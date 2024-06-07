@@ -105,7 +105,9 @@ struct HomeView: View {
                     //                    print(runData.description)
                     //                }
                 }
-        }.navigationBarBackButtonHidden()
+        }
+        .background(.bg)
+        .navigationBarBackButtonHidden()
             .onAppear{
                 healthManager.resetWorkoutData()
                 exerciseViewModel.reseatAll()

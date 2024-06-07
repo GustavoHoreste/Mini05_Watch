@@ -16,6 +16,7 @@ struct GraphAbdominalView: View {
                 GraphExerciseAbdominalView(abdominalEnum: exercise)
             }
         }
+        .background(.bg)
         .tabViewStyle(.carousel)
     }
 }

@@ -16,6 +16,7 @@ struct GraphPushUpView: View {
                 GraphExercisePushUpView(pushUpEnum: exercise)
             }
         }
+        .background(.bg)
         .tabViewStyle(.carousel)
     }
 }

@@ -37,6 +37,7 @@ struct SelectEvaluationView: View {
                     .padding(.leading, 80)
                     .padding(.top, 5)
             }
+            .background(.bg)
             .myBackButton()
         }
     }
@@ -46,9 +47,14 @@ extension SelectEvaluationView{
     @ViewBuilder
     private func configRinning() -> some View{ ///Verifica se corrida foi escolhida, se for chama a view de configura corrida. 
         if exerciseViewModel.selectExercise.contains(.running12min){
-            ConfigureRunningView()
+            withAnimation {
+                ConfigureRunningView()
+            }
         }else{
-            TabViewWorkout()
+            withAnimation {
+                TimerAnimation(destination: TabViewWorkout())
+                    .background(.bg)
+            }
         }
     }
 }

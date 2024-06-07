@@ -20,6 +20,7 @@ struct GraphChooseView: View {
                         .padding(20)
                 }
             }
+            .background(.bg)
 //            .listStyle(.carousel)
         }
         .navigationTitle("Gráficos")

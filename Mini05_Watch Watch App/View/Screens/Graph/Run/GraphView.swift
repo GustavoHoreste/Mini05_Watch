@@ -16,6 +16,7 @@ struct GraphView: View {
                 GraphExerciseView(runEnum: exercise)
             }
         }
+        .background(.bg)
         .tabViewStyle(.carousel)
     }
 }

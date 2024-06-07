@@ -57,7 +57,7 @@ struct SelectionBox: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
-        }
+        }.background(.myBlack)
         .buttonBorderShape(.roundedRectangle)
         .onAppear {
             if self.isCompleteButton {

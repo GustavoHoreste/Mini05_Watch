@@ -52,7 +52,16 @@ struct PickerTimerView: View {
 
                 HStack{
                     Spacer()
-                    ButtonNext(destination: TabViewWorkout())
+                    
+                    NavigationLink {
+                        withAnimation {
+                            TimerAnimation(destination: TabViewWorkout())
+                                .background(.bg)
+                        }
+                    } label: {
+                        ButtonNextLabel()
+                    }.buttonStyle(.plain)
+
                 }
             }
             .onAppear{
@@ -62,6 +71,7 @@ struct PickerTimerView: View {
                 exerciseViewModel.timerValue = convertIntToDate()
                 self.reasetData()
             }
+            .background(.bg)
             .myBackButton()
         }.padding(.horizontal)
     }
