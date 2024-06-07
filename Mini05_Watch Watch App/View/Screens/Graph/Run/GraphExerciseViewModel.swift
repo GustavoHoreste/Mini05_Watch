@@ -74,7 +74,7 @@ class GraphExerciseViewModel {
                 let allValues = sameDateData.map { $0[keyPath: runEnum.keyPath] }
                 let total = allValues.reduce(0, +)
                 let average = total / Double(allValues.count)
-                let runDataToShow = RunData(date: dateFormatted ?? Date(), totalEnergy: average, avgHeartRate: average, avgSpeed: average)
+                let runDataToShow = RunData(date: dateFormatted ?? Date(), totalEnergy: average, avgHeartRate: average, avgSpeed: average, totalDistance: average)
                 
                 graphData.append(runDataToShow)
             }
@@ -88,7 +88,9 @@ class GraphExerciseViewModel {
         case .avgHeartRate:
             return "bpm"
         case .avgSpeed:
-            return "Km/h"
+            return "M/s"
+        case .totalDistance:
+            return "Km"
         }
     }
     

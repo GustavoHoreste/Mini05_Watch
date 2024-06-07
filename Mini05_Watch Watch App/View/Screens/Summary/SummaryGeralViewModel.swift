@@ -75,7 +75,7 @@ class SummaryGeralViewModel {
         var array: [String] = []
         var dataArray: [Double] = []
         
-        let run = runData.last ?? RunData(date: Date(), totalEnergy: 0, avgHeartRate: 0, avgSpeed: 0)
+        let run = runData.last ?? RunData(date: Date(), totalEnergy: 0, avgHeartRate: 0, avgSpeed: 0, totalDistance: 0)
         let push = pushUpData.last ?? PushUpData(date: Date(), totalEnergy: 0, avgHeartRate: 0, repetitions: 0)
         let abd = abdominalData.last ?? AbdominalData(date: Date(), totalEnergy: 0, avgHeartRate: 0, repetitions: 0)
         
@@ -111,7 +111,7 @@ class SummaryGeralViewModel {
         var array: [String] = []
         var dataArray: [Double] = []
         
-        let run = runData.last ?? RunData(date: Date(), totalEnergy: 0, avgHeartRate: 0, avgSpeed: 0)
+        let run = runData.last ?? RunData(date: Date(), totalEnergy: 0, avgHeartRate: 0, avgSpeed: 0, totalDistance: 0)
         let push = pushUpData.last ?? PushUpData(date: Date(), totalEnergy: 0, avgHeartRate: 0, repetitions: 0)
         let abd = abdominalData.last ?? AbdominalData(date: Date(), totalEnergy: 0, avgHeartRate: 0, repetitions: 0)
         
@@ -143,10 +143,11 @@ class SummaryGeralViewModel {
     }
     
     func arraySpeedValue()-> [String] {
-        let run = runData.last ?? RunData(date: Date(), totalEnergy: 0, avgHeartRate: 0, avgSpeed: 0)
+        let run = runData.last ?? RunData(date: Date(), totalEnergy: 0, avgHeartRate: 0, avgSpeed: 0, totalDistance: 0)
         let lastRun = run.avgSpeed
+        let lastDistance = run.totalDistance
         
-        return ["\(Int(lastRun))Km/h"]
+        return ["\(Int(lastRun))M/s", "\(String(format: "%.1f", lastDistance))Km"]
     }
     
     func arrayRepsValue(enums: [WorkoutViewsEnun])-> [String] {
