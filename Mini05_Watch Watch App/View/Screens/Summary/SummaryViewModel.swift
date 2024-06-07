@@ -19,7 +19,7 @@ class SummaryViewModel: ObservableObject {
     func tempoRecord(enun: WorkoutViewsEnun, value: Double)-> String {
         switch enun {
         case .running12min:
-            if recordTempoRun == 0 || Int(value) < recordTempoRun {
+            if recordTempoRun == 0 || Int(value) > recordTempoRun {
                 recordTempoRun = Int(value)
             }
         case .pushUps:
@@ -37,17 +37,17 @@ class SummaryViewModel: ObservableObject {
     func speedOrRepRecord(enun: WorkoutViewsEnun, value: Double)-> String {
         switch enun {
         case .running12min:
-            if recordSpeedRun == 0 || Int(value) < recordSpeedRun {
+            if recordSpeedRun == 0 || Int(value) > recordSpeedRun {
                 recordSpeedRun = Int(value)
             }
-            return "\(Int(value))Km/h"
+            return "\(Int(value))M/s"
         case .pushUps:
-            if recordRepsPushUp == 0 || Int(value) < recordRepsPushUp {
+            if recordRepsPushUp == 0 || Int(value) > recordRepsPushUp {
                 recordRepsPushUp = Int(value)
             }
             return "\(Int(value))"
         default:
-            if recordRepsAbdominal == 0 || Int(value) < recordRepsAbdominal {
+            if recordRepsAbdominal == 0 || Int(value) > recordRepsAbdominal {
                 recordRepsAbdominal = Int(value)
             }
             return "\(Int(value))"

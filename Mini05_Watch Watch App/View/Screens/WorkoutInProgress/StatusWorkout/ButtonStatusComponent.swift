@@ -5,54 +5,62 @@
 //  Created by Gustavo Horestee Santos Barros on 22/05/24.
 //
 
+//  ButtonStatusComponent.swift
+//  Mini05 Watch App
+//
+//  Created by Gustavo Horestee Santos Barros on 22/05/24.
+//
+
 import SwiftUI
 
 struct ButtonStatusComponent: View {
     @EnvironmentObject private var healthManager: HealthKitManager
+    @State private var buttonChange: Bool = false
 
-    let symbol: [ImageResource]
+    let symbols: [ImageResource]
     let nameButton: [String]
     let action: () -> Void
-//    let isPauseOrPlay: Bool
-    
-    @State var buttonChange: Bool = false
     
     var body: some View {
-        VStack(alignment: .center, spacing: -3){
-            Button{
-                verifiStatusButton()
-            }label: {
-                Image(buttonChange ? symbol[1] : symbol[0])
+        VStack(alignment: .center, spacing: -3) {
+            Button {
+                self.action()
+            } label: {
+                self.returnLabel()
                     .frame(width: DeviceScreen.getDimension(proportion: 0.45, forWidth: true),
-                            height: DeviceScreen.getDimension(proportion: 0.35, forWidth: true))
+                           height: DeviceScreen.getDimension(proportion: 0.35, forWidth: true))
             }
             .buttonStyle(.plain)
             .background(
                 RoundedRectangle(cornerRadius: 9)
+                    .foregroundStyle(Color("myWhite"))
             )
             
-            Text(buttonChange ? nameButton[1] : nameButton[0])
+            Text(healthManager.session?.state == .paused ? nameButton[1] : nameButton[0])
                 .myCustonFont(fontName: .sairaMedium, size: 14, valueScaleFactor: 0.8)
         }
     }
 }
 
-
-extension ButtonStatusComponent{
-    //TODO: - Verifica se e butao e de play e pause, se for, a logica de mudar label e ativada.
-    private func verifiStatusButton(){
-        if nameButton.first == "Pause"{
-            buttonChange.toggle()
-            self.action()
-            return
+extension ButtonStatusComponent {
+    @ViewBuilder
+    private func returnLabel() -> some View {
+        if nameButton.contains("Pausar") {
+            switch healthManager.session?.state {
+            case .paused:
+                Image(symbols[1])
+            default:
+                Image(symbols[0])
+            }
+        } else {
+            Image(symbols[0])
         }
-        self.action()
     }
 }
 
 #Preview {
-    ButtonStatusComponent(symbol: [.pauseSimbolo, .despauseSimbolo],
-                          nameButton: ["Pause", "Play"],
-                          action: {print("ola mundo")})
+    ButtonStatusComponent(symbols: [.pauseSimbolo, .despauseSimbolo],
+                          nameButton: ["Pausar", "Retomar"],
+                          action: { print("ola mundo") })
+        .environmentObject(HealthKitManager())
 }
-

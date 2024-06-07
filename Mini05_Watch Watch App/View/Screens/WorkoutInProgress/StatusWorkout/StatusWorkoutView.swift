@@ -20,15 +20,15 @@ struct StatusWorkoutView: View {
                     .myCustonFont(fontName: .sairaMedium, size: 21.5, valueScaleFactor: 0.8)
                 
                 HStack{
-                    ButtonStatusComponent(symbol: [.endSimbolo],
-                                          nameButton: ["Finalizar"],
+                    ButtonStatusComponent(symbols: [.endSimbolo],
+                                          nameButton: ["Finalizar", "Finalizar"],
                                           action:
                                             {
                                                 healthManager.endSession()
                                                 exerciseViewModel.toggleValueEnd()
                                             })
                     
-                    ButtonStatusComponent(symbol: [.pauseSimbolo, .despauseSimbolo],
+                    ButtonStatusComponent(symbols: [.pauseSimbolo, .despauseSimbolo],
                                           nameButton: ["Pausar", "Retomar"],
                                           action:  {
                                                 healthManager.togglePauseOrStart()
@@ -37,19 +37,18 @@ struct StatusWorkoutView: View {
                 }
                 
                 HStack{
-                    ButtonStatusComponent(symbol: [.backSImbolo],
-                                          nameButton: ["Anterior"],
+                    ButtonStatusComponent(symbols: [.backSImbolo],
+                                          nameButton: ["Anterior", "Anterior"],
                                           action:  {
                                                 
                                           }).disabled(true)
                                             .hidden()
                     
                     
-                    ButtonStatusComponent(symbol: [.endNext],
-                                          nameButton: ["Próximo"],
+                    ButtonStatusComponent(symbols: [.endNext],
+                                          nameButton: ["Próximo", "Próximo"],
                                           action:  {
                                                 healthManager.pauseSession()
-//                                                exerciseViewModel.backToView()
                                                 if !(exerciseViewModel.selectExercise[1] == .summary){
                                                     exerciseViewModel.callSumaryView = true
                                                 }else{
@@ -73,7 +72,7 @@ struct StatusWorkoutView: View {
         print("SELECT EXERCISE FIRST: \(exerciseViewModel.selectExercise.first!)")
         switch exerciseViewModel.selectExercise.first! {
         case .running12min:
-            let runData = RunData(date: Date(), totalEnergy: healthManager.calories, avgHeartRate: healthManager.heartRate, avgSpeed: healthManager.runningSpeed)
+            let runData = RunData(date: Date(), totalEnergy: healthManager.calories, avgHeartRate: healthManager.heartRate, avgSpeed: healthManager.runningSpeed, totalDistance: healthManager.distanceWalkingRunning / 1000)
             
             modelContext.insert(runData)
         case .pushUps:

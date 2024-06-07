@@ -33,20 +33,25 @@ struct TimerWorkoutView: View {
                 ElapsedTimeView(elapsedTime: healthManager.builder?.elapsedTime(at: value.date) ?? 0, showSubseconds: value.cadence == .live)
                     .foregroundStyle(.myOrange.opacity(0.7))
             }
-            
-            Group{
-                Divider()
-                    .overlay(Color(.spacer))
-                    .padding(.horizontal, 20)
-                RecordTimeComponent(value: .constant(42.4), name: "Maior Tempo")
-            }
-            .padding(.top)
             .onChange(of: exerciseViewModel.selectExercise) { oldValue, newValue in
                 if newValue.count != oldValue.count{
                     self.canCallSummaryView = true
                     print("nova date")
                 }
             }
+//            Group{
+//                Divider()
+//                    .overlay(Color(.spacer))
+//                    .padding(.horizontal, 20)
+//                RecordTimeComponent(value: .constant(42.4), name: "Maior Tempo")
+//            }
+//            .padding(.top)
+//            .onChange(of: exerciseViewModel.selectExercise) { oldValue, newValue in
+//                if newValue.count != oldValue.count{
+//                    self.canCallSummaryView = true
+//                    print("nova date")
+//                }
+//            }
         }
     }
 }
