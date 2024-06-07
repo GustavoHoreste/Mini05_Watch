@@ -9,9 +9,9 @@ import SwiftUI
 
 struct PickerTimerView: View {
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
-    @State private var selectedMinutesIndex: Int = 0
     @State private var selectedHourIndex: Int = 0
-    @State private var selectedSecondIndex: Int = 5
+    @State private var selectedMinutesIndex: Int = 12
+    @State private var selectedSecondIndex: Int = 0
 
     var body: some View {
         NavigationStack{
@@ -32,7 +32,7 @@ struct PickerTimerView: View {
                     .frame(width: DeviceScreen.getDimension(proportion: 0.27, forWidth: true))
                     
                     Picker("Min", selection: $selectedMinutesIndex) {
-                        ForEach(00..<60) { minute in
+                        ForEach(00..<59) { minute in
                             Text("\(minute)")
                                 .myCustonFont(fontName: .sairaBold, size: 15, valueScaleFactor: 0.8)
                         }
@@ -41,7 +41,7 @@ struct PickerTimerView: View {
                     .frame(width: DeviceScreen.getDimension(proportion: 0.27, forWidth: true))
 
                     Picker("Seg", selection: $selectedSecondIndex) {
-                        ForEach(00..<60) { second in
+                        ForEach(00..<59) { second in
                             Text("\(second)")
                                 .myCustonFont(fontName: .sairaBold, size: 15, valueScaleFactor: 0.8)
                         }
@@ -71,9 +71,10 @@ struct PickerTimerView: View {
                 exerciseViewModel.timerValue = convertIntToDate()
                 self.reasetData()
             }
-            .background(.bg)
             .myBackButton()
-        }.padding(.horizontal)
+        }
+        .padding(.horizontal)
+        .background(.bg)
     }
 }
 

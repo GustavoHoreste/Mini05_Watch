@@ -12,7 +12,7 @@ struct VelocityViewComponemt: View {
 
     var body: some View {
         VStack{
-            Text("\(healthManager.runningSpeed , specifier: "%.0f")Km/h")
+            Text("\(healthManager.runningSpeed , specifier: "%.0f")M/s")
                 .font(.system(size: 60))
             
             Divider()
@@ -25,7 +25,7 @@ struct VelocityViewComponemt: View {
             SectionExercise(model: SectionExerciseModel(
                                 exetensionSection: "km",
                                 systemImage: "map.fill",
-                                value: healthManager.distanceWalkingRunning))
+                                value: healthManager.distanceWalkingRunning / 1000))
         }
     }
 }
