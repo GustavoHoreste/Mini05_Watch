@@ -15,7 +15,7 @@ struct Mini05_Watch_Watch_AppApp: App {
     
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            RunData.self, PushUpData.self, AbdominalData.self, AbdominalConfigData.self
+            RunData.self, PushUpData.self, AbdominalData.self
         ])
         
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
