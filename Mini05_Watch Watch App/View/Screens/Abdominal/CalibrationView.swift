@@ -46,13 +46,13 @@ struct CalibrationView: View {
             }
             
             else if abdominal?.pontoAlto == nil {
-                Text("\(abdominal?.pontoBaixo?.rounded(toPlaces: 2))")
+                Text("\(abdominal?.pontoBaixo?.rounded(toPlaces: 2) ?? 0)")
                 Text("\(AC.rotationX.rounded(toPlaces: 2))")
             }
             
             else {
-                Text("\(abdominal?.pontoBaixo?.rounded(toPlaces: 2))")
-                Text("\(abdominal?.pontoAlto?.rounded(toPlaces: 2))")
+                Text("\(abdominal?.pontoBaixo?.rounded(toPlaces: 2) ?? 0)")
+                Text("\(abdominal?.pontoAlto?.rounded(toPlaces: 2) ?? 0)")
             }
             
             Button {
