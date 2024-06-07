@@ -17,6 +17,7 @@ struct ContentView: View {
             .onAppear{
                 authorizationStatuses = healthManager.verifyStatusPermission()
             }
+            .background(.bg)
     }
 }
 
