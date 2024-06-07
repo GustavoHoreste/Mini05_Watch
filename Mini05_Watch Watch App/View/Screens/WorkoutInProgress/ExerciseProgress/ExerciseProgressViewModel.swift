@@ -6,10 +6,25 @@
 //
 
 import SwiftUI
+import SwiftData
+import CoreMotion
 
 class ExerciseProgressViewModel: ObservableObject{
-    public var healthManager: HealthKitManager?
     
+    @Environment(\.modelContext) private var modelContext
+    
+    @Query private var abdominais:[AbdominalConfigData]
+    private var abdominal: AbdominalConfigData? {
+        abdominais.first
+    }
+    
+    public var healthManager: HealthKitManager?
+    private let motionManager = CMMotionManager()
+    private var rotationX:Double = 0
+    private var ultimoPonto = ""
+    
+    
+    @Published public var abdomenTrincado:Double = 0
     @Published public var endWorkout: Bool = false
     @Published public var isBackToView: Bool = false
     @Published public var toSummaryViewAfterTime: Bool = false
@@ -107,4 +122,41 @@ class ExerciseProgressViewModel: ObservableObject{
         }
         return name.rawValue
     }
+    
+    private func startGyroscope() {
+        if motionManager.isDeviceMotionAvailable {
+            motionManager.deviceMotionUpdateInterval = 0.1
+            motionManager.startDeviceMotionUpdates(to: .main) { [self] (data, error) in
+                
+                guard let data = data else { return }
+                
+                rotationX = data.attitude.pitch.rounded(toPlaces: 2)
+                
+                if let abdominal = abdominal {
+                    if let baixo = abdominal.pontoBaixo?.rounded(toPlaces: 2), let alto = abdominal.pontoAlto?.rounded(toPlaces: 2) {
+                        if rotationX <= baixo && ultimoPonto == "" {
+                            ultimoPonto = "baixo"
+                        }
+                        
+                        if ultimoPonto == "baixo" && rotationX >= alto {
+                            ultimoPonto = "alto"
+                            abdomenTrincado += 0.5
+                        }
+                        
+                        if ultimoPonto == "alto" && rotationX <= baixo {
+                            ultimoPonto = "baixo"
+                            abdomenTrincado += 0.5
+                            
+                            triggerHapticFeedback()
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    private func triggerHapticFeedback() {
+            WKInterfaceDevice.current().play(.success)
+        }
 }

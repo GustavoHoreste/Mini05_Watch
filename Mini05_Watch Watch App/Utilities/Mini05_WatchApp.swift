@@ -13,6 +13,20 @@ struct Mini05_Watch_Watch_AppApp: App {
     @StateObject private var healthManager: HealthKitManager = HealthKitManager()
     @StateObject private var exerciseViewModel: ExerciseProgressViewModel = ExerciseProgressViewModel()
     
+    var sharedModelContainer: ModelContainer = {
+        let schema = Schema([
+            RunData.self, PushUpData.self, AbdominalData.self, AbdominalConfigData.self
+        ])
+        
+        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+
+        do {
+            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+        } catch {
+            fatalError("Could not create ModelContainer: \(error)")
+        }
+    }()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -21,6 +35,6 @@ struct Mini05_Watch_Watch_AppApp: App {
 
             
         }
-        .modelContainer(for: [RunData.self, PushUpData.self, AbdominalData.self])
+        .modelContainer(sharedModelContainer)
     }
 }

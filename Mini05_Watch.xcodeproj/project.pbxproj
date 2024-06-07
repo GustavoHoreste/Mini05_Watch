@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A9B225D2C1348F40044DE8C /* AbdominalConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9B225C2C1348F40044DE8C /* AbdominalConfig.swift */; };
 		5538C6CB2BFFE21F00971930 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CA2BFFE21F00971930 /* AchievementView.swift */; };
 		5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */; };
 		55B1D2DA2C1236CD00878B4A /* CalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1D2D92C1236CD00878B4A /* CalibrationView.swift */; };
@@ -126,6 +127,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A9B225C2C1348F40044DE8C /* AbdominalConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbdominalConfig.swift; sourceTree = "<group>"; };
 		5538C6CA2BFFE21F00971930 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
 		5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementIcon.swift; sourceTree = "<group>"; };
 		55B1D2D92C1236CD00878B4A /* CalibrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationView.swift; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				D9A072742C0509F7004BD3A0 /* ElapsedTimeFormatter.swift */,
 				D9A072762C050A4A004BD3A0 /* MetricsTimelineSchedule.swift */,
 				D9A072782C050C62004BD3A0 /* Device.swift */,
+				0A9B225C2C1348F40044DE8C /* AbdominalConfig.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -706,6 +709,7 @@
 				D908CAB72BFFD14400A088B3 /* HomeButton.swift in Sources */,
 				C01C8C8F2C1105DD001826D6 /* SummaryGeralDataLine.swift in Sources */,
 				D93311872C03B4160077D9BE /* PermissionDeniedView.swift in Sources */,
+				0A9B225D2C1348F40044DE8C /* AbdominalConfig.swift in Sources */,
 				D91846242BFFD5DC0076F3A3 /* PUViewModel.swift in Sources */,
 				D9A072752C0509F7004BD3A0 /* ElapsedTimeFormatter.swift in Sources */,
 				D9A072792C050C62004BD3A0 /* Device.swift in Sources */,
