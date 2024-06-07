@@ -11,18 +11,14 @@ import CoreMotion
 
 class ExerciseProgressViewModel: ObservableObject{
     
-    @Environment(\.modelContext) private var modelContext
-    
-    @Query private var abdominais:[AbdominalConfigData]
-    private var abdominal: AbdominalConfigData? {
-        abdominais.first
-    }
-    
     public var healthManager: HealthKitManager?
     private let motionManager = CMMotionManager()
     private var rotationX:Double = 0
     private var ultimoPonto = ""
     
+    
+    @AppStorage("pontoBaixo") var ptBaixo: Double = 0
+    @AppStorage("pontoAlto") var ptAlto: Double = 0
     
     @Published public var abdomenTrincado:Double = 0
     @Published public var endWorkout: Bool = false
@@ -123,37 +119,38 @@ class ExerciseProgressViewModel: ObservableObject{
         return name.rawValue
     }
     
-    private func startGyroscope() {
+    public func startGyroscope() {
         if motionManager.isDeviceMotionAvailable {
-            motionManager.deviceMotionUpdateInterval = 0.1
+            motionManager.deviceMotionUpdateInterval = 0.2
             motionManager.startDeviceMotionUpdates(to: .main) { [self] (data, error) in
                 
                 guard let data = data else { return }
                 
+                print(ptAlto, ptBaixo, rotationX)
+                
                 rotationX = data.attitude.pitch.rounded(toPlaces: 2)
                 
-                if let abdominal = abdominal {
-                    if let baixo = abdominal.pontoBaixo?.rounded(toPlaces: 2), let alto = abdominal.pontoAlto?.rounded(toPlaces: 2) {
-                        if rotationX <= baixo && ultimoPonto == "" {
+                if rotationX <= (ptBaixo + 0.18) && ultimoPonto == "" {
                             ultimoPonto = "baixo"
                         }
                         
-                        if ultimoPonto == "baixo" && rotationX >= alto {
+                        if ultimoPonto == "baixo" && rotationX >= (ptAlto - 0.18) {
                             ultimoPonto = "alto"
-                            abdomenTrincado += 0.5
                         }
                         
-                        if ultimoPonto == "alto" && rotationX <= baixo {
+                        if ultimoPonto == "alto" && rotationX <= (ptBaixo + 0.18) {
                             ultimoPonto = "baixo"
-                            abdomenTrincado += 0.5
+                            abdomenTrincado += 1
                             
                             triggerHapticFeedback()
                             
-                        }
-                    }
                 }
             }
         }
+    }
+    
+    func stopGyroscope() {
+        motionManager.stopDeviceMotionUpdates()
     }
     
     private func triggerHapticFeedback() {
