@@ -90,7 +90,7 @@ struct HomeView: View {
     private func saveData() {
         if !savedData {
             savedData = true
-            let data1 = RunData(date: Date(timeIntervalSinceNow: -60*60*24), totalEnergy: 10, avgHeartRate: 100, avgSpeed: 110, totalDistance: 8)
+            let data1 = RunData(date: Date(timeIntervalSinceNow: -60*60*24), totalEnergy: 10, avgHeartRate: 100, avgSpeed: 7, totalDistance: 8)
             let data2 = RunData(date: Date(timeIntervalSinceNow: -60*60*24*2), totalEnergy: 12, avgHeartRate: 143, avgSpeed: 8, totalDistance: 1)
             let data3 = RunData(date: Date(timeIntervalSinceNow: -60*60*24*3+800),totalEnergy: 9, avgHeartRate: 150, avgSpeed: 10, totalDistance: 2)
             let data4 = RunData(date: Date(timeIntervalSinceNow: -60*60*24*4), totalEnergy: 9, avgHeartRate: 133, avgSpeed: 11, totalDistance: 3)

@@ -61,7 +61,7 @@ class SummaryGeralViewModel {
             dataArray.append(healthManager[keyPath: enun.keyPathTimer])
         }
         
-        let total = dataArray.reduce(0, +)
+//        let total = dataArray.reduce(0, +)
         array.append(Int(healthManager.timerFinishGeneral).formatTime())
         
         for data in dataArray {
@@ -161,7 +161,8 @@ class SummaryGeralViewModel {
         for enun in enums {
             switch enun {
             case .pushUps: array.append("\(Int(lastPush))")
-            default: array.append("\(Int(lastAbd))")
+            case .abdominal: array.append("\(Int(lastAbd))")
+            default: continue
             }
         }
         
