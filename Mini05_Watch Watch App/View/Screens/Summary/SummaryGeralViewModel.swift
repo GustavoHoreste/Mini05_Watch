@@ -61,8 +61,8 @@ class SummaryGeralViewModel {
             dataArray.append(healthManager[keyPath: enun.keyPathTimer])
         }
         
-//        let total = dataArray.reduce(0, +)
-        array.append(Int(healthManager.timerFinishGeneral).formatTime())
+        let total = dataArray.reduce(0, +)
+        array.append(Int(total).formatTime())
         
         for data in dataArray {
             array.append(Int(data).formatTime())

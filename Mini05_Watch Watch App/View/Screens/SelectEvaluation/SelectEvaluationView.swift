@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SelectEvaluationView: View {
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
-    @State private var exercises: [WorkoutViewsEnun] = [.pushUps, .abdominal, .running12min]
+    @State private var exercises: [WorkoutViewsEnun] = [.abdominal, .running12min]
     
     var body: some View {
         
