@@ -16,12 +16,13 @@ struct SelectEvaluationView: View {
         NavigationStack {
                 ScrollView {
                     ZStack{
-                        RoundedRectangle(cornerSize: CGSize(width: 8, height: 8))
+                        RoundedRectangle(cornerRadius: 10.0)
                         SelectionBox(selectedExercises: $exerciseViewModel.selectExercise, exerciseName: .complete, allExercises: exercises, isCompleteButton: true)
                             .foregroundStyle(.black)
                             .buttonStyle(PlainButtonStyle())
                         
                     }
+                    .padding(.horizontal, 5)
                     Divider()
                     Spacer()
                     HStack{
@@ -30,11 +31,12 @@ struct SelectEvaluationView: View {
                     ForEach(exercises, id: \.self) { exercise in
                         ZStack{
                             RoundedRectangle(cornerSize: CGSize(width: 8, height: 8))
-                                .foregroundStyle(.black)
+                                .foregroundStyle(.myBlack)
                             SelectionBox(selectedExercises: $exerciseViewModel.selectExercise, exerciseName: exercise, allExercises: exercises, isCompleteButton: false)
                                 .buttonStyle(PlainButtonStyle())
                             
                         }
+                        .padding(.horizontal, 5)
                     }
                 
                     
@@ -47,9 +49,11 @@ struct SelectEvaluationView: View {
                     .buttonStyle(PlainButtonStyle())
                     .padding(.leading, 80)
                     .padding(.top, 5)
+                    
             }
             .background(.bg)
             .myBackButton()
+            
         }
     }
 }

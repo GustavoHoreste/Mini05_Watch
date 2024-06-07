@@ -58,8 +58,8 @@ struct SelectionBox: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
-        }.background(.myBlack)
-        .buttonBorderShape(.roundedRectangle)
+        }
+        .buttonBorderShape(.capsule)
         .onAppear {
             if self.isCompleteButton {
                 self.checkState = self.selectedExercises.count == self.allExercises.count
