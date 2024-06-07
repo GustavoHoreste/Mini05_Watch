@@ -11,12 +11,6 @@
 		5538C6CB2BFFE21F00971930 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CA2BFFE21F00971930 /* AchievementView.swift */; };
 		5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */; };
 		55B1D2DA2C1236CD00878B4A /* CalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1D2D92C1236CD00878B4A /* CalibrationView.swift */; };
-		55F808732C133796003BF33B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F808722C133796003BF33B /* WidgetKit.framework */; };
-		55F808752C133796003BF33B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F808742C133796003BF33B /* SwiftUI.framework */; };
-		55F808782C133796003BF33B /* Complication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F808772C133796003BF33B /* Complication.swift */; };
-		55F8087A2C133796003BF33B /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F808792C133796003BF33B /* AppIntent.swift */; };
-		55F8087C2C133797003BF33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F8087B2C133797003BF33B /* Assets.xcassets */; };
-		55F808802C133797003BF33B /* ComplicationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 55F808702C133796003BF33B /* ComplicationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C01C8C7D2C10D7AD001826D6 /* Saira-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C792C10D7AD001826D6 /* Saira-Regular.ttf */; };
 		C01C8C7E2C10D7AD001826D6 /* Saira-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7A2C10D7AD001826D6 /* Saira-Black.ttf */; };
 		C01C8C7F2C10D7AD001826D6 /* Saira-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */; };
@@ -82,22 +76,28 @@
 		D9ECC89A2C0DF5C500A31138 /* VelocityViewComponemt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC8992C0DF5C500A31138 /* VelocityViewComponemt.swift */; };
 		D9ECC89C2C0DF5FB00A31138 /* HeartAndCaloriesViewComponemt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC89B2C0DF5FB00A31138 /* HeartAndCaloriesViewComponemt.swift */; };
 		D9ECC89E2C0DF62E00A31138 /* ExerciseProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9ECC89D2C0DF62E00A31138 /* ExerciseProgressViewModel.swift */; };
+		FC1A98162C138A0500AF015C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F808722C133796003BF33B /* WidgetKit.framework */; };
+		FC1A98172C138A0500AF015C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F808742C133796003BF33B /* SwiftUI.framework */; };
+		FC1A981A2C138A0500AF015C /* WidgetComplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1A98192C138A0500AF015C /* WidgetComplication.swift */; };
+		FC1A981C2C138A0500AF015C /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1A981B2C138A0500AF015C /* AppIntent.swift */; };
+		FC1A981E2C138A0600AF015C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC1A981D2C138A0600AF015C /* Assets.xcassets */; };
+		FC1A98222C138A0600AF015C /* WidgetComplicationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FC1A98152C138A0500AF015C /* WidgetComplicationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		55F8087E2C133797003BF33B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D908CA8A2BFFD03700A088B3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 55F8086F2C133796003BF33B;
-			remoteInfo = ComplicationExtension;
-		};
 		D908CA982BFFD03700A088B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D908CA8A2BFFD03700A088B3 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D908CA952BFFD03700A088B3;
 			remoteInfo = "Mini05_Watch Watch App";
+		};
+		FC1A98202C138A0600AF015C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D908CA8A2BFFD03700A088B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC1A98142C138A0500AF015C;
+			remoteInfo = WidgetComplicationExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -108,7 +108,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				55F808802C133797003BF33B /* ComplicationExtension.appex in Embed Foundation Extensions */,
+				FC1A98222C138A0600AF015C /* WidgetComplicationExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,13 +131,8 @@
 		5538C6CA2BFFE21F00971930 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
 		5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementIcon.swift; sourceTree = "<group>"; };
 		55B1D2D92C1236CD00878B4A /* CalibrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationView.swift; sourceTree = "<group>"; };
-		55F808702C133796003BF33B /* ComplicationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ComplicationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F808722C133796003BF33B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		55F808742C133796003BF33B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		55F808772C133796003BF33B /* Complication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complication.swift; sourceTree = "<group>"; };
-		55F808792C133796003BF33B /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
-		55F8087B2C133797003BF33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		55F8087D2C133797003BF33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C01C8C792C10D7AD001826D6 /* Saira-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Saira-Regular.ttf"; sourceTree = "<group>"; };
 		C01C8C7A2C10D7AD001826D6 /* Saira-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Saira-Black.ttf"; sourceTree = "<group>"; };
 		C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Saira-Medium.ttf"; sourceTree = "<group>"; };
@@ -206,22 +201,27 @@
 		D9ECC8992C0DF5C500A31138 /* VelocityViewComponemt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelocityViewComponemt.swift; sourceTree = "<group>"; };
 		D9ECC89B2C0DF5FB00A31138 /* HeartAndCaloriesViewComponemt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartAndCaloriesViewComponemt.swift; sourceTree = "<group>"; };
 		D9ECC89D2C0DF62E00A31138 /* ExerciseProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseProgressViewModel.swift; sourceTree = "<group>"; };
+		FC1A98152C138A0500AF015C /* WidgetComplicationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetComplicationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC1A98192C138A0500AF015C /* WidgetComplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetComplication.swift; sourceTree = "<group>"; };
+		FC1A981B2C138A0500AF015C /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		FC1A981D2C138A0600AF015C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC1A981F2C138A0600AF015C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		55F8086D2C133796003BF33B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				55F808752C133796003BF33B /* SwiftUI.framework in Frameworks */,
-				55F808732C133796003BF33B /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D908CA932BFFD03700A088B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC1A98122C138A0500AF015C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC1A98172C138A0500AF015C /* SwiftUI.framework in Frameworks */,
+				FC1A98162C138A0500AF015C /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,17 +252,6 @@
 				55F808742C133796003BF33B /* SwiftUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		55F808762C133796003BF33B /* Complication */ = {
-			isa = PBXGroup;
-			children = (
-				55F808772C133796003BF33B /* Complication.swift */,
-				55F808792C133796003BF33B /* AppIntent.swift */,
-				55F8087B2C133797003BF33B /* Assets.xcassets */,
-				55F8087D2C133797003BF33B /* Info.plist */,
-			);
-			path = Complication;
 			sourceTree = "<group>";
 		};
 		C01C8C852C10E27A001826D6 /* SummaryComponents */ = {
@@ -322,7 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				D908CA9A2BFFD03700A088B3 /* Mini05_Watch Watch App */,
-				55F808762C133796003BF33B /* Complication */,
+				FC1A98182C138A0500AF015C /* WidgetComplication */,
 				55F808712C133796003BF33B /* Frameworks */,
 				D908CA912BFFD03700A088B3 /* Products */,
 			);
@@ -333,7 +322,7 @@
 			children = (
 				D908CA902BFFD03700A088B3 /* Mini05_Watch.app */,
 				D908CA962BFFD03700A088B3 /* Mini05_Watch Watch App.app */,
-				55F808702C133796003BF33B /* ComplicationExtension.appex */,
+				FC1A98152C138A0500AF015C /* WidgetComplicationExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -521,26 +510,20 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		FC1A98182C138A0500AF015C /* WidgetComplication */ = {
+			isa = PBXGroup;
+			children = (
+				FC1A98192C138A0500AF015C /* WidgetComplication.swift */,
+				FC1A981B2C138A0500AF015C /* AppIntent.swift */,
+				FC1A981D2C138A0600AF015C /* Assets.xcassets */,
+				FC1A981F2C138A0600AF015C /* Info.plist */,
+			);
+			path = WidgetComplication;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		55F8086F2C133796003BF33B /* ComplicationExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 55F808842C133797003BF33B /* Build configuration list for PBXNativeTarget "ComplicationExtension" */;
-			buildPhases = (
-				55F8086C2C133796003BF33B /* Sources */,
-				55F8086D2C133796003BF33B /* Frameworks */,
-				55F8086E2C133796003BF33B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ComplicationExtension;
-			productName = ComplicationExtension;
-			productReference = 55F808702C133796003BF33B /* ComplicationExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		D908CA8F2BFFD03700A088B3 /* Mini05_Watch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D908CAAA2BFFD03800A088B3 /* Build configuration list for PBXNativeTarget "Mini05_Watch" */;
@@ -570,12 +553,29 @@
 			buildRules = (
 			);
 			dependencies = (
-				55F8087F2C133797003BF33B /* PBXTargetDependency */,
+				FC1A98212C138A0600AF015C /* PBXTargetDependency */,
 			);
 			name = "Mini05_Watch Watch App";
 			productName = "Mini05_Watch Watch App";
 			productReference = D908CA962BFFD03700A088B3 /* Mini05_Watch Watch App.app */;
 			productType = "com.apple.product-type.application";
+		};
+		FC1A98142C138A0500AF015C /* WidgetComplicationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC1A98232C138A0600AF015C /* Build configuration list for PBXNativeTarget "WidgetComplicationExtension" */;
+			buildPhases = (
+				FC1A98112C138A0500AF015C /* Sources */,
+				FC1A98122C138A0500AF015C /* Frameworks */,
+				FC1A98132C138A0500AF015C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WidgetComplicationExtension;
+			productName = WidgetComplicationExtension;
+			productReference = FC1A98152C138A0500AF015C /* WidgetComplicationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -587,14 +587,14 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					55F8086F2C133796003BF33B = {
-						CreatedOnToolsVersion = 15.4;
-					};
 					D908CA8F2BFFD03700A088B3 = {
 						CreatedOnToolsVersion = 15.2;
 					};
 					D908CA952BFFD03700A088B3 = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					FC1A98142C138A0500AF015C = {
+						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
@@ -613,20 +613,12 @@
 			targets = (
 				D908CA8F2BFFD03700A088B3 /* Mini05_Watch */,
 				D908CA952BFFD03700A088B3 /* Mini05_Watch Watch App */,
-				55F8086F2C133796003BF33B /* ComplicationExtension */,
+				FC1A98142C138A0500AF015C /* WidgetComplicationExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		55F8086E2C133796003BF33B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				55F8087C2C133797003BF33B /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D908CA8E2BFFD03700A088B3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -647,18 +639,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		55F8086C2C133796003BF33B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+		FC1A98132C138A0500AF015C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55F808782C133796003BF33B /* Complication.swift in Sources */,
-				55F8087A2C133796003BF33B /* AppIntent.swift in Sources */,
+				FC1A981E2C138A0600AF015C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
 		D908CA922BFFD03700A088B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -731,83 +722,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FC1A98112C138A0500AF015C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC1A981A2C138A0500AF015C /* WidgetComplication.swift in Sources */,
+				FC1A981C2C138A0500AF015C /* AppIntent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		55F8087F2C133797003BF33B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 55F8086F2C133796003BF33B /* ComplicationExtension */;
-			targetProxy = 55F8087E2C133797003BF33B /* PBXContainerItemProxy */;
-		};
 		D908CA992BFFD03700A088B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D908CA952BFFD03700A088B3 /* Mini05_Watch Watch App */;
 			targetProxy = D908CA982BFFD03700A088B3 /* PBXContainerItemProxy */;
 		};
+		FC1A98212C138A0600AF015C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC1A98142C138A0500AF015C /* WidgetComplicationExtension */;
+			targetProxy = FC1A98202C138A0600AF015C /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		55F808822C133797003BF33B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 335BRL9A43;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Complication/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Complication;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "AscenderApp.Mini05-Watch.watchkitapp.Complication";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.5;
-			};
-			name = Debug;
-		};
-		55F808832C133797003BF33B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 335BRL9A43;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Complication/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Complication;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "AscenderApp.Mini05-Watch.watchkitapp.Complication";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 10.5;
-			};
-			name = Release;
-		};
 		D908CAA42BFFD03800A088B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -932,7 +871,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mini05_Watch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 335BRL9A43;
+				DEVELOPMENT_TEAM = 796LA36XLW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini05-Watch-Watch-App-Info.plist";
@@ -945,8 +884,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "AscenderApp.Mini05-Watch.watchkitapp";
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "Ascender-Watch.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -967,7 +906,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mini05_Watch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 335BRL9A43;
+				DEVELOPMENT_TEAM = 796LA36XLW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini05-Watch-Watch-App-Info.plist";
@@ -980,8 +919,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "AscenderApp.Mini05-Watch.watchkitapp";
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "Ascender-Watch.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -999,10 +938,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 335BRL9A43;
+				DEVELOPMENT_TEAM = 796LA36XLW;
 				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "AscenderApp.Mini05-Watch";
+				PRODUCT_BUNDLE_IDENTIFIER = "Ascender-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -1015,10 +954,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 335BRL9A43;
+				DEVELOPMENT_TEAM = 796LA36XLW;
 				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "AscenderApp.Mini05-Watch";
+				PRODUCT_BUNDLE_IDENTIFIER = "Ascender-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -1026,18 +965,70 @@
 			};
 			name = Release;
 		};
+		FC1A98242C138A0600AF015C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 796LA36XLW;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetComplication/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetComplication;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Ascender-Watch.watchkitapp.WidgetComplication";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		FC1A98252C138A0600AF015C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 796LA36XLW;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WidgetComplication/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WidgetComplication;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Ascender-Watch.watchkitapp.WidgetComplication";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		55F808842C133797003BF33B /* Build configuration list for PBXNativeTarget "ComplicationExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				55F808822C133797003BF33B /* Debug */,
-				55F808832C133797003BF33B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		D908CA8D2BFFD03700A088B3 /* Build configuration list for PBXProject "Mini05_Watch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1061,6 +1052,15 @@
 			buildConfigurations = (
 				D908CAAB2BFFD03800A088B3 /* Debug */,
 				D908CAAC2BFFD03800A088B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC1A98232C138A0600AF015C /* Build configuration list for PBXNativeTarget "WidgetComplicationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC1A98242C138A0600AF015C /* Debug */,
+				FC1A98252C138A0600AF015C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
