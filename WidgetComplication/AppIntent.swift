@@ -1,8 +1,8 @@
 //
 //  AppIntent.swift
-//  Complication
+//  WidgetComplication
 //
-//  Created by Samu Lima on 07/06/24.
+//  Created by Fernanda de Farias Bento on 07/06/24.
 //
 
 import WidgetKit

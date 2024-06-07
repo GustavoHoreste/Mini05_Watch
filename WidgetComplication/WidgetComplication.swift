@@ -1,4 +1,11 @@
 //
+//  WidgetComplication.swift
+//  WidgetComplication
+//
+//  Created by Fernanda de Farias Bento on 07/06/24.
+//
+
+//
 //  Complication.swift
 //  Complication
 //
