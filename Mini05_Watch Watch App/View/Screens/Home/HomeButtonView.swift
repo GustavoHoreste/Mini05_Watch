@@ -83,34 +83,7 @@ struct HomeView: View {
             .onAppear {
                 healthManager.resetWorkoutData()
                 exerciseViewModel.reseatAll()
-                saveData()
             }
-    }
-    
-    private func saveData() {
-        if !savedData {
-            savedData = true
-            let data1 = RunData(date: Date(timeIntervalSinceNow: -60*60*24), totalEnergy: 10, avgHeartRate: 100, avgSpeed: 7, totalDistance: 8)
-            let data2 = RunData(date: Date(timeIntervalSinceNow: -60*60*24*2), totalEnergy: 12, avgHeartRate: 143, avgSpeed: 8, totalDistance: 1)
-            let data3 = RunData(date: Date(timeIntervalSinceNow: -60*60*24*3+800),totalEnergy: 9, avgHeartRate: 150, avgSpeed: 10, totalDistance: 2)
-            let data4 = RunData(date: Date(timeIntervalSinceNow: -60*60*24*4), totalEnergy: 9, avgHeartRate: 133, avgSpeed: 11, totalDistance: 3)
-            let data5 = RunData(date: Date(timeIntervalSinceNow: -60*60*24*5+500), totalEnergy: 9, avgHeartRate: 125, avgSpeed: 13, totalDistance: 4)
-            let data6 = RunData(date: Date(timeIntervalSinceNow: -60*60*24*6+800) ,totalEnergy: 9, avgHeartRate: 141, avgSpeed: 15, totalDistance: 5)
-            let data7 = PushUpData(date: Date(timeIntervalSinceNow: -60*60*24), totalEnergy: 6, avgHeartRate: 102, repetitions: 15)
-            let data8 = AbdominalData(date: Date(timeIntervalSinceNow: -60*60*24*2), totalEnergy: 26, avgHeartRate: 101, repetitions: 30)
-            let data9 = AbdominalData(date: Date(timeIntervalSinceNow: -60*60*24*4), totalEnergy: 16, avgHeartRate: 91, repetitions: 43)
-            let data10 = PushUpData(date: Date(timeIntervalSinceNow: -60*60*24*2), totalEnergy: 11, avgHeartRate: 118, repetitions: 20)
-            
-            context.insert(data1)
-            context.insert(data2)
-            context.insert(data3)
-            context.insert(data4)
-            context.insert(data5)
-            context.insert(data6)
-            context.insert(data7)
-            context.insert(data8)
-            context.insert(data9)
-        }
     }
 }
 
