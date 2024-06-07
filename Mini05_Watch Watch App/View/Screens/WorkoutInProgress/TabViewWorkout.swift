@@ -41,6 +41,12 @@ struct TabViewWorkout: View {
             }
             let _ = print("O valor tem que ser 4 da quantidade de exercicios: ", exerciseViewModel.selectExercise.count, " e esses sao os valores ", exerciseViewModel.selectExercise)
         }
+        .onAppear {
+            if let abdmo = exerciseViewModel.selectExercise.first { if abdmo == .abdominal {
+                exerciseViewModel.startGyroscope()
+            }
+            }
+        }
         .onChange(of: exerciseViewModel.isBackToView){ oldValue, newValue in
             displayMetricsView()
         }
@@ -60,6 +66,12 @@ struct TabViewWorkout: View {
                     SummaryView()
                         .toolbar(.hidden, for: .navigationBar)
                 }
+            }
+        }
+        .onDisappear {
+            if let abdmo = exerciseViewModel.selectExercise.first { if abdmo == .abdominal {
+                exerciseViewModel.stopGyroscope()
+            }
             }
         }
         .navigationBarBackButtonHidden()
