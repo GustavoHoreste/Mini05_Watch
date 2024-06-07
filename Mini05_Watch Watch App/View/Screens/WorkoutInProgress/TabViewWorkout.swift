@@ -13,6 +13,8 @@ struct TabViewWorkout: View {
     @EnvironmentObject private var healthManager: HealthKitManager
     @Environment(\.isLuminanceReduced) var isLuminanceReduced
     @State private var selection: Tabs = .exercise
+    
+    @Environment(\.modelContext) var modelContext
 
     var body: some View {
         TabView(selection: $selection){
@@ -47,6 +49,11 @@ struct TabViewWorkout: View {
                 SummaryGeralView()// Quando Termina chama a view final
             }
         }
+        .onChange(of: exerciseViewModel.endWorkout) { _ , newValue in
+            if newValue{
+                saveData()
+            }
+        }
         .sheet(isPresented: $exerciseViewModel.callSumaryView) {
             if exerciseViewModel.callSumaryView{
                 withAnimation {
@@ -62,6 +69,24 @@ struct TabViewWorkout: View {
     private func displayMetricsView() {
         withAnimation {
             selection = .exercise
+        }
+    }
+    
+    private func saveData() {
+        print("SELECT EXERCISE FIRST: \(exerciseViewModel.selectExercise.first!)")
+        switch exerciseViewModel.selectExercise.first! {
+        case .running12min:
+            let runData = RunData(date: Date(), totalEnergy: healthManager.calories, avgHeartRate: healthManager.heartRate, avgSpeed: healthManager.runningSpeed, totalDistance: healthManager.distanceWalkingRunning / 1000)
+            
+            modelContext.insert(runData)
+        case .pushUps:
+            let pushUpData = PushUpData(date: Date(), totalEnergy: healthManager.calories, avgHeartRate: healthManager.heartRate, repetitions: exerciseViewModel.abdomenTrincado)
+            
+            modelContext.insert(pushUpData)
+        default:
+            let abdominalData = AbdominalData(date: Date(), totalEnergy: healthManager.calories, avgHeartRate: healthManager.heartRate, repetitions: exerciseViewModel.abdomenTrincado)
+            
+            modelContext.insert(abdominalData)
         }
     }
 }

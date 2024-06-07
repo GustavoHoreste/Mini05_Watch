@@ -50,12 +50,12 @@ struct StatusWorkoutView: View {
                                           action:  {
                                                 healthManager.pauseSession()
                                                 if !(exerciseViewModel.selectExercise[1] == .summary){
+                                                    saveData()
                                                     exerciseViewModel.callSumaryView = true
                                                 }else{
                                                     healthManager.endSession()
                                                     exerciseViewModel.toggleValueEnd()
                                                 }
-                                                saveData()
                                           })
                 }
             }
