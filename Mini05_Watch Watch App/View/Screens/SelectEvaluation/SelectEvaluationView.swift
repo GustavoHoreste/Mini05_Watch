@@ -15,27 +15,45 @@ struct SelectEvaluationView: View {
         
         NavigationStack {
                 ScrollView {
-                    SelectionBox(selectedExercises: $exerciseViewModel.selectExercise, exerciseName: .complete, allExercises: exercises, isCompleteButton: true)
-                    
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 10.0)
+                        SelectionBox(selectedExercises: $exerciseViewModel.selectExercise, exerciseName: .complete, allExercises: exercises, isCompleteButton: true)
+                            .foregroundStyle(.black)
+                            .buttonStyle(PlainButtonStyle())
+                        
+                    }
+                    .padding(.horizontal, 5)
                     Divider()
-                    
+                    Spacer()
                     HStack{
-                        Text("Exercícios")
-                        Spacer()
                     }
                     
                     ForEach(exercises, id: \.self) { exercise in
-                        SelectionBox(selectedExercises: $exerciseViewModel.selectExercise, exerciseName: exercise, allExercises: exercises, isCompleteButton: false)
+                        ZStack{
+                            RoundedRectangle(cornerSize: CGSize(width: 8, height: 8))
+                                .foregroundStyle(.myBlack)
+                            SelectionBox(selectedExercises: $exerciseViewModel.selectExercise, exerciseName: exercise, allExercises: exercises, isCompleteButton: false)
+                                .buttonStyle(PlainButtonStyle())
+                            
+                        }
+                        .padding(.horizontal, 5)
                     }
                 
-                    Divider()
                     
-                    NavigationLink("NextView") {
+                    NavigationLink {
                         self.configRinning()
+                    } label: {
+                        ButtonNextLabel()
                     }
                     .disabled(exerciseViewModel.selectExercise.isEmpty)
+                    .buttonStyle(PlainButtonStyle())
+                    .padding(.leading, 80)
+                    .padding(.top, 5)
+                    
             }
+            .background(.bg)
             .myBackButton()
+            
         }
     }
 }
@@ -44,9 +62,14 @@ extension SelectEvaluationView{
     @ViewBuilder
     private func configRinning() -> some View{ ///Verifica se corrida foi escolhida, se for chama a view de configura corrida. 
         if exerciseViewModel.selectExercise.contains(.running12min){
-            ConfigureRunningView()
+            withAnimation {
+                ConfigureRunningView()
+            }
         }else{
-            TabViewWorkout()
+            withAnimation {
+                TimerAnimation(destination: TabViewWorkout())
+                    .background(.bg)
+            }
         }
     }
 }

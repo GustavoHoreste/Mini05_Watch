@@ -22,9 +22,6 @@ struct SelectionBox: View {
             if self.isCompleteButton {
                 if self.checkState {
                     self.selectedExercises = self.allExercises
-//                    if !self.selectedExercises.contains(.summary){
-//                        self.selectedExercises.append(.summary)
-//                    }
                 } else {
                     self.selectedExercises.removeAll()
                 }
@@ -44,7 +41,7 @@ struct SelectionBox: View {
         }label: {
             HStack(alignment: .top, spacing: 10) {
                 if self.isCompleteButton {
-                    Image(systemName: self.checkState ? "checkmark.square" : "square")
+                    Image(systemName: self.checkState ? "circle.inset.filled" : "circle")
                 } else {
                     if let index = self.selectedExercises.firstIndex(of: self.exerciseName) {
                         Image(systemName: "\(index + 1).circle")
@@ -52,12 +49,17 @@ struct SelectionBox: View {
                         Image(systemName: "circle")
                     }
                 }
+                Text("|")
+                    .padding(-5)
+                    .padding(.top, 3)
+//                Image(systemName: "figure.run")
                 Text(exerciseName.rawValue)
+                    .myCustonFont(fontName: .sairaRegular, size: 10, valueScaleFactor: 1)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
         }
-        .foregroundColor(Color.white)
+        .buttonBorderShape(.capsule)
         .onAppear {
             if self.isCompleteButton {
                 self.checkState = self.selectedExercises.count == self.allExercises.count

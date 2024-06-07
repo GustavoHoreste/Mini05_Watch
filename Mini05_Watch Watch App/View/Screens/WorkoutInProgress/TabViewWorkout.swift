@@ -29,6 +29,7 @@ struct TabViewWorkout: View {
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: isLuminanceReduced ? .never : .automatic))
         .tabViewStyle(.page)
         .onAppear{
+            exerciseViewModel.allselectExercise = exerciseViewModel.selectExercise
             Task{
                 await healthManager.startWorkout()
             }

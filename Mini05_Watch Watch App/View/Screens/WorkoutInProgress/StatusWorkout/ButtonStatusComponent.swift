@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ButtonStatusComponent: View {
+    @EnvironmentObject private var healthManager: HealthKitManager
+
     let symbol: [ImageResource]
     let nameButton: [String]
     let action: () -> Void

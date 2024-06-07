@@ -22,18 +22,22 @@ class HealthKitManager: NSObject, ObservableObject{
     
     ////Variáveis de dados do HealthKit
     @Published private(set) var heartRate: Double = 0
-    @Published private(set) var activeEnergyBurned: Double = 0
+    public var activeEnergyBurned: Double = 0
     @Published private(set) var distanceWalkingRunning: Double = 0
     @Published private(set) var runningSpeed: Double = 0
     @Published private(set) var runningPower: Double = 0
     @Published private(set) var bodyMass: Double = 0
     @Published private(set) var height: Double = 0
-    @Published private(set) var generalTimeWorkout: String = ""
+    @Published private(set) var repetitions: Double = 0
+    @Published public var calories: Double = 0
     
     
     ///timer
     @Published private(set) var forcePause:  Bool = false
-    @Published private(set) var timerFinish: Double = 0
+    @Published private(set) var timerFinishGeneral: Double = 0
+    @Published private(set) var timerFinishRun: Double = 0
+    @Published private(set) var timerFinishPushUps: Double = 0
+    @Published private(set) var timerFinishAbdominal: Double = 0
     
     
     
@@ -101,17 +105,18 @@ class HealthKitManager: NSObject, ObservableObject{
             switch statistics.quantityType {
             case HKQuantityType(.activeEnergyBurned):
                 unit = HKUnit.kilocalorie()
-                self.activeEnergyBurned = statistics.sumQuantity()?.doubleValue(for: unit!) ?? 0
+                self.activeEnergyBurned = statistics.mostRecentQuantity()?.doubleValue(for: unit!) ?? 0
+                self.calories += self.activeEnergyBurned
             case HKQuantityType(.heartRate):
                 unit = HKUnit.count().unitDivided(by: HKUnit.minute())
-                self.heartRate = statistics.mostRecentQuantity()?.doubleValue(for: unit!) ?? 0
+                self.heartRate = statistics.averageQuantity()?.doubleValue(for: unit!) ?? 0
             case HKQuantityType(.distanceWalkingRunning):
                 unit = HKUnit.meter()
                 self.distanceWalkingRunning = statistics.sumQuantity()?.doubleValue(for: unit!) ?? 0
             case HKQuantityType(.runningSpeed):
                 unit = HKUnit.meter().unitDivided(by: .second())
-                self.runningSpeed = statistics.mostRecentQuantity()?.doubleValue(for: unit!) ?? 0
-//                self.runningSpeed = statistics.averageQuantity()?.doubleValue(for: unit!) ?? 0
+//                self.runningSpeed = statistics.mostRecentQuantity()?.doubleValue(for: unit!) ?? 0
+                self.runningSpeed = statistics.averageQuantity()?.doubleValue(for: unit!) ?? 0
             case HKQuantityType(.runningPower):
                 unit = HKUnit.watt()
                 self.runningPower = statistics.averageQuantity()?.doubleValue(for: unit!) ?? 0
@@ -147,15 +152,33 @@ class HealthKitManager: NSObject, ObservableObject{
         }
     }
     
-    public func calcFinishDate(_ finishDate: Date){
+    public func calcFinishDate(_ finishDate: Date, _ typeExercise: WorkoutViewsEnun){
         guard let startDate = builder?.startDate else {
             print("Data de início não encontrada")
             return
         }
         let elapsedTime = finishDate.timeIntervalSince(startDate)
-        print("Tempo final e: ", elapsedTime)
-        self.timerFinish = elapsedTime
+        self.timerFinishGeneral = elapsedTime
     }
+    
+    public func calcTimeExercise(_ value: Date, _ startTime: Date, _ typeExercise: WorkoutViewsEnun){
+        let elapsedTime = value.timeIntervalSince(startTime)
+        
+        DispatchQueue.main.async {
+            switch typeExercise{
+            case .running12min:
+                self.timerFinishRun = elapsedTime
+            case .pushUps:
+                self.timerFinishPushUps = elapsedTime
+            case .abdominal:
+                self.timerFinishAbdominal = elapsedTime
+            default:
+                print("valor invalido")
+            }
+        }
+    }
+    
+    
     
     public func resetWorkoutData() {
         session = nil
@@ -168,7 +191,11 @@ class HealthKitManager: NSObject, ObservableObject{
         runningPower = 0
         bodyMass = 0
         height = 0
-        self.forcePause = false
+        timerFinishRun = 0
+        timerFinishAbdominal = 0
+        timerFinishPushUps = 0
+        timerFinishGeneral = 0
+        forcePause = false
         
         print("Todos os dados do workout e do HealthKit foram resetados.")
     }
@@ -181,6 +208,7 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
         print("Estado da session: ", toState.rawValue)
         
         if toState == .ended{
+            
             builder?.endCollection(withEnd: date) { (success, error) in
                 self.builder?.finishWorkout { (workout, error) in
                     if error != nil{
@@ -188,10 +216,16 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
                     }else{
                         print("Session terminada")
                         DispatchQueue.main.async {
-                            self.calcFinishDate(date)
+                            self.forcePause = true
+                            
+                            self.calcFinishDate(date, .complete)
+                            print("Timers abaixo: ")
+                            print(self.timerFinishRun)
+                            print(self.timerFinishPushUps)
+                            print(self.timerFinishAbdominal)
+                            print(self.timerFinishGeneral)
                         }
                     }
-//                    workout?.allStatistics.
                 }
             }
         }
