@@ -16,9 +16,9 @@ enum PushUpEnum: Identifiable {
     
     var id: String {
         switch self {
-        case .totalEnergy: return "Total Energy"
-        case .avgHeartRate: return "Avg Heart Rate"
-        case .repetitions: return "Repetitions"
+        case .totalEnergy: return "Calorias Totais"
+        case .avgHeartRate: return "Frequência cardíaca média"
+        case .repetitions: return "Repetições"
         }
     }
     
