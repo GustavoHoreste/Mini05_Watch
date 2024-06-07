@@ -15,15 +15,26 @@ struct SelectEvaluationView: View {
         
         NavigationStack {
                 ScrollView {
-                    SelectionBox(selectedExercises: $exerciseViewModel.selectExercise, exerciseName: .complete, allExercises: exercises, isCompleteButton: true)
-                    
+                    ZStack{
+                        RoundedRectangle(cornerSize: CGSize(width: 8, height: 8))
+                        SelectionBox(selectedExercises: $exerciseViewModel.selectExercise, exerciseName: .complete, allExercises: exercises, isCompleteButton: true)
+                            .foregroundStyle(.black)
+                            .buttonStyle(PlainButtonStyle())
+                        
+                    }
                     Divider()
                     Spacer()
                     HStack{
                     }
                     
                     ForEach(exercises, id: \.self) { exercise in
-                        SelectionBox(selectedExercises: $exerciseViewModel.selectExercise, exerciseName: exercise, allExercises: exercises, isCompleteButton: false)
+                        ZStack{
+                            RoundedRectangle(cornerSize: CGSize(width: 8, height: 8))
+                                .foregroundStyle(.black)
+                            SelectionBox(selectedExercises: $exerciseViewModel.selectExercise, exerciseName: exercise, allExercises: exercises, isCompleteButton: false)
+                                .buttonStyle(PlainButtonStyle())
+                            
+                        }
                     }
                 
                     

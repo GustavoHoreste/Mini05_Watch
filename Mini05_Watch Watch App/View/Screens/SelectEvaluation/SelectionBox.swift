@@ -54,6 +54,7 @@ struct SelectionBox: View {
                     .padding(.top, 3)
 //                Image(systemName: "figure.run")
                 Text(exerciseName.rawValue)
+                    .myCustonFont(fontName: .sairaRegular, size: 10, valueScaleFactor: 1)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
