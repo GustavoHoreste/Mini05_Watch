@@ -26,18 +26,34 @@ struct TabViewWorkout: View {
                 .tag(Tabs.nowPlaying)
             
         }
+        .background(.bg)
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: isLuminanceReduced ? .never : .automatic))
         .tabViewStyle(.page)
         .onAppear{
+            exerciseViewModel.allselectExercise = exerciseViewModel.selectExercise
             Task{
                 await healthManager.startWorkout()
             }
-            
-            exerciseViewModel.selectExercise.append(.summary)
-            
+            if !exerciseViewModel.selectExercise.contains(.summary){
+                exerciseViewModel.selectExercise.append(.summary)
+            }
+            let _ = print("O valor tem que ser 4 da quantidade de exercicios: ", exerciseViewModel.selectExercise.count, " e esses sao os valores ", exerciseViewModel.selectExercise)
         }
         .onChange(of: exerciseViewModel.isBackToView){ oldValue, newValue in
             displayMetricsView()
+        }
+        .navigationDestination(isPresented: $exerciseViewModel.endWorkout) {
+            if exerciseViewModel.endWorkout{
+                SummaryGeralView()// Quando Termina chama a view final
+            }
+        }
+        .sheet(isPresented: $exerciseViewModel.callSumaryView) {
+            if exerciseViewModel.callSumaryView{
+                withAnimation {
+                    SummaryView()
+                        .toolbar(.hidden, for: .navigationBar)
+                }
+            }
         }
         .navigationBarBackButtonHidden()
         

@@ -10,10 +10,13 @@ import SwiftData
 
 struct HomeView: View {
     @Environment(\.modelContext) var context
+    @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
+    @EnvironmentObject private var healthManager: HealthKitManager
     
     private let buttons: [HomeButtonData] = [
         HomeButtonData(name: "Iniciar", destination: AnyView(SelectEvaluationView()), description: "Iniciar uma nova \navaliação", id: 0),
-        HomeButtonData(name: "Avaliações", destination: AnyView(GraphView()), description: "Visualizar avaliações\n passadas", id: 1),
+        HomeButtonData(name: "Avaliações", destination: AnyView(GraphChooseView()), description: "Visualizar avaliações\n passadas", id: 1),
+        HomeButtonData(name: "Calibragem", destination: AnyView(CalibrationView()), description: "", id: 2)
     ]
     
     var body: some View {
@@ -102,16 +105,20 @@ struct HomeView: View {
                     //                    print(runData.description)
                     //                }
                 }
-            
         }
+        .background(.bg)
+        .navigationBarBackButtonHidden()
+            .onAppear{
+                healthManager.resetWorkoutData()
+                exerciseViewModel.reseatAll()
+            }
     }
-    
-    
 }
 
 
 #Preview {
     HomeView()
+        .environmentObject(ExerciseProgressViewModel())
         .environmentObject(HealthKitManager())
 }
 

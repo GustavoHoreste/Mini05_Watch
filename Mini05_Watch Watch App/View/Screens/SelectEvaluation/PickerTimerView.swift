@@ -9,9 +9,9 @@ import SwiftUI
 
 struct PickerTimerView: View {
     @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
-    @State private var selectedMinutesIndex: Int = 12
+    @State private var selectedMinutesIndex: Int = 0
     @State private var selectedHourIndex: Int = 0
-    @State private var selectedSecondIndex: Int = 0
+    @State private var selectedSecondIndex: Int = 5
 
     var body: some View {
         NavigationStack{
@@ -49,11 +49,19 @@ struct PickerTimerView: View {
                     .pickerStyle(WheelPickerStyle())
                     .frame(width: DeviceScreen.getDimension(proportion: 0.27, forWidth: true))
                 }
-//                .padding(.horizontal)
 
                 HStack{
                     Spacer()
-                    ButtonNext(destination: TabViewWorkout())
+                    
+                    NavigationLink {
+                        withAnimation {
+                            TimerAnimation(destination: TabViewWorkout())
+                                .background(.bg)
+                        }
+                    } label: {
+                        ButtonNextLabel()
+                    }.buttonStyle(.plain)
+
                 }
             }
             .onAppear{
@@ -63,6 +71,7 @@ struct PickerTimerView: View {
                 exerciseViewModel.timerValue = convertIntToDate()
                 self.reasetData()
             }
+            .background(.bg)
             .myBackButton()
         }.padding(.horizontal)
     }

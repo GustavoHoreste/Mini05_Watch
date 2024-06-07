@@ -10,14 +10,12 @@ import SwiftData
 import SwiftUI
 
 enum AbdominalEnum: Identifiable {
-    case totalTime
     case totalEnergy
     case avgHeartRate
     case repetitions
     
     var id: String {
         switch self {
-        case .totalTime: return "Total Time"
         case .totalEnergy: return "Total Energy"
         case .avgHeartRate: return "Avg Heart Rate"
         case .repetitions: return "Repetitions"
@@ -26,7 +24,6 @@ enum AbdominalEnum: Identifiable {
     
     var keyPath: KeyPath<AbdominalData, Double> {
         switch self {
-        case .totalTime: return \.totalTime
         case .totalEnergy: return \.totalEnergy
         case .avgHeartRate: return \.avgHeartRate
         case .repetitions: return \.repetitions
@@ -35,10 +32,17 @@ enum AbdominalEnum: Identifiable {
     
     var color: Color {
         switch self {
-        case .totalTime: return .green
         case .totalEnergy: return .orange
         case .avgHeartRate: return .red
         case .repetitions: return .yellow
+        }
+    }
+    
+    var sfSymbol: String {
+        switch self {
+        case .totalEnergy: return "flame.fill"
+        case .avgHeartRate: return "heart.fill"
+        case .repetitions: return "figure.core.training"
         }
     }
 }
@@ -46,14 +50,12 @@ enum AbdominalEnum: Identifiable {
 @Model
 class AbdominalData: Identifiable {
     var date: Date
-    var totalTime: Double
     var totalEnergy: Double
     var avgHeartRate: Double
     var repetitions: Double
     
-    init(date: Date, totalTime: Double, totalEnergy: Double, avgHeartRate: Double, repetitions: Double) {
+    init(date: Date, totalEnergy: Double, avgHeartRate: Double, repetitions: Double) {
         self.date = date
-        self.totalTime = totalTime
         self.totalEnergy = totalEnergy
         self.avgHeartRate = avgHeartRate
         self.repetitions = repetitions

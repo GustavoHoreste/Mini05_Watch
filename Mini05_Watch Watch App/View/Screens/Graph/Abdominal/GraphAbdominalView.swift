@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GraphAbdominalView: View {
-    @State private var enums: [AbdominalEnum] = [.repetitions, .avgHeartRate, .totalEnergy, .totalTime]
+    @State private var enums: [AbdominalEnum] = [.repetitions, .avgHeartRate, .totalEnergy]
 
     var body: some View {
         TabView {
@@ -16,6 +16,7 @@ struct GraphAbdominalView: View {
                 GraphExerciseAbdominalView(abdominalEnum: exercise)
             }
         }
+        .background(.bg)
         .tabViewStyle(.carousel)
     }
 }

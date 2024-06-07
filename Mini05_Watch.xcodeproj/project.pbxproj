@@ -9,11 +9,23 @@
 /* Begin PBXBuildFile section */
 		5538C6CB2BFFE21F00971930 /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CA2BFFE21F00971930 /* AchievementView.swift */; };
 		5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */; };
+		55B1D2DA2C1236CD00878B4A /* CalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1D2D92C1236CD00878B4A /* CalibrationView.swift */; };
+		55F808732C133796003BF33B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F808722C133796003BF33B /* WidgetKit.framework */; };
+		55F808752C133796003BF33B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F808742C133796003BF33B /* SwiftUI.framework */; };
+		55F808782C133796003BF33B /* Complication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F808772C133796003BF33B /* Complication.swift */; };
+		55F8087A2C133796003BF33B /* AppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F808792C133796003BF33B /* AppIntent.swift */; };
+		55F8087C2C133797003BF33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F8087B2C133797003BF33B /* Assets.xcassets */; };
+		55F808802C133797003BF33B /* ComplicationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 55F808702C133796003BF33B /* ComplicationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C01C8C7D2C10D7AD001826D6 /* Saira-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C792C10D7AD001826D6 /* Saira-Regular.ttf */; };
 		C01C8C7E2C10D7AD001826D6 /* Saira-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7A2C10D7AD001826D6 /* Saira-Black.ttf */; };
 		C01C8C7F2C10D7AD001826D6 /* Saira-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */; };
 		C01C8C802C10D7AD001826D6 /* Saira-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01C8C7C2C10D7AD001826D6 /* Saira-Bold.ttf */; };
 		C01C8C842C10E05B001826D6 /* RunData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C832C10E05B001826D6 /* RunData.swift */; };
+		C01C8C8B2C110506001826D6 /* SummaryGeralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C8A2C110506001826D6 /* SummaryGeralView.swift */; };
+		C01C8C8D2C1105BE001826D6 /* SummaryGeralData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C8C2C1105BE001826D6 /* SummaryGeralData.swift */; };
+		C01C8C8F2C1105DD001826D6 /* SummaryGeralDataLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C8E2C1105DD001826D6 /* SummaryGeralDataLine.swift */; };
+		C01C8C912C112F7C001826D6 /* SummaryGeralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C902C112F7C001826D6 /* SummaryGeralViewModel.swift */; };
+		C01C8C932C11F27A001826D6 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C8C922C11F27A001826D6 /* SummaryViewModel.swift */; };
 		C0EA943C2C0124F40057E48B /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943B2C0124F40057E48B /* GraphView.swift */; };
 		C0EA94402C012F520057E48B /* GraphExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EA943F2C012F520057E48B /* GraphExerciseView.swift */; };
 		C0F01FE02C07C75000FE6CC9 /* GraphExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F01FDF2C07C75000FE6CC9 /* GraphExerciseViewModel.swift */; };
@@ -34,6 +46,7 @@
 		D908CAB02BFFD09A00A088B3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CAAF2BFFD09A00A088B3 /* UserModel.swift */; };
 		D908CAB22BFFD0A600A088B3 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CAB12BFFD0A600A088B3 /* Enum.swift */; };
 		D908CAB72BFFD14400A088B3 /* HomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908CAB62BFFD14400A088B3 /* HomeButton.swift */; };
+		D90FB6362C128E2700DC9F42 /* TimerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90FB6352C128E2700DC9F42 /* TimerAnimation.swift */; };
 		D91846062BFFD1990076F3A3 /* HomeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91846052BFFD1990076F3A3 /* HomeButtonView.swift */; };
 		D91846092BFFD1DF0076F3A3 /* SelectEvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91846082BFFD1DF0076F3A3 /* SelectEvaluationView.swift */; };
 		D918460B2BFFD2010076F3A3 /* SelectionBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D918460A2BFFD2010076F3A3 /* SelectionBox.swift */; };
@@ -71,6 +84,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		55F8087E2C133797003BF33B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D908CA8A2BFFD03700A088B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55F8086F2C133796003BF33B;
+			remoteInfo = ComplicationExtension;
+		};
 		D908CA982BFFD03700A088B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D908CA8A2BFFD03700A088B3 /* Project object */;
@@ -81,6 +101,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		55F808812C133797003BF33B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				55F808802C133797003BF33B /* ComplicationExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D908CAA92BFFD03800A088B3 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -97,11 +128,24 @@
 /* Begin PBXFileReference section */
 		5538C6CA2BFFE21F00971930 /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
 		5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementIcon.swift; sourceTree = "<group>"; };
-		C01C8C792C10D7AD001826D6 /* Saira-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Regular.ttf"; sourceTree = "<group>"; };
-		C01C8C7A2C10D7AD001826D6 /* Saira-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Black.ttf"; sourceTree = "<group>"; };
-		C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Medium.ttf"; sourceTree = "<group>"; };
-		C01C8C7C2C10D7AD001826D6 /* Saira-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saira-Bold.ttf"; sourceTree = "<group>"; };
+		55B1D2D92C1236CD00878B4A /* CalibrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationView.swift; sourceTree = "<group>"; };
+		55F808702C133796003BF33B /* ComplicationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ComplicationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		55F808722C133796003BF33B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		55F808742C133796003BF33B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		55F808772C133796003BF33B /* Complication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Complication.swift; sourceTree = "<group>"; };
+		55F808792C133796003BF33B /* AppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntent.swift; sourceTree = "<group>"; };
+		55F8087B2C133797003BF33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55F8087D2C133797003BF33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C01C8C792C10D7AD001826D6 /* Saira-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Saira-Regular.ttf"; sourceTree = "<group>"; };
+		C01C8C7A2C10D7AD001826D6 /* Saira-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Saira-Black.ttf"; sourceTree = "<group>"; };
+		C01C8C7B2C10D7AD001826D6 /* Saira-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Saira-Medium.ttf"; sourceTree = "<group>"; };
+		C01C8C7C2C10D7AD001826D6 /* Saira-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Saira-Bold.ttf"; sourceTree = "<group>"; };
 		C01C8C832C10E05B001826D6 /* RunData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunData.swift; sourceTree = "<group>"; };
+		C01C8C8A2C110506001826D6 /* SummaryGeralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralView.swift; sourceTree = "<group>"; };
+		C01C8C8C2C1105BE001826D6 /* SummaryGeralData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralData.swift; sourceTree = "<group>"; };
+		C01C8C8E2C1105DD001826D6 /* SummaryGeralDataLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralDataLine.swift; sourceTree = "<group>"; };
+		C01C8C902C112F7C001826D6 /* SummaryGeralViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryGeralViewModel.swift; sourceTree = "<group>"; };
+		C01C8C922C11F27A001826D6 /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		C0EA943B2C0124F40057E48B /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		C0EA943F2C012F520057E48B /* GraphExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphExerciseView.swift; sourceTree = "<group>"; };
 		C0F01FDF2C07C75000FE6CC9 /* GraphExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphExerciseViewModel.swift; sourceTree = "<group>"; };
@@ -123,6 +167,7 @@
 		D908CAAF2BFFD09A00A088B3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		D908CAB12BFFD0A600A088B3 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		D908CAB62BFFD14400A088B3 /* HomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButton.swift; sourceTree = "<group>"; };
+		D90FB6352C128E2700DC9F42 /* TimerAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAnimation.swift; sourceTree = "<group>"; };
 		D91846052BFFD1990076F3A3 /* HomeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonView.swift; sourceTree = "<group>"; };
 		D91846082BFFD1DF0076F3A3 /* SelectEvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEvaluationView.swift; sourceTree = "<group>"; };
 		D918460A2BFFD2010076F3A3 /* SelectionBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionBox.swift; sourceTree = "<group>"; };
@@ -162,6 +207,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		55F8086D2C133796003BF33B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55F808752C133796003BF33B /* SwiftUI.framework in Frameworks */,
+				55F808732C133796003BF33B /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D908CA932BFFD03700A088B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -179,6 +233,44 @@
 				5538C6CC2BFFE22C00971930 /* AchievementIcon.swift */,
 			);
 			path = Achievement;
+			sourceTree = "<group>";
+		};
+		55B1D2D82C1236B000878B4A /* Abdominal */ = {
+			isa = PBXGroup;
+			children = (
+				55B1D2D92C1236CD00878B4A /* CalibrationView.swift */,
+			);
+			path = Abdominal;
+			sourceTree = "<group>";
+		};
+		55F808712C133796003BF33B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55F808722C133796003BF33B /* WidgetKit.framework */,
+				55F808742C133796003BF33B /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55F808762C133796003BF33B /* Complication */ = {
+			isa = PBXGroup;
+			children = (
+				55F808772C133796003BF33B /* Complication.swift */,
+				55F808792C133796003BF33B /* AppIntent.swift */,
+				55F8087B2C133797003BF33B /* Assets.xcassets */,
+				55F8087D2C133797003BF33B /* Info.plist */,
+			);
+			path = Complication;
+			sourceTree = "<group>";
+		};
+		C01C8C852C10E27A001826D6 /* SummaryComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D918460F2BFFD2CB0076F3A3 /* SummaryDataComponent.swift */,
+				C01C8C8C2C1105BE001826D6 /* SummaryGeralData.swift */,
+				C01C8C8E2C1105DD001826D6 /* SummaryGeralDataLine.swift */,
+			);
+			path = SummaryComponents;
 			sourceTree = "<group>";
 		};
 		C0EA943A2C01245D0057E48B /* Graph */ = {
@@ -228,6 +320,8 @@
 			isa = PBXGroup;
 			children = (
 				D908CA9A2BFFD03700A088B3 /* Mini05_Watch Watch App */,
+				55F808762C133796003BF33B /* Complication */,
+				55F808712C133796003BF33B /* Frameworks */,
 				D908CA912BFFD03700A088B3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -237,6 +331,7 @@
 			children = (
 				D908CA902BFFD03700A088B3 /* Mini05_Watch.app */,
 				D908CA962BFFD03700A088B3 /* Mini05_Watch Watch App.app */,
+				55F808702C133796003BF33B /* ComplicationExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -304,12 +399,14 @@
 			isa = PBXGroup;
 			children = (
 				D908CA9D2BFFD03700A088B3 /* ContentView.swift */,
+				D90FB6342C128E1200DC9F42 /* TimerAnimation */,
 				5538C6C92BFFE1F100971930 /* Achievement */,
 				D91846212BFFD59D0076F3A3 /* PushUps */,
 				D91846132BFFD2EE0076F3A3 /* WorkoutInProgress */,
 				C0EA943A2C01245D0057E48B /* Graph */,
 				D918460E2BFFD2B40076F3A3 /* Summary */,
 				D91846072BFFD1C50076F3A3 /* SelectEvaluation */,
+				55B1D2D82C1236B000878B4A /* Abdominal */,
 				D908CAB52BFFD11F00A088B3 /* Home */,
 			);
 			path = Screens;
@@ -324,6 +421,14 @@
 				D93311862C03B4160077D9BE /* PermissionDeniedView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		D90FB6342C128E1200DC9F42 /* TimerAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				D90FB6352C128E2700DC9F42 /* TimerAnimation.swift */,
+			);
+			path = TimerAnimation;
 			sourceTree = "<group>";
 		};
 		D91846072BFFD1C50076F3A3 /* SelectEvaluation */ = {
@@ -341,8 +446,11 @@
 		D918460E2BFFD2B40076F3A3 /* Summary */ = {
 			isa = PBXGroup;
 			children = (
-				D918460F2BFFD2CB0076F3A3 /* SummaryDataComponent.swift */,
+				C01C8C8A2C110506001826D6 /* SummaryGeralView.swift */,
+				C01C8C902C112F7C001826D6 /* SummaryGeralViewModel.swift */,
 				D91846112BFFD2E10076F3A3 /* SummaryView.swift */,
+				C01C8C922C11F27A001826D6 /* SummaryViewModel.swift */,
+				C01C8C852C10E27A001826D6 /* SummaryComponents */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -413,6 +521,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		55F8086F2C133796003BF33B /* ComplicationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55F808842C133797003BF33B /* Build configuration list for PBXNativeTarget "ComplicationExtension" */;
+			buildPhases = (
+				55F8086C2C133796003BF33B /* Sources */,
+				55F8086D2C133796003BF33B /* Frameworks */,
+				55F8086E2C133796003BF33B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ComplicationExtension;
+			productName = ComplicationExtension;
+			productReference = 55F808702C133796003BF33B /* ComplicationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D908CA8F2BFFD03700A088B3 /* Mini05_Watch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D908CAAA2BFFD03800A088B3 /* Build configuration list for PBXNativeTarget "Mini05_Watch" */;
@@ -437,10 +562,12 @@
 				D908CA922BFFD03700A088B3 /* Sources */,
 				D908CA932BFFD03700A088B3 /* Frameworks */,
 				D908CA942BFFD03700A088B3 /* Resources */,
+				55F808812C133797003BF33B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				55F8087F2C133797003BF33B /* PBXTargetDependency */,
 			);
 			name = "Mini05_Watch Watch App";
 			productName = "Mini05_Watch Watch App";
@@ -454,9 +581,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					55F8086F2C133796003BF33B = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					D908CA8F2BFFD03700A088B3 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -480,11 +610,20 @@
 			targets = (
 				D908CA8F2BFFD03700A088B3 /* Mini05_Watch */,
 				D908CA952BFFD03700A088B3 /* Mini05_Watch Watch App */,
+				55F8086F2C133796003BF33B /* ComplicationExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		55F8086E2C133796003BF33B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55F8087C2C133797003BF33B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D908CA8E2BFFD03700A088B3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -508,6 +647,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		55F8086C2C133796003BF33B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55F808782C133796003BF33B /* Complication.swift in Sources */,
+				55F8087A2C133796003BF33B /* AppIntent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D908CA922BFFD03700A088B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -521,16 +669,20 @@
 				C0EA943C2C0124F40057E48B /* GraphView.swift in Sources */,
 				D9DDC0BB2C07AD260097B82C /* TimerWorkoutView.swift in Sources */,
 				D9CDC9E02C0D571E003C20F1 /* StatisticTimeComponent.swift in Sources */,
+				C01C8C8B2C110506001826D6 /* SummaryGeralView.swift in Sources */,
 				D91846092BFFD1DF0076F3A3 /* SelectEvaluationView.swift in Sources */,
 				C0F01FE42C0FA7B100FE6CC9 /* GraphPushUpView.swift in Sources */,
 				C0F01FF52C0FB51800FE6CC9 /* AbdominalData.swift in Sources */,
 				D91846282BFFD65E0076F3A3 /* PUModel.swift in Sources */,
 				C0F01FE02C07C75000FE6CC9 /* GraphExerciseViewModel.swift in Sources */,
 				C0EA94402C012F520057E48B /* GraphExerciseView.swift in Sources */,
+				D90FB6362C128E2700DC9F42 /* TimerAnimation.swift in Sources */,
+				C01C8C912C112F7C001826D6 /* SummaryGeralViewModel.swift in Sources */,
 				D91846062BFFD1990076F3A3 /* HomeButtonView.swift in Sources */,
 				D94FBF912C0DF51000C852DE /* InformationViewComponemt.swift in Sources */,
 				D908CAB02BFFD09A00A088B3 /* UserModel.swift in Sources */,
 				D981C96B2C0BB66200003DCF /* SelectButtonComponent.swift in Sources */,
+				C01C8C932C11F27A001826D6 /* SummaryViewModel.swift in Sources */,
 				D981C96D2C0BB76300003DCF /* ButtonNext.swift in Sources */,
 				5538C6CD2BFFE22C00971930 /* AchievementIcon.swift in Sources */,
 				C0F01FEA2C0FA80E00FE6CC9 /* PushUpData.swift in Sources */,
@@ -547,10 +699,12 @@
 				D9ECC89E2C0DF62E00A31138 /* ExerciseProgressViewModel.swift in Sources */,
 				D91846262BFFD6000076F3A3 /* PUView.swift in Sources */,
 				D908CAB22BFFD0A600A088B3 /* Enum.swift in Sources */,
+				55B1D2DA2C1236CD00878B4A /* CalibrationView.swift in Sources */,
 				D9ECC89C2C0DF5FB00A31138 /* HeartAndCaloriesViewComponemt.swift in Sources */,
 				D91846122BFFD2E10076F3A3 /* SummaryView.swift in Sources */,
 				D9ECC89A2C0DF5C500A31138 /* VelocityViewComponemt.swift in Sources */,
 				D908CAB72BFFD14400A088B3 /* HomeButton.swift in Sources */,
+				C01C8C8F2C1105DD001826D6 /* SummaryGeralDataLine.swift in Sources */,
 				D93311872C03B4160077D9BE /* PermissionDeniedView.swift in Sources */,
 				D91846242BFFD5DC0076F3A3 /* PUViewModel.swift in Sources */,
 				D9A072752C0509F7004BD3A0 /* ElapsedTimeFormatter.swift in Sources */,
@@ -569,12 +723,18 @@
 				D918462F2C00C8670076F3A3 /* RequestPermissionView.swift in Sources */,
 				D918461B2BFFD3720076F3A3 /* ButtonStatusComponent.swift in Sources */,
 				D918462D2C00C20A0076F3A3 /* HealthKitManager.swift in Sources */,
+				C01C8C8D2C1105BE001826D6 /* SummaryGeralData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		55F8087F2C133797003BF33B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55F8086F2C133796003BF33B /* ComplicationExtension */;
+			targetProxy = 55F8087E2C133797003BF33B /* PBXContainerItemProxy */;
+		};
 		D908CA992BFFD03700A088B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D908CA952BFFD03700A088B3 /* Mini05_Watch Watch App */;
@@ -583,6 +743,67 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		55F808822C133797003BF33B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 335BRL9A43;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Complication/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Complication;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mini05.Mini05-Watch.watchkitapp.Complication";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		55F808832C133797003BF33B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 335BRL9A43;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Complication/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Complication;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mini05.Mini05-Watch.watchkitapp.Complication";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
 		D908CAA42BFFD03800A088B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -700,6 +921,7 @@
 		D908CAA72BFFD03800A088B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Mini05_Watch Watch App/Mini05_Watch Watch App.entitlements";
@@ -710,7 +932,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini05-Watch-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
+				INFOPLIST_KEY_CFBundleDisplayName = Ascender;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Para oferecer uma experiência completa e personalizada, nosso aplicativo precisa acessar seus dados de saúde. Isso nos permite rastrear suas atividades físicas, como exercícios e passos dados, para fornecer insights valiosos sobre sua saúde e bem-estar.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Nosso aplicativo necessita acessar e atualizar seus dados de saúde para fornecer um acompanhamento detalhado de suas atividades físicas e hábitos de vida. Isso inclui registrar informações sobre exercícios, monitorar métricas de saúde e oferecer recomendações personalizadas para melhorar seu condicionamento físico e bem-estar geral.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -734,6 +956,7 @@
 		D908CAA82BFFD03800A088B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Mini05_Watch Watch App/Mini05_Watch Watch App.entitlements";
@@ -744,7 +967,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mini05-Watch-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Mini05_Watch;
+				INFOPLIST_KEY_CFBundleDisplayName = Ascender;
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Para oferecer uma experiência completa e personalizada, nosso aplicativo precisa acessar seus dados de saúde. Isso nos permite rastrear suas atividades físicas, como exercícios e passos dados, para fornecer insights valiosos sobre sua saúde e bem-estar.";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Nosso aplicativo necessita acessar e atualizar seus dados de saúde para fornecer um acompanhamento detalhado de suas atividades físicas e hábitos de vida. Isso inclui registrar informações sobre exercícios, monitorar métricas de saúde e oferecer recomendações personalizadas para melhorar seu condicionamento físico e bem-estar geral.";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -802,6 +1025,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		55F808842C133797003BF33B /* Build configuration list for PBXNativeTarget "ComplicationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55F808822C133797003BF33B /* Debug */,
+				55F808832C133797003BF33B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D908CA8D2BFFD03700A088B3 /* Build configuration list for PBXProject "Mini05_Watch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
