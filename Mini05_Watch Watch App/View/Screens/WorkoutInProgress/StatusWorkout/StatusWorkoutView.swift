@@ -76,11 +76,11 @@ struct StatusWorkoutView: View {
             
             modelContext.insert(runData)
         case .pushUps:
-            let pushUpData = PushUpData(date: Date(), totalEnergy: healthManager.calories, avgHeartRate: healthManager.heartRate, repetitions: healthManager.repetitions)
+            let pushUpData = PushUpData(date: Date(), totalEnergy: healthManager.calories, avgHeartRate: healthManager.heartRate, repetitions: exerciseViewModel.abdomenTrincado)
             
             modelContext.insert(pushUpData)
         default:
-            let abdominalData = AbdominalData(date: Date(), totalEnergy: healthManager.calories, avgHeartRate: healthManager.heartRate, repetitions: healthManager.repetitions)
+            let abdominalData = AbdominalData(date: Date(), totalEnergy: healthManager.calories, avgHeartRate: healthManager.heartRate, repetitions: exerciseViewModel.abdomenTrincado)
             
             modelContext.insert(abdominalData)
         }

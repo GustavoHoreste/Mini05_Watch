@@ -37,7 +37,7 @@ struct SummaryGeralView: View {
                         SummaryGeralData(title: "Velocidade", subTitle: ["Média Corrida", "Distância Percorrida"], subValue: viewModel.arraySpeedValue())
                     }
                     if exerciseViewModel.allselectExercise.contains(.abdominal) || exerciseViewModel.selectExercise.contains(.pushUps) {
-                        SummaryGeralData(title: "Repetições", subTitle: viewModel.arraySubTitle(enums: exerciseViewModel.allselectExercise), subValue: ["30", "52"])
+                        SummaryGeralData(title: "Repetições", subTitle: viewModel.arraySubTitle(enums: exerciseViewModel.allselectExercise), subValue: viewModel.arrayRepsValue(enums: exerciseViewModel.allselectExercise))
                     }
                     Button(action: {
                         navigateToNextView.toggle()

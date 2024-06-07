@@ -62,7 +62,7 @@ class SummaryGeralViewModel {
         }
         
         let total = dataArray.reduce(0, +)
-        array.append(Int(healthManager.timerFinishGeneral).formatTime())
+        array.append(Int(total).formatTime())
         
         for data in dataArray {
             array.append(Int(data).formatTime())
@@ -161,7 +161,8 @@ class SummaryGeralViewModel {
         for enun in enums {
             switch enun {
             case .pushUps: array.append("\(Int(lastPush))")
-            default: array.append("\(Int(lastAbd))")
+            case .abdominal: array.append("\(Int(lastAbd))")
+            default: continue
             }
         }
         

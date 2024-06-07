@@ -27,7 +27,7 @@ struct ExerciseProgressView: View {
                     MakeExerciseProgressView {
                         InformationViewComponemt(nameExercise: exerciseViewModel.returnNameExercise(),
                                                  subTitle: "Repetições",
-                                                 value: healthManager.runningSpeed,//passar parametro aqui de repeticoes
+                                                 value: exerciseViewModel.abdomenTrincado,//passar parametro aqui de repeticoes
                                                  extensionName: "")
                     }
                 default:
