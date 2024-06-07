@@ -10,13 +10,6 @@ import SwiftData
 
 struct CalibrationView: View {
     
-    @Environment(\.modelContext) private var modelContext
-    
-    @Query private var abdominais:[AbdominalConfigData]
-    private var abdominal: AbdominalConfigData? {
-        abdominais.first
-    }
-    
     @State var gravou:Int = 0
     
     var AC:AbdominalConfig = AbdominalConfig()
@@ -25,6 +18,7 @@ struct CalibrationView: View {
         VStack{
             
             if gravou == 0 {
+                
                 Text("Fique em posição para")
                     
                     .multilineTextAlignment(.center)
@@ -39,20 +33,6 @@ struct CalibrationView: View {
                     .font(.footnote)
                 
                 
-            }
-            
-            if abdominal?.pontoBaixo == nil {
-                Text("\(AC.rotationX.rounded(toPlaces: 2))")
-            }
-            
-            else if abdominal?.pontoAlto == nil {
-                Text("\(abdominal?.pontoBaixo?.rounded(toPlaces: 2) ?? 0)")
-                Text("\(AC.rotationX.rounded(toPlaces: 2))")
-            }
-            
-            else {
-                Text("\(abdominal?.pontoBaixo?.rounded(toPlaces: 2) ?? 0)")
-                Text("\(abdominal?.pontoAlto?.rounded(toPlaces: 2) ?? 0)")
             }
             
             Button {
@@ -70,12 +50,10 @@ struct CalibrationView: View {
         
         
             .onAppear {
-                if abdominal == nil {
-                    let newItem = AbdominalConfigData(pontoBaixo: nil, pontoAlto: nil)
-                    modelContext.insert(newItem)
-                }
-                
                 AC.startGyroscope()
+            }
+            .onDisappear {
+                AC.stopGyroscope()
             }
     }
 }
