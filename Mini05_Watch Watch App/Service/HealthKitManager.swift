@@ -21,15 +21,15 @@ class HealthKitManager: NSObject, ObservableObject{
     
     
     ////Variáveis de dados do HealthKit
-    @Published private(set) var heartRate: Double = 0
     public var activeEnergyBurned: Double = 0
+    @Published public var calories: Double = 0
+    @Published private(set) var heartRate: Double = 0
     @Published private(set) var distanceWalkingRunning: Double = 0
     @Published private(set) var runningSpeed: Double = 0
     @Published private(set) var runningPower: Double = 0
     @Published private(set) var bodyMass: Double = 0
     @Published private(set) var height: Double = 0
     @Published private(set) var repetitions: Double = 0
-    @Published public var calories: Double = 0
     
     
     ///timer
@@ -38,7 +38,6 @@ class HealthKitManager: NSObject, ObservableObject{
     @Published private(set) var timerFinishRun: Double = 0
     @Published private(set) var timerFinishPushUps: Double = 0
     @Published private(set) var timerFinishAbdominal: Double = 0
-    
     
     
     override init() { }
@@ -208,7 +207,6 @@ extension HealthKitManager: HKWorkoutSessionDelegate{
         print("Estado da session: ", toState.rawValue)
         
         if toState == .ended{
-            
             builder?.endCollection(withEnd: date) { (success, error) in
                 self.builder?.finishWorkout { (workout, error) in
                     if error != nil{
