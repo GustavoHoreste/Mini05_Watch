@@ -72,7 +72,7 @@ struct StatusWorkoutView: View {
         print("SELECT EXERCISE FIRST: \(exerciseViewModel.selectExercise.first!)")
         switch exerciseViewModel.selectExercise.first! {
         case .running12min:
-            let runData = RunData(date: Date(), totalEnergy: healthManager.calories, avgHeartRate: healthManager.heartRate, avgSpeed: healthManager.runningSpeed)
+            let runData = RunData(date: Date(), totalEnergy: healthManager.calories, avgHeartRate: healthManager.heartRate, avgSpeed: healthManager.runningSpeed, totalDistance: healthManager.distanceWalkingRunning / 1000)
             
             modelContext.insert(runData)
         case .pushUps:

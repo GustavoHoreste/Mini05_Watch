@@ -30,14 +30,11 @@ struct SummaryGeralView: View {
                     Text("Geral")
                         .myCustonFont(fontName: .sairaRegular, size: 18, valueScaleFactor: 0.8)
                         .foregroundStyle(.white)
-                    // MUDAR PARA O ARRAY COM TODOS OS EXERCICIOS SELECIONADOS AQUI
                     SummaryGeralData(title: "Tempo", subTitle: viewModel.arraySubTitle(enums: exerciseViewModel.allselectExercise, addMedia: false), subValue: viewModel.arrayTimeValue(healthManager: healthManager, excViewModel: exerciseViewModel))
-                    // MUDAR PARA O ARRAY COM TODOS OS EXERCICIOS SELECIONADOS AQUI
                     SummaryGeralData(title: "Frequência Cardíaca", subTitle: viewModel.arraySubTitle(enums: exerciseViewModel.allselectExercise, addMedia: true), subValue: viewModel.arrayHeartValue(enums: exerciseViewModel.allselectExercise))
-                    // MUDAR PARA O ARRAY COM TODOS OS EXERCICIOS SELECIONADOS AQUI
                     SummaryGeralData(title: "Calorias Queimadas", subTitle: viewModel.arraySubTitle(enums: exerciseViewModel.allselectExercise, addMedia: false), subValue: viewModel.arrayCaloriesValue(enums: exerciseViewModel.allselectExercise))
                     if exerciseViewModel.allselectExercise.contains(.running12min) {
-                        SummaryGeralData(title: "Velocidade", subTitle: ["Média Corrida"], subValue: viewModel.arraySpeedValue())
+                        SummaryGeralData(title: "Velocidade", subTitle: ["Média Corrida", "Distância Percorrida"], subValue: viewModel.arraySpeedValue())
                     }
                     if exerciseViewModel.allselectExercise.contains(.abdominal) || exerciseViewModel.selectExercise.contains(.pushUps) {
                         SummaryGeralData(title: "Repetições", subTitle: viewModel.arraySubTitle(enums: exerciseViewModel.allselectExercise), subValue: ["30", "52"])
@@ -50,7 +47,6 @@ struct SummaryGeralView: View {
                             .padding(.trailing, 15)
                     })
                     .myCustonFont(fontName: .sairaMedium, size: 12, valueScaleFactor: 0.8)
-//                    .frame(width: .infinity)
                     .padding()
                     .background(.myOrange)
                     .buttonStyle(.plain)

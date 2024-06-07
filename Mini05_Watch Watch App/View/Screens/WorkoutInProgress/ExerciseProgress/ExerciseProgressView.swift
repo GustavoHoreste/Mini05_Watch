@@ -21,7 +21,7 @@ struct ExerciseProgressView: View {
                         InformationViewComponemt(nameExercise: exerciseViewModel.returnNameExercise(),
                                                  subTitle: "Velocidade atual",
                                                  value: healthManager.runningSpeed,
-                                                 extensionName: "Km/h")
+                                                 extensionName: "M/s")
                     }
                 case .pushUps, .abdominal:
                     MakeExerciseProgressView {
