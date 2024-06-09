@@ -8,38 +8,43 @@
 import SwiftUI
 
 struct ExerciseProgressView: View {
-    var body: some View {
-        MakeExerciseProgressView {
-            Text("Cronômetro")
-                .font(.callout)
-            
-            Text("Tempo de exercicio")
-            Text("0:05:03")
-                .font(.system(size: 25))
-            
-            HStack{
-                Text("Tempo de avaliação")
-                    .font(.system(size: 10))
+    @EnvironmentObject private var exerciseViewModel: ExerciseProgressViewModel
+    @EnvironmentObject private var healthManager: HealthKitManager
+    @State private var callSummaryGeralView: Bool = false
 
-                Text("0:05:03")
+    var body: some View {
+        NavigationStack{
+            Group{
+                switch exerciseViewModel.selectExercise.first ?? .running12min{
+                case .running12min:
+                    MakeExerciseProgressView{
+                        InformationViewComponemt(nameExercise: exerciseViewModel.returnNameExercise(),
+                                                 subTitle: "Velocidade atual",
+                                                 value: healthManager.runningSpeed,
+                                                 extensionName: "M/s")
+                    }
+                case .pushUps, .abdominal:
+                    MakeExerciseProgressView {
+                        InformationViewComponemt(nameExercise: exerciseViewModel.returnNameExercise(),
+                                                 subTitle: "Repetições",
+                                                 value: exerciseViewModel.abdomenTrincado,//passar parametro aqui de repeticoes
+                                                 extensionName: "")
+                    }
+                default:
+                    EmptyView()
+                    let _ = print("view vazia")
+                }
             }
-            
-            Divider()
-            Label("Calorias", systemImage: "flame.fill")
-            
-            Text("130 kal")
-                .font(.system(size: 25))
-            
-            Divider()
-            
-            Text("Ferequência cadiaca")
-            Label("120 bpm", systemImage: "heart.fill")
-                .font(.system(size: 25))
+            .onAppear{
+                let _ = print(exerciseViewModel.selectExercise.first?.rawValue ?? "nil")
+            }
         }
     }
 }
 
-//intencao e criar view diferentes de acordo com o exercicio
+
+
+
 struct MakeExerciseProgressView<T: View>: View {
     let content: T
     
@@ -48,18 +53,19 @@ struct MakeExerciseProgressView<T: View>: View {
     }
     
     var body: some View {
-        NavigationStack{
-            ScrollView{
-                VStack(alignment: .leading){
-                    content
-                }.navigationTitle("Defult")//mudar de acordo com o nome do exercicio
-                    .padding(.horizontal)
-            }
-        }
+        TabView {
+            TimerWorkoutView()
+            self.content
+        }.tabViewStyle(.carousel)
+            .background(.bg)
     }
 }
 
+
+
 #Preview {
     ExerciseProgressView()
+        .environmentObject(HealthKitManager())
+        .environmentObject(ExerciseProgressViewModel())
 }
 

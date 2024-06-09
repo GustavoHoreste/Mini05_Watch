@@ -13,18 +13,27 @@ struct HomeButton<Destination: View>: View {
     
     var body: some View {
         NavigationLink(destination: destination){
+            ZStack{
+                RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
+                    .rotation(.degrees(45))
+                    .frame(width: 70,height: 70)
+                    .foregroundStyle(Color("myOrange"))
             HStack {
                 Spacer()
                 Text(name)
-                    .padding(15)
-                Spacer()
+                    .foregroundStyle(.white)
+                    .myCustonFont(fontName: .sairaMedium, size: 14, valueScaleFactor: 0)
+                
+                
             }
         }
+        .buttonStyle(PlainButtonStyle())
     }
 }
 
 
 #Preview {
     HomeButton(name: "Avaliação", destination: ContentView())
+    
 }
 

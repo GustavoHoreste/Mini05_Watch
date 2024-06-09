@@ -6,14 +6,46 @@
 //
 
 import SwiftUI
+import HealthKit
 
 struct ContentView: View {
+    @EnvironmentObject private var healthManager: HealthKitManager
+    @State private var authorizationStatuses: [HKObjectType: HKAuthorizationStatus] = [:]
+    
     var body: some View {
-        HomeView()
+        verifyAutorization()
+            .onAppear{
+                authorizationStatuses = healthManager.verifyStatusPermission()
+            }
+            .background(.bg)
+    }
+}
+
+extension ContentView{
+    @ViewBuilder
+    private func verifyAutorization() -> some View{
+        if allPermissionsAuthorized(){
+            HomeView()
+        }else if anyPermissionDenied(){
+            PermissionDeniedView()
+        }else{
+            RequestPermissionView(healthKitManager: self.healthManager,
+                                        authorizationStatuses: self.$authorizationStatuses)
+        }
+    }
+    
+    private func allPermissionsAuthorized() -> Bool{
+        return !authorizationStatuses.values.contains(.notDetermined) &&
+               !authorizationStatuses.values.contains(.sharingDenied)
+    }
+    
+    private func anyPermissionDenied() -> Bool {
+        return authorizationStatuses.values.contains(.sharingDenied)
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(HealthKitManager())
 }
 

@@ -8,7 +8,5 @@
 import Foundation
 
 
-enum Tabs {
-    case exercise, status
-}
+
 
