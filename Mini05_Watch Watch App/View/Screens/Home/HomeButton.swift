@@ -18,6 +18,8 @@ struct HomeButton<Destination: View>: View {
                     .rotation(.degrees(45))
                     .frame(width: 70,height: 70)
                     .foregroundStyle(Color("myOrange"))
+            HStack {
+                Spacer()
                 Text(name)
                     .foregroundStyle(.white)
                     .myCustonFont(fontName: .sairaMedium, size: 14, valueScaleFactor: 0)
